@@ -48,3 +48,6 @@ When naming classes, preface all classes with `fs-` and use [BEM](http://csswiza
 ## Variables
 When naming variables, start the variable name with the most generic term and end with the most specific term. This allows auto complete to grab all variables that also belong to the generic category. For example, a variable for a blue border should be named `$color-border-blue`.
 *See [Sass Variable Architecture](http://peteschuster.com/2014/02/sass-variable-architecture/), [Naming SASS Variables Modularly](http://webdesign.tutsplus.com/articles/quick-tip-name-your-sass-variables-modularly--webdesign-13364), and [SASS Color Variables](http://sachagreif.com/sass-color-variables/) for more details*
+
+## License
+Copyright © 2014 by Intellectual Reserve, Inc. See the LICENSE file for license rights and limitations.
