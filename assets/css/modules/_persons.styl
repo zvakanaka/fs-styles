@@ -208,9 +208,12 @@ background:url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz
 /*------------------------------------*\
   $PERSON_PORTRAIT
 \*------------------------------------*/
+.fs-person-portrait {
+  display: table;
+}
+
 .fs-person-portrait__container {
   display: table-cell;
-  width: 85px;
 }
 
 .fs-person-portrait__portrait {
@@ -223,6 +226,7 @@ background:url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz
   box-shadow: 0 2px 3px 0 #636363;
   width: 66px;
   height: 66px;
+  margin-right: 20px;
   position: relative;
 }
 
@@ -348,7 +352,7 @@ background:url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz
       content: '';
       width: 8px;
       height: 26px;
-      border: 1px solid #000;
+      border: 1px solid currentcolor;
       border-right: 0;
       position: absolute;
       right: 100%;

@@ -17,7 +17,7 @@
 \*------------------------------------*/
 body {
   color: $color-text;
-  font-family: "ProximaNova", Verdana, sans-serif;
+  font-family: "ProximaNova", sans-serif;
   font-size: $medium-size;
   line-height: $medium-lineHieght;
 }
@@ -63,8 +63,38 @@ label {
   line-height: $small-lineHieght;
 }
 
+::-webkit-input-placeholder {
+   font-family: "ProximaNova", sans-serif;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   font-family: "ProximaNova", sans-serif;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   font-family: "ProximaNova", sans-serif;
+}
+
+:-ms-input-placeholder {
+   font-family: "ProximaNova", sans-serif;
+}
+
 textarea,
-input[type=text] {
+input[type=text],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"] {
+  font-family: "ProximaNova", sans-serif;
   font-size: $medium-size;
   line-height: $medium-lineHieght;
   color: $color-text;
@@ -82,9 +112,10 @@ input[type=text] {
 }
 
 select {
+  font-family: "ProximaNova", sans-serif;
   border-color: $color-border-select;
-  font-size: $small-size;
-  line-height: $small-lineHieght;
+  font-size: $medium-size;
+  line-height: $medium-lineHieght;
   color: $color-text;
 
   &:focus {
