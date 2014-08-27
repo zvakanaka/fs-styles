@@ -139,6 +139,7 @@ select {
   color: #fff;
   background-color: $color-background-gradient-start-button-primary;
   background-image: linear-gradient($color-background-gradient-start-button-primary, $color-background-gradient-stop-button-primary);
+
   &:hover {
     color: #fff;
     background: $color-background-gradient-start-button-primary;
@@ -161,6 +162,7 @@ select {
     background-color: $color-background-gradient-start-button-secondary;
     background-image: linear-gradient($color-background-gradient-start-button-secondary, $color-background-gradient-stop-button-secondary);
     text-shadow: 0px 1px 0 rgba(255,255,255,0.5);
+
     &:hover {
       color: $color-text;
       background: $color-background-gradient-start-button-secondary;
@@ -174,6 +176,26 @@ select {
       &:hover {
         background-image: linear-gradient($color-background-gradient-start-button-secondary, $color-background-gradient-stop-button-secondary);
       }
+    }
+  }
+
+  // tertiary actions
+  &--tertiary {
+    color: $color-link;
+    background: transparent;
+    box-shadow: 0 0 0 transparent;
+    padding: 0;
+    margin: 10px 20px;
+
+    &:hover {
+      color: $color-link;
+      background: transparent;
+      text-decoration: underline;
+    }
+    &:active {
+      color: $color-link;
+      background: transparent;
+      text-decoration: underline;
     }
   }
 }
