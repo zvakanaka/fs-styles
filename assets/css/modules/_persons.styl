@@ -6,6 +6,7 @@
  * PERSON_GENDER........Person gender styles
  * PERSON_PORTRAIT......Person portrait styles
  * STYLE_VARIATIONS.....Different person styles
+ * STATES...............State rules
  */
 /*
  * Gender icons to match new style
@@ -243,6 +244,7 @@ background:url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz
 
 .fs-person-portrait__image {
   position: relative;
+  z-index: 1;
 }
 
 .fs-person-portrait__gender-wrapper {
@@ -348,6 +350,27 @@ background:url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz
     }
   }
 
+  // LIGHT
+  &--light {
+    .fs-person-portrait__portrait {
+      background-color: #f4f4f4;
+      border-color: #d9d9d9;
+      box-shadow: none;
+    }
+
+    .fs-icon-before-portrait-male:before {
+      @extend .fs-icon-before-portrait-male-gray:before;
+      background-position: inherit;
+      background-size: inherit;
+    }
+
+    .fs-icon-before-portrait-female:before {
+      @extend .fs-icon-before-portrait-female-gray:before
+      background-position: inherit;
+      background-size: inherit;
+    }
+  }
+
   // COUPLE
   &--husband, &--wife {
 
@@ -374,5 +397,28 @@ background:url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz
       border-top: 0;
       bottom: 50%;
     }
+  }
+}
+
+
+
+
+
+/*------------------------------------*\
+  $STATES
+\*------------------------------------*/
+
+// Prevent a portrait image from being draggable. Image attributes to disable
+// an image or prevent dragging do not work consistently across all browsers.
+.disable-portrait-image {
+  .fs-person-portrait__portrait:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
   }
 }
