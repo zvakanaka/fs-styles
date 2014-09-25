@@ -1,6 +1,6 @@
 fs-styles
 =========
-Stylus files used by FamilySearch.org.
+Global styles for the FamilySearch.org website.
 
 # Folder Organization
 To help organize a large CSS code base, we have split the files into different folders. Each file is then compiled into `familysearch-styles.styl` which is what is used on the site.
