@@ -1,6 +1,31 @@
 {
   "name": "fs-styles",
-  "version": "0.1.0",
+  "description": "Global styles for the FamilySearch.org website.",
+  "version": "1.0.1",
+  "homepage": "https://github.com/fs-webdev/fs-styles",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fs-webdev/fs-styles.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fs-webdev/fs-styles/issues"
+  },
+  "author": {
+    "name": "FamilySearch",
+    "url": "https://familysearch.org/"
+  },
+  "contributors": [
+    {
+      "name": "Steven Lambert",
+      "email": "steven.lambert@familysearch.org"
+    }
+  ],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/fs-webdev/fs-styles/blob/master/LICENSE.txt"
+    }
+  ],
   "private": true,
   "dependencies": {},
   "devDependencies": {}
