@@ -138,7 +138,8 @@ background:url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz
 
 .fs-person-details__lifeSpan,
 .fs-person-details__separator,
-.fs-person-details__id {
+.fs-person-details__id,
+.fs-person-details__birthPlace {
   float: left;
   font-size: $small-size;
   line-height: $small-lineHieght;
@@ -154,7 +155,13 @@ background:url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz
   display: none;
 }
 
-
+.fs-person-details__birthPlace {
+  clear: both;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
 
 
 
@@ -211,6 +218,7 @@ background:url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz
 \*------------------------------------*/
 .fs-person-portrait {
   display: table;
+  position: relative;
 }
 
 .fs-person-portrait__container {
@@ -240,6 +248,10 @@ background:url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz
   top: 0;
   height: 100%;
   width: 100%;
+}
+
+.fs-couple .fs-person-portrait__portrait {
+  margin: 5px 20px 5px 0;
 }
 
 .fs-person-portrait__image {
@@ -374,18 +386,33 @@ background:url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz
   // COUPLE
   &--husband, &--wife {
 
-    .fs-person-gender__image:before {
+    .fs-person-gender__image:before,
+    .fs-couple & .fs-person-portrait__container:after {
       content: '';
       width: 8px;
-      height: 26px;
       border: 1px solid currentcolor;
       border-right: 0;
       position: absolute;
+    }
+
+    .fs-person-gender__image:before {
+      height: 26px;
       right: 100%;
     }
+
+    .fs-couple & .fs-person-portrait__container:after {
+      height: 44px;
+      left: -9px;
+    }
+
+    .fs-person-portrait& .fs-person-gender__image:before {
+      border: none;
+    }
+
   }
 
-  &--husband .fs-person-gender__image:before {
+  &--husband .fs-person-gender__image:before,
+  .fs-couple &--husband .fs-person-portrait__container:after {
     border-bottom: 0;
     top: 50%;
   }
@@ -393,7 +420,8 @@ background:url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz
   &--wife {
     margin-top: 5px;
 
-    .fs-person-gender__image:before {
+    .fs-person-gender__image:before,
+    .fs-couple & .fs-person-portrait__container:after {
       border-top: 0;
       bottom: 50%;
     }
