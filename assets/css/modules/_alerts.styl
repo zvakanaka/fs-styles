@@ -1,14 +1,24 @@
 /*------------------------------------*\
   $ALERTS
 \*------------------------------------*/
-/*
- * ALERTS
- * <div class="fs-alert">Message</div>
- */
 .fs-alert {
-  border: 1px solid;
+  background: $color-background-alert-success;
+  border-radius: 4px;
+  border: 1px solid $color-border-alert-success;
+  color: $color-text-alert-success;
+  display: block;
   margin: 1em 0 0;
   padding: 1em;
-  display: block;
-  border-radius: 4px;
+
+  &--warning {
+    background: $color-background-alert-warning;
+    border-color: $color-border-alert-warning;
+    color: $color-text-alert-warning;
+  }
+
+  &--error {
+    background: $color-background-alert-error;
+    border-color: $color-border-alert-error;
+    color: $color-text-alert-error;
+  }
 }

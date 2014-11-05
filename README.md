@@ -36,6 +36,7 @@ A little effort goes a long way. Please take the time to organize your CSS file 
   $SECTION-NAME
 \*------------------------------------*/
 ```
+3. Order css properties in alphabetical order. It's the easiest ordering to understand without explaining and ensures that finding a property is easy.
 
 # Naming Conventions
 
