@@ -1,25 +1,25 @@
 fs-styles
 =========
-Global styles for the FamilySearch.org website.
+Global styles for the FamilySearch.org website. Based on the principles of [Atomic Design](http://bradfrost.com/blog/post/atomic-web-design/).
 
 # Folder Organization
 To help organize a large CSS code base, we have split the files into different folders. Each file is then compiled into `familysearch-styles.styl` which is what is used on the site.
 *See [Architecture SASS Project](http://www.sitepoint.com/architecture-sass-project/) and [SMACSS Categorizing](http://smacss.com/book/categorizing) for more details*
 
-Folder   | Contents
----------|---------
-Helpers  | Variables, mixins, and functions.
-Elements | Default styles applied to an HTML element any time it's used on a page.
-Modules  | Groupings of HTML elements that form a reusable component.
-Layout   | Styles for content layout such as grids, headers, footers, etc.
-Themes   | Theme specific styles (colors, typography, etc.) applied to elements and modules.
+Folder     | Contents
+-----------|---------
+Helpers    | Variables, mixins, and functions.
+Elements   | Basic, indivisible building blocks of the site that include colors, HTML tags, and simple class names.
+Modules    | Groupings of Elements that form a reusable aspect of the interface.
+Components | Groupings of Modules that form relatively complex secitons of the interface.
+Layout     | Styles for content layout such as grids, headers, footers, etc.
 
 # File Organization
 A little effort goes a long way. Please take the time to organize your CSS file so that others may quickly find what they are looking for. Divide your code into meaningful sections that denote what the rules are affecting.
 *See [CSS Guidelines](https://github.com/csswizardry/CSS-Guidelines) for more details*
 
 ## Recommended Guidelines
-1. Table of contents at the top of the stylesheet denoting sections
+- Table of contents at the top of the stylesheet denoting sections
 ```javascript
 /*------------------------------------*\
   $CONTENTS
@@ -30,13 +30,13 @@ A little effort goes a long way. Please take the time to organize your CSS file 
  * ...
  */
 ```
-2. Section headings start with $ to make searching easier (`$SECTION-NAME`)
+- Section headings start with $ to make searching easier (`$SECTION-NAME`)
 ```javascript
 /*------------------------------------*\
   $SECTION-NAME
 \*------------------------------------*/
 ```
-3. Order css properties in alphabetical order. It's the easiest ordering to understand without explaining and ensures that finding a property is easy.
+- Order css properties in alphabetical order. It's the easiest ordering to understand without explaining and ensures that finding a property is easy.
 
 # Naming Conventions
 
