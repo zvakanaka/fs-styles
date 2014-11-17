@@ -4,7 +4,7 @@
 
 /**
  * 1. Default button height should be 35px.
- * 2. Links need to override :focus color.
+ * 2. Links need to override :focus and :visited color.
  * 3. :hover should always be declared before :active so that :active overrides :hover styles
  */
 .fs-button {
@@ -51,7 +51,8 @@
     opacity: 0.5;
   }
 
-  &:focus {
+  &:focus,
+  &:visited {
     text-decoration: none;
     color: #fff; /* [2] */
   }
@@ -74,7 +75,8 @@
       color: $color-text;
     }
 
-    &:focus {
+    &:focus,
+    &:visited {
       color: $color-text; /* [2] */
     }
 
@@ -108,7 +110,8 @@
       text-decoration: underline;
     }
 
-    &:focus {
+    &:focus,
+    &:visited {
       color: $color-link; /* [2] */
     }
   }
