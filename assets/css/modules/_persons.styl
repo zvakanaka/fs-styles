@@ -440,21 +440,6 @@ background:url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz
 .fs-couple {
   position: relative;
 
-  // need to move up the connector for small icons
-  &[data-config*='small']:before {
-    top: 20%;
-  }
-
-  // add connector for showing parents
-  &:before {
-    content: '';
-    position: absolute;
-    border-right: 1px solid currentcolor;
-    height: 50%;
-    left: -9px;  // 9px connector (width + border)
-    top: 25%;
-  }
-
   &--info .fs-person-gender__image:after,
   &--portrait .fs-person-portrait__portrait:after {
     content: '';
@@ -464,34 +449,53 @@ background:url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz
     position: absolute;
   }
 
-  .fs-person--husband {
-    .fs-couple__connector:after {
-      border-bottom: 0;
-      top: 50%;
-    }
-  }
-
-  .fs-person--wife {
-    .fs-couple__connector:after {
-      border-top: 0;
-      bottom: 50%;
-
-      // needed for couple within couple (e.g. showing parents of couples)
-      border-bottom: 1px solid currentcolor;
-      top: inherit;
-    }
-  }
-
   .fs-person-gender__image:after {
-    height: 26px;
     right: 100%;
   }
 
   .fs-person-portrait__portrait:after {
-    height: 44px;
     left: -13px;  // 9px connector (width + border) + 4px portrait border
   }
 }
+
+.fs-person--husband,
+.fs-person--wife {
+  margin-left: -9px;  // 9px connector (width + border)
+  padding-left: 9px;  // 9px connector (width + border)
+  overflow: hidden;
+}
+
+.fs-couple__connector:after {
+  height: 150px;  // large number that would go outside the overflow of the husband/wife
+}
+
+.fs-person--husband {
+  padding-bottom: 5px;
+
+  .fs-couple__connector:after {
+    border-bottom: 0;
+    top: 50%;
+  }
+}
+
+.fs-person--wife {
+  .fs-couple__connector:after {
+    border-top: 0;
+    bottom: 50%;
+  }
+}
+
+// needed for couple within couple (e.g. showing parents of couples)
+.fs-person__fs-person-parents .fs-person--wife .fs-couple__connector:after {
+  border-bottom: 1px solid currentcolor;
+  top: inherit;
+}
+
+.fs-person__fs-person-parents .fs-person--husband .fs-couple__connector:after {
+  border-top: 1px solid currentcolor;
+  bottom: inherit;
+}
+
 
 
 
