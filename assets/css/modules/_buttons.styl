@@ -24,6 +24,7 @@
   padding: 9.5px 20px; /* [1] */
   position: relative;
   text-decoration: none;
+  transition: padding .2s;
   user-select: none;
   vertical-align: middle;
   white-space: nowrap;
@@ -55,6 +56,33 @@
   &:visited {
     text-decoration: none;
     color: #fff; /* [2] */
+  }
+
+  &:after {
+    content: '';
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  &.is-loading {
+    padding-right: 47px;
+
+    &:after {
+      -moz-animation: rotate 1s infinite steps(12);
+      -ms-animation: rotate 1s infinite steps(12);
+      -o-animation: rotate 1s infinite steps(12);
+      -webkit-animation: rotate 1s infinite steps(12);
+      animation: rotate 1s infinite steps(12);
+      background-image: url('https://edge.fscdn.org/assets/img/profile/spinner-8045af23c74dd357fab7c6b5a5656093.svg');
+      background-size: contain;
+      content: '';
+      height: 20px;
+      margin-top: -2px;
+      opacity: 1;
+      position: absolute;
+      right: 15px;
+      width: 20px;
+    }
   }
 
   /**
@@ -141,5 +169,33 @@
    */
   &--small {
     padding: 7px 20px; /* [1] */
+
+    &.is-loading {
+      padding-right: 42px;
+
+      &:after {
+        width: 16px;
+        height: 16px;
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+
+@keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
