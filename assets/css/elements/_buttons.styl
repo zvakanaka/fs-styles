@@ -1,11 +1,30 @@
 /*------------------------------------*\
-  $BUTTONS
+  $CONTENTS
 \*------------------------------------*/
+/**
+ * DEFAULT_BUTTON.......Standard button for primary actions
+ * SECONDARY_BUTTON.....Button used for secondary actions
+ * TERTIARY_BUTTON......Button used for tertiary actions
+ * LARGE_BUTTON.........A larger button used for campaign pages
+ * SMALL_BUTTON.........A smaller button used for apps and inline form elements
+ * LOADING_ANIMATION....Animation for a loading button
+ * KEYFRAMES............Animation keyframes
+ */
 
+
+
+
+
+/*------------------------------------*\
+  $DEFAULT_BUTTON
+\*------------------------------------*/
 /**
  * 1. Default button height should be 35px.
  * 2. Links need to override :focus and :visited color.
- * 3. :hover should always be declared before :active so that :active overrides :hover styles
+ * 3. :hover should always be declared before :active so that :active overrides
+ *    :hover styles
+ * 4. Prefetch all background images for button animations
+ *    http://stackoverflow.com/questions/1373142/preloading-css-background-images
  */
 .fs-button {
   -webkit-appearance: none;
@@ -58,36 +77,20 @@
     color: #fff; /* [2] */
   }
 
-  &:after {
+  &:after { /* [4] */
+    background: url('https://edge.fscdn.org/assets/img/profile/spinner-8045af23c74dd357fab7c6b5a5656093.svg');
     content: '';
     opacity: 0;
     transition: opacity 0.3s;
   }
 
-  &.is-loading {
-    padding-right: 47px;
 
-    &:after {
-      -moz-animation: rotate 1s infinite steps(12);
-      -ms-animation: rotate 1s infinite steps(12);
-      -o-animation: rotate 1s infinite steps(12);
-      -webkit-animation: rotate 1s infinite steps(12);
-      animation: rotate 1s infinite steps(12);
-      background-image: url('https://edge.fscdn.org/assets/img/profile/spinner-8045af23c74dd357fab7c6b5a5656093.svg');
-      background-size: contain;
-      content: '';
-      height: 20px;
-      margin-top: -2px;
-      opacity: 1;
-      position: absolute;
-      right: 15px;
-      width: 20px;
-    }
-  }
 
-  /**
-   * secondary submit button
-   */
+
+
+  /*------------------------------------*\
+    $SECONDARY_BUTTON
+  \*------------------------------------*/
   &--secondary {
     background-color: $color-background-button-secondary-light;
     background-image: linear-gradient($color-background-button-secondary-light, $color-background-button-secondary-dark);
@@ -118,9 +121,13 @@
     }
   }
 
-  /**
-   * tertiary actions
-   */
+
+
+
+
+  /*------------------------------------*\
+    $TERTIARY_BUTTON
+  \*------------------------------------*/
   &--tertiary {
     background: transparent;
     box-shadow: 0 0 0 transparent;
@@ -148,9 +155,10 @@
 
 
 
-
+  /*------------------------------------*\
+    $LARGE_BUTTON
+  \*------------------------------------*/
   /**
-   * large buttons
    * 1. Large button height should be 50px
    */
   &--large {
@@ -163,8 +171,10 @@
 
 
 
+  /*------------------------------------*\
+    $SMALL_BUTTON
+  \*------------------------------------*/
   /**
-   * small buttons
    * 1. Small button height should be 30px
    */
   &--small {
@@ -180,9 +190,42 @@
       }
     }
   }
+
+
+
+
+
+  /*------------------------------------*\
+    $LOADING_ANIMATION
+  \*------------------------------------*/
+  &--loading {
+    padding-right: 47px;
+
+    &:after {
+      -moz-animation: rotate 1s infinite steps(12);
+      -ms-animation: rotate 1s infinite steps(12);
+      -o-animation: rotate 1s infinite steps(12);
+      -webkit-animation: rotate 1s infinite steps(12);
+      animation: rotate 1s infinite steps(12);
+      background-image: url('https://edge.fscdn.org/assets/img/profile/spinner-8045af23c74dd357fab7c6b5a5656093.svg');
+      background-size: contain;
+      height: 20px;
+      margin-top: -2px;
+      opacity: 1;
+      position: absolute;
+      right: 15px;
+      width: 20px;
+    }
+  }
 }
 
 
+
+
+
+/*------------------------------------*\
+  $KEYFRAMES
+\*------------------------------------*/
 @keyframes rotate {
   from {
     -webkit-transform: rotate(0deg);

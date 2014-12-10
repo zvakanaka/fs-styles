@@ -1,0 +1,88 @@
+/*------------------------------------*\
+  $CONTENTS
+\*------------------------------------*/
+/**
+ * DEFAULT_STATE........Default field state
+ * VALID_STATE..........Valid field state
+ * INVALID_STATE........Invalid field state
+ */
+
+
+
+
+
+/*------------------------------------*\
+  $DEFAULT_STATE
+\*------------------------------------*/
+/**
+ * 1. Prefetch all background images for field validation
+ *    http://stackoverflow.com/questions/1373142/preloading-css-background-images
+ */
+.fs-field-validation {
+  border-radius: 4px;
+  margin: -2px;
+  padding: 2px;
+  position: relative;
+
+  &__valid-message,
+  &__invalid-message {
+    display: none;
+    margin: 6px;
+  }
+
+  &:after { /* [1] */
+    background: url('https://edge.fscdn.org/assets/img/profile/check-530fbb09a5d89e3f4af95d9d2cd61885.svg'), url('https://edge.fscdn.org/assets/img/profile/x-46d46c886f5e8d2214edbe5dc9c9c8fc.svg');
+    content: '';
+    display: none;
+  }
+
+
+
+
+
+  /*------------------------------------*\
+    $VALID_STATE
+  \*------------------------------------*/
+  &--valid {
+    background: $color-background-success;
+
+    input {
+      background: #fff url('https://edge.fscdn.org/assets/img/profile/check-530fbb09a5d89e3f4af95d9d2cd61885.svg') no-repeat 98% center;
+      border-color: $color-border-success;
+
+      &:focus {
+        border-color: #356635
+      }
+    }
+
+    .fs-field-validation__valid-message {
+      color: $color-text-success;
+      display: block;
+    }
+  }
+
+
+
+
+
+  /*------------------------------------*\
+    $INVALID_STATE
+  \*------------------------------------*/
+  &--invalid {
+    background: $color-background-error;
+
+    input {
+      background: #fff url('https://edge.fscdn.org/assets/img/profile/x-46d46c886f5e8d2214edbe5dc9c9c8fc.svg') no-repeat 98% center;
+      border-color: $color-border-error;
+
+      &:focus {
+        border-color: #953b39
+      }
+    }
+
+    .fs-field-validation__invalid-message {
+      color: $color-text-error;
+      display: block;
+    }
+  }
+}
