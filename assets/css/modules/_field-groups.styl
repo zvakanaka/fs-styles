@@ -120,7 +120,11 @@
   &--help {
     input.fs-field-group__input { /* [1] */
       border-radius: 4px;
-      // width: 50%;  // ie9 only
+      width: 50% unquote('\9'); /* IE9 */
+
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        width: 100% /* IE10 reset of IE9 style */
+      }
     }
   }
 
