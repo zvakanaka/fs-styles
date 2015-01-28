@@ -1,11 +1,15 @@
 /*------------------------------------*\
   $BASE
 \*------------------------------------*/
+html {
+  font-size: ($font-base)px;
+}
+
 body {
   color: $color-text;
   font-family: "ProximaNova", sans-serif;
-  font-size: $medium-size;
-  line-height: $medium-lineHieght;
+  font-size: pxToRem($medium-size);
+  line-height: calcLineHeight($medium-lineHeight, $medium-size);
 }
 
 h1, h2, h3, h4,
@@ -19,28 +23,28 @@ h5, .fs-h5 {
   font-family: "ProximaNova", sans-serif;
 }
 h1, .fs-h1 {
-  font-size: $xxx-large-size;
-  line-height: $xxx-large-lineHeight;
+  font-size: pxToRem($xxx-large-size);
+  line-height: calcLineHeight($xxx-large-lineHeight, $xxx-large-size);
 
   & + p {
     margin-top: 16px;
   }
 }
 h2, .fs-h2 {
-  font-size: $xx-large-size;
-  line-height: $xx-large-lineHeight;
+  font-size: pxToRem($xx-large-size);
+  line-height: calcLineHeight($xx-large-lineHeight, $xx-large-size);
 }
 h3, .fs-h3 {
-  font-size: $x-large-size;
-  line-height: $x-large-lineHeight;
+  font-size: pxToRem($x-large-size);
+  line-height: calcLineHeight($x-large-lineHeight, $x-large-size);
 
   & + p {
     margin-top: 14px;
   }
 }
 h4, .fs-h4 {
-  font-size: $large-size;
-  line-height: $large-lineHeight;
+  font-size: pxToRem($large-size);
+  line-height: calcLineHeight($large-lineHeight, $large-size);
 
   & + p {
     margin-top: 12px;
@@ -48,9 +52,9 @@ h4, .fs-h4 {
 }
 h5, .fs-h5 {
   color: $color-headings;
-  font-size: $small-size;
+  font-size: pxToRem($small-size);
   letter-spacing: 1px;
-  line-height: $small-lineHieght;
+  line-height: calcLineHeight($small-lineHeight, $small-size);
   text-transform: uppercase;
 
   & + p {
@@ -88,11 +92,11 @@ p + * {
 }
 
 ul, li {
-  line-height: $medium-lineHieght;
+  line-height: calcLineHeight($medium-lineHeight, $medium-size);
 }
 
 small {
-  font-size: $small-size;
-  line-height: 17px;
+  font-size: pxToRem($small-size);
+  line-height: calcLineHeight($small-lineHeight, 17px);
   color: $color-label;
 }

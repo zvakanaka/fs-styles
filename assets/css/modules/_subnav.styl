@@ -1,5 +1,5 @@
 /*------------------------------------*\
-  $SUB_NAV
+  $SUBNAV
 \*------------------------------------*/
 .fs-subnav {
   background: #fff;
@@ -25,12 +25,16 @@
 
   &__nav-item {
     display: inline-block;
+
+    &:first-child {
+      margin-left: -10px;  // make the link text left align with the logo
+    }
   }
 
   &__link {
     color: $brand-color-label-grey;
     display: block;
-    font-size: 14px;
+    font-size: pxToRem($small-size);
     line-height: 122%;
     padding: 4px 10px;
 

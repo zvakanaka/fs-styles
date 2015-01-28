@@ -3,8 +3,8 @@
 \*------------------------------------*/
 label {
   color: $color-label;
-  font-size: $small-size;
-  line-height: $small-lineHieght;
+  font-size: pxToRem($small-size);
+  line-height: $small-lineHeight;
   margin-bottom: 0;
 
   > input[type="radio"],
@@ -14,7 +14,7 @@ label {
   }
 
   > input[type="radio"] {
-    margin-top: 3px;
+    margin-top: 1px;
   }
 
   > input[type="checkbox"] {
@@ -54,9 +54,9 @@ input[type="color"] {
           box-sizing: border-box;
   color: $color-text;
   font-family: "ProximaNova", sans-serif;
-  font-size: $medium-size;
+  font-size: pxToRem($medium-size);
   height: 30px;  // needed to override Bootstrap
-  line-height: $medium-lineHieght;
+  line-height: $medium-lineHeight;
   margin-bottom: 0;
   padding: 4px 6px;
   width: 100%;
@@ -76,7 +76,7 @@ input[type="color"] {
 
 input[type="radio"],
 input[type="checkbox"] {
-  padding: 0;  // ie9
+  padding: 0; /* IE9 */
 }
 
 textarea {
@@ -89,9 +89,9 @@ select {
   border: 1px solid $color-border-select;
   color: $color-text;
   font-family: "ProximaNova", sans-serif;
-  font-size: $medium-size;
+  font-size: pxToRem($medium-size);
   height: 30px;
-  line-height: $medium-lineHieght;
+  line-height: $medium-lineHeight;
   margin: 0;
   padding: 4px 6px;
   width: 100%;

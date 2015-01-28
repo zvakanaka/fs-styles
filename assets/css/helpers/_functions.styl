@@ -1,14 +1,22 @@
 /*------------------------------------*\
   $FUNCTIONS
 \*------------------------------------*/
+$roundPrecision = 3;
+
+/**
+ * Shortcut for displaying ellipsis text on truncation (overflow: ellipsis)
+ */
 overflow()
   if arguments[0] == ellipsis
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
   else
     overflow: arguments
 
+/**
+ * Output the clearfix hack for the element
+ */
 clearfix()
   &:before
   &:after
@@ -16,3 +24,22 @@ clearfix()
     display: table
   &:after
     clear: both
+
+/**
+ * Take a unit and output both px and rem properties.
+ * @param {unit}
+ */
+pxToRem(n)
+  if current-property
+    add-property(current-property[0], (n)px);
+    round( (n / $font-base), $roundPrecision )rem;
+  else
+    error('pxToRem() must be used within a property')
+
+/**
+ * Calculate the line-height as a multiplier of the font-size
+ * @param {unit} lineHeight - Line-height in px
+ * @param {unit} fontSize   - Font-size in px
+ */
+calcLineHeight(lineHeight, fontSize)
+  return round( remove-unit(lineHeight / fontSize), $roundPrecision )
