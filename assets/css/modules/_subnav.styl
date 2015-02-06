@@ -1,42 +1,51 @@
 /*------------------------------------*\
   $SUBNAV
 \*------------------------------------*/
+/**
+ * 1. Leftmost and rightmost links should be flush with the grid.
+ */
 .fs-subnav {
-  background: #fff;
-  border-bottom: 1px solid rgba(151,151,151,.8);
+  margin: 0 auto;
   position: relative;
+  top: 50%;
+  transform: translateY(-50%)
 
-  &:before {
-    border: 2px solid rgba(0,0,0,0.05);
-    bottom: -3px;
-    content: '';
-    left: 0;
-    position: absolute;
-    right: 0;
+  @media $media-query-large {
+    max-width: $screen-large-min;
   }
 
-  &__nav {
+  &-container {
+    background: #fff;
+    border-bottom: 1px solid rgba(151,151,151,.8);
+    position: relative;
+    height: 35px;
     box-sizing: border-box;
-    height: 34px;
-    list-style: none;
-    margin: 0 auto;
-    padding: 4px 0;
-  }
 
-  &__nav-item {
-    display: inline-block;
+    @media $media-query-x-small {
+      display: none;
+    }
 
-    &:first-child {
-      margin-left: -10px;  // make the link text left align with the logo
+    &:before {
+      border: 2px solid rgba(0,0,0,0.05);
+      bottom: -3px;
+      content: '';
+      left: 0;
+      position: absolute;
+      right: 0;
     }
   }
 
-  &__link {
+  &__item {
+    background: transparent;
+    border-radius: 3px;
+    border: 0;
     color: $brand-color-label-grey;
-    display: block;
+    display: inline-block;
     font-size: pxToRem($small-size);
-    line-height: 122%;
+    line-height: calcLineHeight($small-lineHeight, $small-size);
+    margin-right: 1px;
     padding: 4px 10px;
+    vertical-align: middle;
 
     &:active,
     &:focus,
@@ -45,11 +54,50 @@
       color: $brand-color-label-grey;
       text-decoration: none;
     }
+
+    &:hover,
+    &.active {
+      background: #e1edc1;
+    }
+
+    &--split {
+      display: inline-block;
+      vertical-align: middle;
+
+      &:hover .fs-subnav__item {
+        background: #e1edc1;
+      }
+
+      .fs-subnav__item {
+
+         &:first-child {
+          border-radius: 3px 0 0  3px;
+          margin-right: 2px;
+          float: left;
+        }
+
+        &:last-child {
+          border-radius: 0 3px 3px 0;
+          padding: 4px 6px 4px 5px;
+          float: left;
+        }
+
+        &:hover {
+          background: #F1F8E3;
+        }
+      }
+    }
   }
 
-  &__link:hover,
-  .active &__link {
-    background: #e1edc1;
-    border-radius: 3px;
+  & > &__item:first-child {
+    margin-left: -10px; /* [1] */
+  }
+
+  &--secondary {
+    float: right;
+
+    .fs-subnav__item:last-child {
+      margin-right: -10px; /* [1] */
+    }
   }
 }

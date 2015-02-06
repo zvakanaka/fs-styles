@@ -38,7 +38,7 @@
   font-size: pxToRem($medium-size);
   font-weight: normal;
   line-height: 1;
-  padding: 9.5px 20px; /* [1] */
+  padding: pxToRem(9.5px 20px); /* [1] */
   position: relative;
   text-decoration: none;
   transition: padding .2s;
@@ -161,7 +161,7 @@
   &--large {
     border-radius: 5px;
     box-shadow: 0 5px 0 rgba(0,0,0,0.05);
-    padding: 17px 20px; /* [1] */
+    padding: pxToRem(17px 20px); /* [1] */
   }
 
 
@@ -175,7 +175,7 @@
    * 1. Small button height should be 30px
    */
   &--small {
-    padding: 7px 20px; /* [1] */
+    padding: pxToRem(7px 20px); /* [1] */
 
     &.is-loading {
       padding-right: 42px;

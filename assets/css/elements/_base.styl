@@ -8,8 +8,6 @@ html {
 body {
   color: $color-text;
   font-family: "ProximaNova", sans-serif;
-  font-size: pxToRem($medium-size);
-  line-height: calcLineHeight($medium-lineHeight, $medium-size);
 }
 
 h1, h2, h3, h4,
@@ -27,7 +25,7 @@ h1, .fs-h1 {
   line-height: calcLineHeight($xxx-large-lineHeight, $xxx-large-size);
 
   & + p {
-    margin-top: 16px;
+    margin-top: pxToRem(16px);
   }
 }
 h2, .fs-h2 {
@@ -39,7 +37,7 @@ h3, .fs-h3 {
   line-height: calcLineHeight($x-large-lineHeight, $x-large-size);
 
   & + p {
-    margin-top: 14px;
+    margin-top: pxToRem(14px);
   }
 }
 h4, .fs-h4 {
@@ -47,7 +45,7 @@ h4, .fs-h4 {
   line-height: calcLineHeight($large-lineHeight, $large-size);
 
   & + p {
-    margin-top: 12px;
+    margin-top: pxToRem(12px);
   }
 }
 h5, .fs-h5 {
@@ -58,8 +56,13 @@ h5, .fs-h5 {
   text-transform: uppercase;
 
   & + p {
-    margin-top: 12px;
+    margin-top: pxToRem(12px);
   }
+}
+
+p {
+  font-size: pxToRem($medium-size);
+  line-height: calcLineHeight($medium-lineHeight, $medium-size);
 }
 
 a {
@@ -88,10 +91,11 @@ button {
 // lobotomized owl variant
 // http://alistapart.com/article/axiomatic-css-and-lobotomized-owls
 p + * {
-  margin-top: 26px;
+  margin-top: pxToRem(26px);
 }
 
-ul, li {
+ol, ul, li {
+  font-size: pxToRem($medium-size);
   line-height: calcLineHeight($medium-lineHeight, $medium-size);
 }
 
