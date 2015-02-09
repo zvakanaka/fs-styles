@@ -119,7 +119,7 @@ background:url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz
 .fs-person-vitals__name {
   overflow: ellipsis;
   font-size: pxToRem($medium-size);
-  line-height: $medium-lineHeight;
+  line-height: calcLineHeight($medium-lineHeight, $medium-size);
 }
 
 .fs-person-vitals__name-full,
@@ -142,7 +142,7 @@ background:url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz
 .fs-person-details__birthPlace {
   float: left;
   font-size: pxToRem($small-size);
-  line-height: $small-lineHeight;
+  line-height: calcLineHeight($small-lineHeight, $small-size);
 }
 
 .fs-person-details__selection-stopper {
@@ -181,7 +181,7 @@ background:url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz
 .fs-person-parents__show-label {
   @extend a;
   display: inline-block;
-  line-height: $small-lineHeight;
+  line-height: calcLineHeight($small-lineHeight, $small-size);
 }
 
 .fs-person-parents__hide-text {

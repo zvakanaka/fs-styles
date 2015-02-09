@@ -4,7 +4,7 @@
 label {
   color: $color-label;
   font-size: pxToRem($small-size);
-  line-height: $small-lineHeight;
+  line-height: calcLineHeight($small-lineHeight, $small-size);
   margin-bottom: 0;
 
   > input[type="radio"],
