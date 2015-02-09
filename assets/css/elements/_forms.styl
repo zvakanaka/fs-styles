@@ -3,14 +3,22 @@
 \*------------------------------------*/
 label {
   color: $color-label;
-  font-size: $small-size;
-  line-height: $small-lineHieght;
+  font-size: pxToRem($small-size);
+  line-height: calcLineHeight($small-lineHeight, $small-size);
   margin-bottom: 0;
 
   > input[type="radio"],
   > input[type="checkbox"] {
     float: left;
     margin-right: 8px;
+  }
+
+  > input[type="radio"] {
+    margin-top: 1px;
+  }
+
+  > input[type="checkbox"] {
+    margin-top: 2px;
   }
 }
 
@@ -46,11 +54,11 @@ input[type="color"] {
           box-sizing: border-box;
   color: $color-text;
   font-family: "ProximaNova", sans-serif;
-  font-size: $medium-size;
-  height: 30px;  // needed to override Bootstrap
-  line-height: $medium-lineHieght;
+  font-size: pxToRem($medium-size);
+  height: pxToRem(30px);  // needed to override Bootstrap
+  line-height: calcLineHeight($medium-lineHeight, $medium-size);
   margin-bottom: 0;
-  padding: 4px 6px;
+  padding: pxToRem(4px 6px);
   width: 100%;
 
   &:focus {
@@ -68,7 +76,8 @@ input[type="color"] {
 
 input[type="radio"],
 input[type="checkbox"] {
-  padding: 0;  // ie9
+  padding: 0; /* IE9 */
+  font-size: pxToRem(14px);
 }
 
 textarea {
@@ -81,11 +90,11 @@ select {
   border: 1px solid $color-border-select;
   color: $color-text;
   font-family: "ProximaNova", sans-serif;
-  font-size: $medium-size;
-  height: 30px;
-  line-height: $medium-lineHieght;
+  font-size: pxToRem($medium-size);
+  height: pxToRem(30px);
+  line-height: calcLineHeight($medium-lineHeight, $medium-size);
   margin: 0;
-  padding: 4px 6px;
+  padding: pxToRem(4px 6px);
   width: 100%;
 
   &:focus {

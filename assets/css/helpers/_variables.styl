@@ -2,9 +2,35 @@
   $CONTENTS
 \*------------------------------------*/
 /**
- * COLORS.......Color variables
- * FONTS........Font variables
+ * MEDIA_QUERIES...Media query sizes
+ * COLORS..........Color variables
+ * FONTS...........Font variables
  */
+
+
+
+
+
+/*------------------------------------*\
+  $MEDIA_QUERIES
+\*------------------------------------*/
+/**
+ * Match Bootstrap 3 breakpoints for consistency when using BS
+ */
+$screen-x-small-max = 767px;
+
+$screen-small-min = 768px;
+$screen-small-max = 991px;
+
+$screen-medium-min = 992px;
+$screen-medium-max = 1199px;
+
+$screen-large-min = 1200px;
+
+$media-query-x-small = "screen and (max-width: " + $screen-x-small-max + ")";
+$media-query-small = "screen and (min-width: " + $screen-small-min + ") and (max-width: " + $screen-small-max + ")";
+$media-query-medium = "screen and (min-width: " + $screen-medium-min + ") and (max-width: " + $screen-medium-max + ")";
+$media-query-large = "screen and (min-width: " + $screen-large-min + ")";
 
 
 
@@ -13,7 +39,7 @@
 /*------------------------------------*\
   $COLORS
 \*------------------------------------*/
-/*
+/**
  * Color plaque
  * TODO: When we decide on the FamilySearch brand colors, rename these to match
  * http://chir.ag/projects/name-that-color/ for color names
@@ -72,8 +98,11 @@ $brand-color-error-red-light = #fde3e3;
 $brand-color-error-red-dark = #9b0a0a;
 $brand-color-error-red-border = #fdaeae;
 
+// subnav
+$brand-color-subnav-green = #e1edc1;
 
-/*
+
+/**
  * Functional color names
  */
 $color-link = $brand-color-link-blue;
@@ -116,6 +145,8 @@ $color-background-error = $brand-color-error-red-light;
 $color-text-error = $brand-color-error-red-dark;
 $color-border-error = $brand-color-error-red-border;
 
+// subnav
+$color-nav-highlight = $brand-color-subnav-green;
 
 
 
@@ -123,11 +154,15 @@ $color-border-error = $brand-color-error-red-border;
 /*------------------------------------*\
   $FONTS
 \*------------------------------------*/
+// responsive typography
+$font-base = 16;
+$lineHeight-base = 20;
+
 $small-size = 14px;
-$small-lineHieght = 20px;
+$small-lineHeight = 18px;
 
 $medium-size = 16px;
-$medium-lineHieght = 22px;
+$medium-lineHeight = 20px;
 
 $large-size = 21px;
 $large-lineHeight = 24px;

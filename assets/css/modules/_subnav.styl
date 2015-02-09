@@ -1,0 +1,139 @@
+/*------------------------------------*\
+  $CONTENTS
+\*------------------------------------*/
+/**
+ * SUBNAV...........Sub navigation
+ * MENU_ITEM........A link
+ * SPLIT_ITEM.......A menu item that contains a link and a dropdown button
+ * SECONDARY_NAV....Contains menu items that are floated right
+ */
+
+
+
+
+
+/*------------------------------------*\
+  $SUBNAV
+\*------------------------------------*/
+/**
+ * 1. Subnav should have a fixed height of 35px.
+ * 2. Leftmost and rightmost links should be flush with the grid.
+ */
+.fs-subnav {
+  margin: 0 auto;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%)
+
+  @media $media-query-large {
+    max-width: $screen-large-min;
+  }
+
+  &-container {
+    background: #fff;
+    border-bottom: 1px solid rgba(151,151,151,.8);
+    position: relative;
+    height: 35px; /* [1] */
+    box-sizing: border-box;
+
+    @media $media-query-x-small {
+      display: none;
+    }
+
+    &:before {
+      border: 2px solid rgba(0,0,0,0.05);
+      bottom: -3px;
+      content: '';
+      left: 0;
+      position: absolute;
+      right: 0;
+    }
+  }
+
+
+
+
+
+  /*------------------------------------*\
+    $MENU_ITEM
+  \*------------------------------------*/
+  & > &__item:first-child {
+    margin-left: -10px; /* [2] */
+  }
+
+  &__item {
+    background: transparent;
+    border-radius: 3px;
+    border: 0;
+    color: $brand-color-label-grey;
+    display: inline-block;
+    font-size: pxToRem($small-size);
+    line-height: calcLineHeight($small-lineHeight, $small-size);
+    margin-right: 1px;
+    padding: 4px 10px;
+    vertical-align: middle;
+
+    &:active,
+    &:focus,
+    &:hover,
+    &:visited {
+      color: $brand-color-label-grey;
+      text-decoration: none;
+    }
+
+    &:hover,
+    &--active {
+      background: $color-nav-highlight;
+    }
+
+
+
+
+
+    /*------------------------------------*\
+      $SPLIT_ITEM
+    \*------------------------------------*/
+    &--split {
+      display: inline-block;
+      vertical-align: middle;
+
+      &:hover .fs-subnav__item {
+        background: $color-nav-highlight;
+      }
+
+      .fs-subnav__item {
+
+         &:first-child {
+          border-radius: 3px 0 0  3px;
+          margin-right: 2px;
+          float: left;
+        }
+
+        &:last-child {
+          border-radius: 0 3px 3px 0;
+          padding: 4px 6px 4px 5px;
+          float: left;
+        }
+
+        &:hover {
+          background: #f1f8e3;
+        }
+      }
+    }
+  }
+
+
+
+
+
+  /*------------------------------------*\
+    $SECONDARY_NAV
+  \*------------------------------------*/
+  &--secondary {
+    float: right;
+
+    .fs-subnav__item:last-child {
+      margin-right: -10px; /* [2] */
+    }
+  }
+}
