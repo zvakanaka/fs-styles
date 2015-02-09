@@ -1,8 +1,23 @@
 /*------------------------------------*\
+  $CONTENTS
+\*------------------------------------*/
+/**
+ * SUBNAV...........Sub navigation
+ * MENU_ITEM........A link
+ * SPLIT_ITEM.......A menu item that contains a link and a dropdown button
+ * SECONDARY_NAV....Contains menu items that are floated right
+ */
+
+
+
+
+
+/*------------------------------------*\
   $SUBNAV
 \*------------------------------------*/
 /**
- * 1. Leftmost and rightmost links should be flush with the grid.
+ * 1. Subnav should have a fixed height of 35px.
+ * 2. Leftmost and rightmost links should be flush with the grid.
  */
 .fs-subnav {
   margin: 0 auto;
@@ -18,7 +33,7 @@
     background: #fff;
     border-bottom: 1px solid rgba(151,151,151,.8);
     position: relative;
-    height: 35px;
+    height: 35px; /* [1] */
     box-sizing: border-box;
 
     @media $media-query-x-small {
@@ -33,6 +48,17 @@
       position: absolute;
       right: 0;
     }
+  }
+
+
+
+
+
+  /*------------------------------------*\
+    $MENU_ITEM
+  \*------------------------------------*/
+  & > &__item:first-child {
+    margin-left: -10px; /* [2] */
   }
 
   &__item {
@@ -56,16 +82,23 @@
     }
 
     &:hover,
-    &.active {
-      background: #e1edc1;
+    &--active {
+      background: $color-nav-highlight;
     }
 
+
+
+
+
+    /*------------------------------------*\
+      $SPLIT_ITEM
+    \*------------------------------------*/
     &--split {
       display: inline-block;
       vertical-align: middle;
 
       &:hover .fs-subnav__item {
-        background: #e1edc1;
+        background: $color-nav-highlight;
       }
 
       .fs-subnav__item {
@@ -83,21 +116,24 @@
         }
 
         &:hover {
-          background: #F1F8E3;
+          background: #f1f8e3;
         }
       }
     }
   }
 
-  & > &__item:first-child {
-    margin-left: -10px; /* [1] */
-  }
 
+
+
+
+  /*------------------------------------*\
+    $SECONDARY_NAV
+  \*------------------------------------*/
   &--secondary {
     float: right;
 
     .fs-subnav__item:last-child {
-      margin-right: -10px; /* [1] */
+      margin-right: -10px; /* [2] */
     }
   }
 }
