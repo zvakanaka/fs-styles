@@ -1,34 +1,129 @@
 /*------------------------------------*\
-  $ALERTS
+  $CONTENTS
 \*------------------------------------*/
+/**
+ * SUCCESS.......Standard alert for successful actions
+ * INFO..........Alert used for getting the user's attention
+ * WARNING.......Alert used for potential problems
+ * ERROR.........Alert used for errors
+ */
+
+
+
+
+
+/*------------------------------------*\
+  $SUCCESS
+\*------------------------------------*/
+/**
+ * 1. Use margin-left, margin-right, margin-bottom instead of condensing it to
+ *    one margin property since we want to have a margin-top when two content
+ *    paragraphs are placed inside the alert (i.e. p + p)
+ */
 .fs-alert {
   background: $color-background-success;
   border-radius: 4px;
   border: 1px solid $color-border-success;
   color: $color-text-success ;
   display: block;
-  margin: 1em 0 0;
-  padding: 1em;
+  margin: 1em 0;
+  padding: pxToRem(10px 10px 10px 7px);
+  position: relative;
 
-  &__content {
-    margin: 0;
+  &:before {
+    background: url('data:image/svg+xml;charset=utf-8,%3Csvg%20version%3D%221.2%22%20baseProfile%3D%22tiny%22%20id%3D%22Art%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%0A%09%20x%3D%220px%22%20y%3D%220px%22%20width%3D%2220px%22%20height%3D%2220px%22%20viewBox%3D%220%200%2020%2020%22%20xml%3Aspace%3D%22preserve%22%3E%0A%3Cpath%20fill%3D%22%2344650F%22%20d%3D%22M7%2C16.589c-0.174%2C0-0.337-0.067-0.46-0.189l-5.939-5.94c-0.122-0.122-0.189-0.285-0.188-0.458%0A%09c0-0.173%2C0.068-0.336%2C0.191-0.458l1.964-1.944c0.122-0.122%2C0.286-0.188%2C0.46-0.188c0.176%2C0%2C0.34%2C0.068%2C0.463%2C0.19l2.924%2C2.924%0A%09c0.16%2C0.16%2C0.373%2C0.248%2C0.602%2C0.248c0.228%2C0%2C0.44-0.088%2C0.601-0.248l7.924-7.924c0.123-0.122%2C0.286-0.189%2C0.46-0.189%0A%09s0.337%2C0.067%2C0.46%2C0.189l1.939%2C1.939C18.521%2C4.663%2C18.589%2C4.826%2C18.589%2C5s-0.067%2C0.337-0.189%2C0.459L7.46%2C16.399%0A%09C7.337%2C16.521%2C7.174%2C16.589%2C7%2C16.589z%22%2F%3E%0A%3Crect%20fill%3D%22none%22%20width%3D%2220%22%20height%3D%2220%22%2F%3E%0A%3C%2Fsvg%3E') no-repeat 98% center;
+    content: '';
+    height: pxToRem(20px);
+    position: absolute;
+    width: pxToRem(20px);
   }
 
+  &__content {
+    /* [1] */
+    margin-bottom: 0;
+    margin-left: pxToRem(27px);
+    margin-right: pxToRem(30px);
+  }
+
+  &__close {
+    -webkit-appearance: none;
+    -webkit-touch-callout: none;
+    background: transparent;
+    border: none;
+    box-shadow: 0 0 0 transparent;
+    color: rgba(0,0,0,0.3);
+    font-weight: bold;
+    height: pxToRem(20px);
+    line-height: 1;
+    padding: 0;
+    position: absolute;
+    right: pxToRem(10px);
+    top: pxToRem(10px);
+    user-select: none;
+    width: pxToRem(20px);
+
+    &:before {
+      content: 'X';
+    }
+
+    &:hover,
+    &:focus {
+      color: $color-text;
+    }
+
+    &:active {
+      color: rgba(0,0,0,0.6);
+    }
+  }
+
+
+
+
+
+  /*------------------------------------*\
+    $INFO
+  \*------------------------------------*/
   &--info {
     background: $color-background-info;
     border-color: $color-border-info;
     color: $color-text-info;
+
+    &:before {
+      background: url('data:image/svg+xml;charset=utf-8,%3Csvg%20version%3D%221.2%22%20baseProfile%3D%22tiny%22%20id%3D%22Art%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%0A%09%20x%3D%220px%22%20y%3D%220px%22%20width%3D%2220px%22%20height%3D%2220px%22%20viewBox%3D%220%200%2020%2020%22%20xml%3Aspace%3D%22preserve%22%3E%0A%3Cpath%20fill%3D%22%230F5BA9%22%20d%3D%22M9.998%2C18.7c-4.796%2C0-8.698-3.902-8.698-8.698c0-4.796%2C3.902-8.699%2C8.698-8.699%0A%09c4.799%2C0%2C8.702%2C3.902%2C8.702%2C8.699C18.7%2C14.798%2C14.797%2C18.7%2C9.998%2C18.7z%20M9.072%2C7.417c-0.45%2C0-0.892%2C0.074-1.312%2C0.219%0A%09C7.053%2C7.882%2C6.876%2C8.407%2C6.94%2C8.782C6.987%2C9.063%2C7.17%2C9.253%2C7.395%2C9.253c0.417%2C0%2C0.533%2C0.088%2C0.552%2C0.106%0A%09c0.031%2C0.029%2C0.105%2C0.134%2C0.105%2C0.451c0%2C0.16-0.021%2C0.339-0.061%2C0.533c-0.042%2C0.209-0.095%2C0.435-0.156%2C0.669l-0.716%2C2.521%0A%09c-0.067%2C0.29-0.115%2C0.539-0.145%2C0.758c-0.03%2C0.226-0.046%2C0.445-0.046%2C0.66c0%2C0.61%2C0.229%2C1.12%2C0.679%2C1.518%0A%09C7.855%2C16.689%2C8.536%2C17.2%2C9.477%2C17.2c0.488%2C0%2C1.172-0.173%2C1.742-0.44c0.506-0.235%2C0.859-0.631%2C0.901-1.008%0A%09c0.022-0.224-0.063-0.428-0.237-0.562c-0.097-0.072-0.204-0.108-0.322-0.108c-0.14%2C0-0.261%2C0.052-0.357%2C0.094l-0.111%2C0.043%0A%09c-0.387-0.001-0.527-0.08-0.568-0.114c-0.05-0.04-0.109-0.152-0.109-0.445c0-0.121%2C0.021-0.299%2C0.063-0.535%0A%09c0.042-0.247%2C0.091-0.469%2C0.147-0.661l0.715-2.521c0.072-0.251%2C0.124-0.526%2C0.152-0.817c0.027-0.292%2C0.041-0.495%2C0.041-0.609%0A%09c0-0.619-0.223-1.132-0.663-1.524C10.443%2C7.61%2C9.839%2C7.417%2C9.072%2C7.417z%20M10.654%2C2.8c-0.543%2C0-1.019%2C0.185-1.413%2C0.549%0A%09C8.843%2C3.723%2C8.641%2C4.177%2C8.641%2C4.7c0%2C0.528%2C0.203%2C0.982%2C0.602%2C1.35c0.393%2C0.361%2C0.867%2C0.544%2C1.412%2C0.544%0A%09c0.544%2C0%2C1.019-0.184%2C1.409-0.546c0.396-0.364%2C0.596-0.817%2C0.596-1.348c0-0.526-0.2-0.98-0.595-1.35%0A%09C11.672%2C2.985%2C11.197%2C2.8%2C10.654%2C2.8z%22%2F%3E%0A%3Crect%20fill%3D%22none%22%20width%3D%2220%22%20height%3D%2220%22%2F%3E%0A%3C%2Fsvg%3E') no-repeat 98% center;
+    }
   }
 
+
+
+
+
+  /*------------------------------------*\
+    $WARNING
+  \*------------------------------------*/
   &--warning {
     background: $color-background-warning;
     border-color: $color-border-warning;
     color: $color-text-warning;
+
+    &:before {
+      background: url('data:image/svg+xml;charset=utf-8,%3Csvg%20version%3D%221.2%22%20baseProfile%3D%22tiny%22%20id%3D%22Art%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%0A%09%20x%3D%220px%22%20y%3D%220px%22%20width%3D%2220px%22%20height%3D%2220px%22%20viewBox%3D%220%200%2020%2020%22%20xml%3Aspace%3D%22preserve%22%3E%0A%3Crect%20fill%3D%22none%22%20width%3D%2220%22%20height%3D%2220%22%2F%3E%0A%3Cpath%20fill%3D%22%2379520F%22%20d%3D%22M10%2C8.692l3.181%2C5.408H6.819L10%2C8.692%20M10%2C2.21c-0.368%2C0-0.735%2C0.237-1.014%2C0.711L1.189%2C16.177%0A%09C0.631%2C17.125%2C1.075%2C17.9%2C2.175%2C17.9h15.65c1.1%2C0%2C1.544-0.776%2C0.986-1.724L11.014%2C2.921C10.735%2C2.447%2C10.368%2C2.21%2C10%2C2.21L10%2C2.21z%22%0A%09%2F%3E%0A%3C%2Fsvg%3E') no-repeat 98% center;
+    }
   }
 
+
+
+
+
+  /*------------------------------------*\
+    $ERROR
+  \*------------------------------------*/
   &--error {
     background: $color-background-error;
     border-color: $color-border-error;
     color: $color-text-error;
+
+    &:before {
+      background: url('data:image/svg+xml;charset=utf-8,%3Csvg%20version%3D%221.2%22%20baseProfile%3D%22tiny%22%20id%3D%22Art%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%0A%09%20x%3D%220px%22%20y%3D%220px%22%20width%3D%2220px%22%20height%3D%2220px%22%20viewBox%3D%220%200%2020%2020%22%20xml%3Aspace%3D%22preserve%22%3E%0A%3Crect%20fill%3D%22none%22%20width%3D%2220%22%20height%3D%2220%22%2F%3E%0A%3Cpath%20fill%3D%22%23A71E1A%22%20d%3D%22M13.083%2C11.003C13.037%2C11.552%2C12.55%2C12%2C12%2C12H9c-0.55%2C0-1.037-0.448-1.083-0.997L7.083%2C0.997%0A%09C7.037%2C0.448%2C7.45%2C0%2C8%2C0h4.998c0.55%2C0%2C0.963%2C0.448%2C0.917%2C0.997L13.083%2C11.003z%20M11.573%2C19c0.55%2C0%2C1.034-0.449%2C1.075-0.997%0A%09l0.225-3.006C12.915%2C14.449%2C12.498%2C14%2C11.948%2C14H9.05c-0.55%2C0-0.966%2C0.449-0.925%2C0.997l0.225%2C3.006C8.391%2C18.551%2C8.875%2C19%2C9.425%2C19%0A%09H11.573z%22%2F%3E%0A%3C%2Fsvg%3E') no-repeat 98% center;
+    }
   }
 }
