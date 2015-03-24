@@ -98,7 +98,6 @@ h5, .fs-h5 {
   $PARAGRAPHS
 \*------------------------------------*/
 p {
-  font-size: pxToRem($medium-size);
   line-height: calcLineHeight($medium-lineHeight, $medium-size);
 }
 
@@ -125,7 +124,8 @@ a {
 
 a,
 a:hover,
-a:active {
+a:active,
+a:focus {
   color: $color-link;
 }
 
