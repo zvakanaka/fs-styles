@@ -2,6 +2,7 @@
   $CONTENTS
 \*------------------------------------*/
 /**
+ * VARIABLES............Variables just for buttons
  * DEFAULT_BUTTON.......Standard button for primary actions
  * SECONDARY_BUTTON.....Button used for secondary actions
  * TERTIARY_BUTTON......Button used for tertiary actions
@@ -10,6 +11,21 @@
  * LOADING_ANIMATION....Animation for a loading button
  * KEYFRAMES............Animation keyframes
  */
+
+
+
+
+
+/*------------------------------------*\
+  $VARIABLES
+\*------------------------------------*/
+$blue-light = #358fe8;
+$blue-dark = #003e99;
+
+$grey-light = #e6e7e8;
+$grey-dark = #bcbec0;
+
+$link-blue = #0051c4;
 
 
 
@@ -27,15 +43,15 @@
 .fs-button {
   -webkit-appearance: none;
   -webkit-touch-callout: none;
-  background-color: $color-background-button-primary-light;
-  background-image: linear-gradient($color-background-button-primary-light, $color-background-button-primary-dark);
-  border-radius: 4px;
+  background-color: $blue-light;
+  background-image: linear-gradient($blue-light, $blue-dark);
+  border-radius: $border-radius;
   border: none;
   box-shadow: 0 3px 0 0 rgba(0,0,0,0.05);
   color: #fff;
   cursor: pointer;
   display: inline-block;
-  font-size: pxToRem($medium-size);
+  font-size: pxToRem($font-size-medium);
   font-weight: normal;
   line-height: 1;
   padding: pxToRem(9.5px 20px); /* [1] */
@@ -47,19 +63,19 @@
   white-space: nowrap;
 
   &:hover { /* [3] */
-    background: $color-background-button-primary-light;
+    background: $blue-light;
     color: #fff;
     text-decoration: none;
 
     // disable hover effects when disabled
     &:disabled,
     &.disabled {
-      background-image: linear-gradient($color-background-button-primary-light, $color-background-button-primary-dark);
+      background-image: linear-gradient($blue-light, $blue-dark);
     }
   }
 
   &:active {
-    background-image: linear-gradient($color-background-button-primary-dark, $color-background-button-primary-light);
+    background-image: linear-gradient($blue-dark, $blue-light);
     box-shadow: none;
   }
 
@@ -89,23 +105,23 @@
     $SECONDARY_BUTTON
   \*------------------------------------*/
   &--secondary {
-    background-color: $color-background-button-secondary-light;
-    background-image: linear-gradient($color-background-button-secondary-light, $color-background-button-secondary-dark);
-    color: $color-text;
+    background-color: $grey-light;
+    background-image: linear-gradient($grey-light, $grey-dark);
+    color: $color-grey-body;
 
     &:hover { /* [3] */
-      background: $color-background-button-secondary-light;
-      color: $color-text;
+      background: $grey-light;
+      color: $color-grey-body;
     }
 
     &:active {
-      background-image: linear-gradient($color-background-button-secondary-dark, $color-background-button-secondary-light);
-      color: $color-text;
+      background-image: linear-gradient($grey-dark, $grey-light);
+      color: $color-grey-body;
     }
 
     &:focus,
     &:visited {
-      color: $color-text; /* [2] */
+      color: $color-grey-body; /* [2] */
     }
 
     &:disabled,
@@ -113,7 +129,7 @@
 
       // disable hover effects when disabled
       &:hover {
-        background-image: linear-gradient($color-background-button-secondary-light, $color-background-button-secondary-dark);
+        background-image: linear-gradient($grey-light, $grey-dark);
       }
     }
   }
@@ -128,23 +144,23 @@
   &--tertiary {
     background: transparent;
     box-shadow: 0 0 0 transparent;
-    color: $color-link;
+    color: $link-blue;
 
     &:hover { /* [3] */
       background: transparent;
-      color: $color-link;
+      color: $link-blue;
       text-decoration: underline;
     }
 
     &:active {
       background: transparent;
-      color: $color-link;
+      color: $link-blue;
       text-decoration: underline;
     }
 
     &:focus,
     &:visited {
-      color: $color-link; /* [2] */
+      color: $link-blue; /* [2] */
     }
   }
 

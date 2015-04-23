@@ -6,6 +6,7 @@
  * HEADINGS.......Heading styles
  * PARAGRAPHS.....Paragraph styles
  * ANCHORS........Anchor styles
+ * OTHER..........Other element styles
  */
 
 
@@ -16,13 +17,13 @@
   $GLOBAL
 \*------------------------------------*/
 html {
-  font-size: ($font-base)px;
+  font-size: $font-size-medium;
 }
 
 body {
-  color: $color-text;
-  font-family: "ProximaNova", sans-serif;
-  font-size: pxToRem($font-base);
+  color: $color-grey-body;
+  font-family: $font-face-body;
+  font-size: $font-size-medium;
 }
 
 
@@ -34,21 +35,21 @@ body {
 \*------------------------------------*/
 h1, h2, h3, h4,
 .fs-h1, .fs-h2, .fs-h3, .fs-h4 {
-  color: $color-headings;
-  font-family: "museo", serif;
+  color: $color-grey;
+  font-family: $font-face-heading;
   letter-spacing: initial;
   text-transform: initial;
   margin-top: 0;
 }
 
 h5, .fs-h5 {
-  font-family: "ProximaNova", sans-serif;
+  font-family: $font-face-body;
   margin-top: 0;
 }
 
 h1, .fs-h1 {
-  font-size: pxToRem($xxx-large-size);
-  line-height: calcLineHeight($xxx-large-lineHeight, $xxx-large-size);
+  font-size: pxToRem($font-size-large-xxx);
+  line-height: calcLineHeight($line-height-large-xxx, $font-size-large-xxx);
 
   & + p {
     margin-top: pxToRem(16px);
@@ -56,13 +57,13 @@ h1, .fs-h1 {
 }
 
 h2, .fs-h2 {
-  font-size: pxToRem($xx-large-size);
-  line-height: calcLineHeight($xx-large-lineHeight, $xx-large-size);
+  font-size: pxToRem($font-size-large-xx);
+  line-height: calcLineHeight($line-height-large-xx, $font-size-large-xx);
 }
 
 h3, .fs-h3 {
-  font-size: pxToRem($x-large-size);
-  line-height: calcLineHeight($x-large-lineHeight, $x-large-size);
+  font-size: pxToRem($font-size-large-x);
+  line-height: calcLineHeight($line-height-large-x, $font-size-large-x);
 
   & + p {
     margin-top: pxToRem(14px);
@@ -70,8 +71,8 @@ h3, .fs-h3 {
 }
 
 h4, .fs-h4 {
-  font-size: pxToRem($large-size);
-  line-height: calcLineHeight($large-lineHeight, $large-size);
+  font-size: pxToRem($font-size-large);
+  line-height: calcLineHeight($line-height-large, $font-size-large);
 
   & + p {
     margin-top: pxToRem(12px);
@@ -79,10 +80,10 @@ h4, .fs-h4 {
 }
 
 h5, .fs-h5 {
-  color: $color-headings;
-  font-size: pxToRem($small-size);
+  color: $color-grey;
+  font-size: pxToRem($font-size-small);
   letter-spacing: 1px;
-  line-height: calcLineHeight($small-lineHeight, $small-size);
+  line-height: calcLineHeight($line-height-small, $font-size-small);
   text-transform: uppercase;
 
   & + p {
@@ -98,7 +99,7 @@ h5, .fs-h5 {
   $PARAGRAPHS
 \*------------------------------------*/
 p {
-  line-height: calcLineHeight($medium-lineHeight, $medium-size);
+  line-height: calcLineHeight($line-height-medium, $font-size-medium);
 }
 
 // lobotomized owl variant
@@ -126,30 +127,30 @@ a,
 a:hover,
 a:active,
 a:focus {
-  color: $color-link;
+  color: #0051c4;
 }
 
 a:visited {
-  color: $color-link-visited;
+  color: #8c0e4c;
 }
 
 
 
 
 /*------------------------------------*\
-  $
+  $OTHER
 \*------------------------------------*/
 button {
   outline-offset: -2px;
-  font-family: "ProximaNova", sans-serif;
+  font-family: $font-face-body;
 }
 
 ol, ul, li {
-  line-height: calcLineHeight($medium-lineHeight, $medium-size);
+  line-height: calcLineHeight($line-height-medium, $font-size-medium);
 }
 
 small {
-  font-size: pxToRem($small-size);
-  line-height: calcLineHeight($small-lineHeight, 17px);
-  color: $color-label;
+  font-size: pxToRem($font-size-small);
+  line-height: calcLineHeight($line-height-small, 17px);
+  color: $color-grey-body-light;
 }
