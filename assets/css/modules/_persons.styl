@@ -118,8 +118,8 @@ background:url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz
 \*------------------------------------*/
 .fs-person-vitals__name {
   overflow: ellipsis;
-  font-size: pxToRem($medium-size);
-  line-height: calcLineHeight($medium-lineHeight, $medium-size);
+  font-size: pxToRem($font-size-medium);
+  line-height: calcLineHeight($line-height-medium, $font-size-medium);
 }
 
 .fs-person-vitals__name-full,
@@ -141,8 +141,8 @@ background:url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz
 .fs-person-details__id,
 .fs-person-details__birthPlace {
   float: left;
-  font-size: pxToRem($small-size);
-  line-height: calcLineHeight($small-lineHeight, $small-size);
+  font-size: pxToRem($font-size-small);
+  line-height: calcLineHeight($line-height-small, $font-size-small);
 }
 
 .fs-person-details__selection-stopper {
@@ -181,7 +181,7 @@ background:url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz
 .fs-person-parents__show-label {
   @extend a;
   display: inline-block;
-  line-height: calcLineHeight($small-lineHeight, $small-size);
+  line-height: calcLineHeight($line-height-small, $font-size-small);
 }
 
 .fs-person-parents__hide-text {
@@ -189,7 +189,7 @@ background:url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz
 }
 
 .fs-person-parents__show-button:focus + .fs-person-parents__show-label {
-  outline: thin dotted #333;
+  outline: thin dotted $color-grey-body;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
   text-decoration: underline;
@@ -254,7 +254,7 @@ background:url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz
 
   &[class*=fs-icon-medium] {
     margin-top: 10px;
-    height:22px;
+    height: 22px;
   }
 }
 
@@ -392,7 +392,7 @@ background:url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz
     & .fs-person-vitals,
     & .fs-person-gender__container,
     & .fs-person-portrait__container {
-      color: #ffffff;
+      color: #fff;
     }
 
     .fs-person-portrait__portrait {
