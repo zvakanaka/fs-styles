@@ -5,6 +5,7 @@
  * MEDIA_QUERIES...Media query sizes
  * COLORS..........Color variables
  * FONTS...........Font variables
+ * OTHER...........Other property variables such as border-radius
  */
 
 
@@ -13,24 +14,31 @@
 
 /*------------------------------------*\
   $MEDIA_QUERIES
+  Match Bootstrap 3 breakpoints for consistency
 \*------------------------------------*/
-/**
- * Match Bootstrap 3 breakpoints for consistency when using BS
- */
-$screen-x-small-max = 767px;
+// screen sizes
+$screen-mobile-max = 767px;
 
-$screen-small-min = 768px;
-$screen-small-max = 991px;
+$screen-tablet-min = 768px;
+$screen-tablet-max = 979px;
 
-$screen-medium-min = 992px;
-$screen-medium-max = 1199px;
+$screen-desktop-min = 980px;
+$screen-desktop-max = 1199px;
 
-$screen-large-min = 1200px;
+$screen-desktopHD-min = 1200px;
 
-$media-query-x-small = "screen and (max-width: " + $screen-x-small-max + ")";
-$media-query-small = "screen and (min-width: " + $screen-small-min + ") and (max-width: " + $screen-small-max + ")";
-$media-query-medium = "screen and (min-width: " + $screen-medium-min + ") and (max-width: " + $screen-medium-max + ")";
-$media-query-large = "screen and (min-width: " + $screen-large-min + ")";
+// media query breakpoints
+$break-mobile = "screen and (max-width:" + $screen-mobile-max  + ")";
+
+$break-tablet-above = "screen and (min-width:" + $screen-tablet-min +")";
+$break-tablet = "screen and (min-width:" + $screen-tablet-min +") and (min-width:" + $screen-tablet-max +")";
+$break-tablet-below = "screen and (max-width:" + $screen-tablet-max +")";
+
+$break-desktop-above = "screen and (min-width:" + $screen-desktop-min +")";
+$break-desktop = "screen and (min-width:" + $screen-desktop-min +") and (max-width:" + $screen-desktop-max +")";
+$break-desktop-below = "screen and (max-width:" + $screen-desktop-max +")";
+
+$break-desktopHD = "screen and (min-width:" + $screen-desktopHD-min +")";
 
 
 
@@ -38,123 +46,31 @@ $media-query-large = "screen and (min-width: " + $screen-large-min + ")";
 
 /*------------------------------------*\
   $COLORS
+  Use the stylus function "rgba(hex, opacity)" to add alpha transparency to a color
+  @see http://learnboost.github.io/stylus/docs/bifs.html#rgbacolor--rgba
 \*------------------------------------*/
-/**
- * Color plaque
- * TODO: When we decide on the FamilySearch brand colors, rename these to match
- * http://chir.ag/projects/name-that-color/ for color names
- */
-$brand-color-logo-green = #87b940;
-$brand-color-logo-grey = #bab7b1;
-$brand-color-logo-brown = #9c947a;
+$color-green-primary = #87b940;
+$color-grey-primary = #bab7b1;
+$color-brown-primary = #9c947a;
 
-$brand-color-accent-red = #f16458;
-$brand-color-accent-blue = #27c4f4;
-$brand-color-accent-orange = #fcb34b;
-$brand-color-accent-green = #bfd730;
-$brand-color-accent-purple = #996799;
-$brand-color-accent-brown = #9c947a;
+$color-red-accent = #f16458;
+$color-blue-accent = #27c4f4;
+$color-orange-accent = #fcb34b;
+$color-green-accent = #bfd730;
+$color-purple-accent = #996799;
+$color-brown-accent = #9c947a;
 
-$brand-color-link-blue = #0051c4;
-$brand-color-link-purple = #8c0e4c;
+$color-grey-dark = #333331;
+$color-grey = #4d4d4a;
+$color-grey-light = #666662;
+$color-grey-lightest = #ccccca;
 
-$brand-color-male-blue = #3d8ff7;
-$brand-color-female-pink = #e23f7b;
+// gender colors should only be used to represent gender
+$color-blue-gender = #3d8ff7;
+$color-blue-gender-light = #99c4fe;
+$color-pink-gender = #e23f7b;
+$color-pink-gender-light = #f48eb6;
 
-$brand-color-male-blue-light = #99c4fe;
-$brand-color-female-pink-light = #f48eb6;
-
-// fonts
-$brand-color-heading-grey = #4d4d4a;
-$brand-color-body-grey = #333331;
-$brand-color-label-grey = #666662;
-
-// buttons
-$brand-color-button-grey-light = #e6e7e8;
-$brand-color-button-grey-dark = #bcbec0;
-$brand-color-button-grey-border = #d5d5d5;
-
-$brand-color-button-blue-light = #358fe8;
-$brand-color-button-blue-dark = #003e99;
-
-// inputs
-$brand-color-disabled-grey-light = #f0f0f0;
-$brand-color-disabled-grey-text = #999999;
-
-$brand-color-input-selected-border = #333331;
-
-$brand-color-select-border = #cccccc;
-
-// alerts
-$brand-color-ok-green-light = #f1f6d3;
-$brand-color-ok-green-dark = #44650f;
-$brand-color-ok-green-border = #b4d730;
-
-$brand-color-info-blue-light = #e0f6fd;
-$brand-color-info-blue-dark = #0f5ba9;
-$brand-color-info-blue-border = #6ed7f7;
-
-$brand-color-warning-yellow-light = #fff8de;
-$brand-color-warning-yellow-dark = #79520f;
-$brand-color-warning-yellow-border = #ffd400;
-
-$brand-color-error-red-light = #fdeeee;
-$brand-color-error-red-dark = #a71e1a;
-$brand-color-error-red-border = #f8b0ab;
-
-// subnav
-$brand-color-subnav-green = #e1edc1;
-
-
-/**
- * Functional color names
- */
-$color-link = $brand-color-link-blue;
-$color-link-visited = $brand-color-link-purple;
-
-$color-male = $brand-color-male-blue;
-$color-female = $brand-color-female-pink;
-
-// fonts
-$color-headings = $brand-color-heading-grey;
-$color-text = $brand-color-body-grey;
-$color-label = $brand-color-label-grey;
-
-// buttons
-$color-background-button-primary-light = $brand-color-button-blue-light;
-$color-background-button-primary-dark = $brand-color-button-blue-dark;
-
-$color-background-button-secondary-light = $brand-color-button-grey-light;
-$color-background-button-secondary-dark = $brand-color-button-grey-dark;
-$color-border-button-secondary = $brand-color-button-grey-border;
-
-// inputs
-$color-background-input-disabled = $brand-color-disabled-grey-light;
-$color-text-input-disabled = $brand-color-disabled-grey-text;
-
-$color-border-input-selected = $brand-color-input-selected-border;
-
-$color-border-select = $brand-color-select-border;
-
-// alerts
-$color-background-success = $brand-color-ok-green-light;
-$color-text-success = $brand-color-ok-green-dark;
-$color-border-success = $brand-color-ok-green-border;
-
-$color-background-info = $brand-color-info-blue-light;
-$color-text-info = $brand-color-info-blue-dark;
-$color-border-info = $brand-color-info-blue-border;
-
-$color-background-warning = $brand-color-warning-yellow-light;
-$color-text-warning = $brand-color-warning-yellow-dark;
-$color-border-warning = $brand-color-warning-yellow-border;
-
-$color-background-error = $brand-color-error-red-light;
-$color-text-error = $brand-color-error-red-dark;
-$color-border-error = $brand-color-error-red-border;
-
-// subnav
-$color-nav-highlight = $brand-color-subnav-green;
 
 
 
@@ -162,24 +78,35 @@ $color-nav-highlight = $brand-color-subnav-green;
 /*------------------------------------*\
   $FONTS
 \*------------------------------------*/
-// responsive typography
-$font-base = 16;
-$lineHeight-base = 20;
+// font families
+$font-face-text = "ProximaNova", sans-serif;
+$font-face-heading = "museo", serif;
 
-$small-size = 14px;
-$small-lineHeight = 18px;
+// responsive typography settings
+$base-font-size = 16;
+$base-line-height = 20;
 
-$medium-size = 16px;
-$medium-lineHeight = 20px;
+// font sizes
+$font-size-small = 14px;
+$font-size-medium = 16px;
+$font-size-large = 21px;
+$font-size-large-x = 28px;
+$font-size-large-xx = 36px;
+$font-size-large-xxx = 48px;
 
-$large-size = 21px;
-$large-lineHeight = 24px;
+// line heights
+$line-height-small = 18px;
+$line-height-medium = 20px;
+$line-height-large = 24px;
+$line-height-large-x = 32px;
+$line-height-large-xx = 39px;
+$line-height-large-xxx = 50px;
 
-$x-large-size = 28px;
-$x-large-lineHeight = 32px;
 
-$xx-large-size = 36px;
-$xx-large-lineHeight = 39px;
 
-$xxx-large-size = 48px;
-$xxx-large-lineHeight = 50px;
+
+
+/*------------------------------------*\
+  $OTHER
+\*------------------------------------*/
+$border-radius = 4x;
