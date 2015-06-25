@@ -2,6 +2,7 @@
  * Typography
  * @section
  */
+
 /*------------------------------------*\
   $CONTENTS
 \*------------------------------------*/
@@ -91,8 +92,8 @@ h1, h2, h3, h4,
 .fs-h1, .fs-h2, .fs-h3, .fs-h4 {
   color: $color-grey;
   font-family: $font-face-heading;
-  letter-spacing: initial;
-  text-transform: initial;
+  letter-spacing: inherit;
+  text-transform: inherit;
   margin-top: 0;
 }
 
@@ -204,7 +205,7 @@ p + p {
  * ##### Avoid
  *
  * Do not use links when the only purpose is to use it to activate JavaScript (i.e. when
- * the `href` is equal to `#` or `javascript:void(0);`). Use a [#buttons](button) instead.
+ * the `href` is equal to `#` or `javascript:void(0);`). Use a [button](#buttons) instead.
  *
  * @section
  * @subsectionof Typography
@@ -225,7 +226,7 @@ a,
 a:hover,
 a:active,
 a:focus {
-  color: #0051c4;
+  color: #0073de;
 }
 
 a:visited {
@@ -327,4 +328,8 @@ small {
  */
 ol, ul, li {
   line-height: calcLineHeight($line-height-medium, $font-size-medium);
+}
+
+li + li {
+  margin-top: 5px;
 }

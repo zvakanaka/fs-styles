@@ -3,7 +3,7 @@
 \*------------------------------------*/
 $roundPrecision = 3;
 
-/**
+/*
  * Shortcut for displaying ellipsis text on truncation (overflow: ellipsis)
  */
 overflow()
@@ -14,7 +14,7 @@ overflow()
   else
     overflow: arguments
 
-/**
+/*
  * Output the clearfix hack for the element
  */
 clearfix()
@@ -25,7 +25,7 @@ clearfix()
   &:after
     clear: both
 
-/**
+/*
  * Take a unit and output both px and rem properties.
  * @param {unit|units}
  *
@@ -50,7 +50,7 @@ pxToRem(num)
   else
     error('pxToRem() must be used within a property')
 
-/**
+/*
  * Calculate the line-height as a multiplier of the font-size
  * @param {unit} lineHeight - Line-height in px
  * @param {unit} fontSize   - Font-size in px

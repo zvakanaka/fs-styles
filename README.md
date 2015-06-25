@@ -14,6 +14,11 @@ Modules    | Groupings of Elements that form a reusable aspect of the interface.
 Components | Groupings of Modules that form relatively complex secitons of the interface.
 Layout     | Styles for content layout such as grids, headers, footers, etc.
 
+# Comments
+The styles make use of a custom [CSSDoc](CSSDoc.md) style for comments which can be parsed to generate a style guide.
+
+Always remember to update the comments when changing styles, or to create a new comment block for new styles.
+
 # File Organization
 A little effort goes a long way. Please take the time to organize your CSS file so that others may quickly find what they are looking for. Divide your code into meaningful sections that denote what the rules are affecting.
 *See [CSS Guidelines](https://github.com/csswizardry/CSS-Guidelines) for more details*

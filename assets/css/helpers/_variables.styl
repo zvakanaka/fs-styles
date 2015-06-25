@@ -1,7 +1,7 @@
 /*------------------------------------*\
   $CONTENTS
 \*------------------------------------*/
-/**
+/*
  * MEDIA_QUERIES...Media query sizes
  * COLORS..........Color variables
  * FONTS...........Font variables
@@ -49,30 +49,362 @@ $break-desktop-hd = "screen and (min-width:" + $screen-desktop-hd-min +")";
   Use the stylus function "rgba(hex, opacity)" to add alpha transparency to a color
   @see http://learnboost.github.io/stylus/docs/bifs.html#rgbacolor--rgba
 \*------------------------------------*/
+/**
+ * Colors
+ * @section
+ */
+
+/**
+ * Logo Colors
+ *
+ * ##### Acceptable Use
+ *
+ * The full 3-color logo is the primary logo and should be used in all instances when
+ * possible.
+ *
+ * There may be some instances where a single color logo is appropriate, such as using the
+ * FamilySearch logo on photography, apparel, spiffs, etc.
+ *
+ * ##### Avoid
+ *
+ * Do not use any other colors for the logo.
+ *
+ * @section
+ * @subsectionof Colors
+ */
+
+/**
+ * Full Color Logo
+ * @section
+ * @subsectionof Logo Colors
+ */
+
+ /**
+ * Single Color Logos
+ * @section
+ * @subsectionof Logo Colors
+ */
+
+/**
+ * @colordef Green Primary
+ * @color {hex} #87b940
+ * @color {rgb} 135,185,64
+ * @color {cmyk} 53,7,100,0
+ * @colorof Full Color Logo
+ * @colorof Single Color Logos
+ */
 $color-green-primary = #87b940;
+
+/**
+ * @colordef Grey Primary
+ * @color {hex} #bab7b1
+ * @color {rgb} 186,183,177
+ * @color {cmyk} 28,23,27,0
+ * @colorof Full Color Logo
+ */
 $color-grey-primary = #bab7b1;
+
+/**
+ * @colordef Brown Primary
+ * @color {hex} #9c947a
+ * @color {rgb} 156,148,122
+ * @color {cmyk} 40,35,54,4
+ * @colorof Full Color Logo
+ */
 $color-brown-primary = #9c947a;
 
-$color-red-accent = #f16458;
-$color-blue-accent = #27c4f4;
-$color-orange-accent = #fcb34b;
-$color-green-accent = #bfd730;
-$color-purple-accent = #996799;
-$color-brown-accent = #9c947a;
-$color-grey-accent = #cccccc;
+/**
+ * @colordef Black
+ * @color {hex} #000000
+ * @color {rgb} 0,0,0
+ * @color {cmyk} 100,100,100,100
+ * @colorof Single Color Logos
+ */
 
-$color-grey = #4d4d4a;
+ /**
+ * @colordef White
+ * @color {hex} #ffffff
+ * @color {rgb} 255,255,255
+ * @color {cmyk} 0,0,0,0
+ * @colorof Single Color Logos
+ */
+
+/**
+ * Accent Colors
+ *
+ * ##### Acceptable Use
+ *
+ * Use accent colors to help draw attention and create visual interest within your designs.
+ *
+ * You can lighten the value of the color by adjusting the amount of white added to it (use
+ * the [Stylus function](https://learnboost.github.io/stylus/docs/bifs.html#lightencolor-amount) `lighten(color, amount)`).
+ *
+ * ##### Avoid
+ *
+ * Avoid using too many colors.
+ *
+ * Avoid darkening the value of the color by adjusting the amount of black added to it.
+ *
+ * @section
+ * @subsectionof Colors
+ */
+
+/**
+ * @colordef Red Accent
+ * @color {hex} #f16458
+ * @color {rgb} 241,100,88
+ * @color {cmyk} 0,76,64,0
+ * @colorof Accent Colors
+ */
+$color-red-accent = #f16458;
+
+/**
+ * @colordef Blue Accent
+ * @color {hex} #27c4f4
+ * @color {rgb} 39,196,244
+ * @color {cmyk} 64,0,0,0
+ * @colorof Accent Colors
+ */
+$color-blue-accent = #27c4f4;
+
+/**
+ * @colordef Orange Accent
+ * @color {hex} #fcb34b
+ * @color {rgb} 252,179,75
+ * @color {cmyk} 0,34,80,0
+ * @colorof Accent Colors
+ */
+$color-orange-accent = #fcb34b;
+
+/**
+ * @colordef Green Accent
+ * @color {hex} #bfd730
+ * @color {rgb} 191,215,48
+ * @color {cmyk} 30,0,100,0
+ * @colorof Accent Colors
+ */
+$color-green-accent = #bfd730;
+
+/**
+ * @colordef Purple Accent
+ * @color {hex} #996799
+ * @color {rgb} 153,103,153
+ * @color {cmyk} 36,70,11,0
+ * @colorof Accent Colors
+ */
+$color-purple-accent = #996799;
+
+/**
+ * @colordef Brown Accent
+ * @color {hex} #9c947a
+ * @color {rgb} 156,148,122
+ * @color {cmyk} 40,35,54,4
+ * @colorof Accent Colors
+ */
+$color-brown-accent = #9c947a;
+
+/**
+ * Adjusting the Value
+ *
+ * @section
+ * @subsectionof Accent Colors
+ *
+ * @example
+ * <div class="row-fluid">
+ *   <div class="span12 color-square fs-card" style="height: auto">
+ *     <div class="color-square__color color-square__color--gradient">
+ *       <div class="color__gradient color__gradient--100" style="background: rgba(39,196,244, 1)">100%</div>
+ *       <div class="color__gradient color__gradient--80" style="background: rgba(39,196,244, 0.8)">80%</div>
+ *       <div class="color__gradient color__gradient--60" style="background: rgba(39,196,244, 0.6)">60%</div>
+ *       <div class="color__gradient color__gradient--40" style="background: rgba(39,196,244, 0.4)">40%</div>
+ *     </div>
+ *   </div>
+ * </div>
+ */
+
+/**
+ * Text Colors
+ *
+ * ##### Avoid
+ *
+ * Do not use other colors for text.
+ *
+ * @section
+ * @subsectionof Colors
+ */
+
+/**
+ * Body Text
+ *
+ * @colordef Grey Body
+ * @color {hex} #333331
+ * @color {rgb} 51,51,49
+ * @color {cmyk} 64,57,59,38
+ * @colorof Text Colors
+ */
 $color-grey-body = #333331;
+
+/**
+ * Headings
+ *
+ * @colordef Grey
+ * @color {hex} #4d4d4a
+ * @color {rgb} 77,77,74
+ * @color {cmyk} 61,51,53,49
+ * @colorof Text Colors
+ */
+$color-grey = #4d4d4a;
+
+/**
+ * Sub-Headings, Labels, and Small Text
+ *
+ * @colordef Grey Light
+ * @color {hex} #666662
+ * @color {rgb} 102,102,98
+ * @color {cmyk} 55,44,48,34
+ * @colorof Text Colors
+ */
 $color-grey-light = #666662;
 
-// gender colors should only be used to represent gender
+/**
+ * Background Colors
+ *
+ * @section
+ * @subsectionof Colors
+ */
+
+/**
+ * @colordef Grey Body
+ * @color {hex} #333331
+ * @color {rgb} 51,51,49
+ * @color {cmyk} 64,57,59,38
+ * @colorof Background Colors
+ */
+
+/**
+ * @colordef Grey
+ * @color {hex} #4d4d4a
+ * @color {rgb} 77,77,74
+ * @color {cmyk} 61,51,53,49
+ * @colorof Background Colors
+ */
+
+/**
+ * @colordef Grey Light
+ * @color {hex} #666662
+ * @color {rgb} 102,102,98
+ * @color {cmyk} 55,44,48,34
+ * @colorof Background Colors
+ */
+
+/**
+ * @colordef Grey Background
+ * @color {hex} #ecebea
+ * @color {rgb} 236,235,234
+ * @color {cmyk} 0,42,85,74
+ * @colorof Background Colors
+ */
+$color-grey-background = #ecebea;
+
+/**
+ * @colordef Grey Background Light
+ * @color {hex} #f4f4f4
+ * @color {rgb} 244,244,244
+ * @color {cmyk} 0,0,0,43
+ * @colorof Background Colors
+ */
+$color-grey-background-light = #f4f4f4;
+
+/**
+ * Other Colors
+ *
+ * ##### Acceptable Use
+ *
+ * The blue and pink gender colors should only be used to represent gender.
+ *
+ * Use the Light Gender Colors when on dark backgrounds.
+ *
+ * @section
+ * @subsectionof Colors
+ */
+
+/**
+ * Gender Colors
+ * @section
+ * @subsectionof Other Colors
+ */
+
+ /**
+ * Light Gender Colors
+ * @section
+ * @subsectionof Other Colors
+ */
+
+/**
+ * Male
+ *
+ * @colordef Blue Gender
+ * @color {hex} #3d8ff7
+ * @color {rgb} 601,143,247
+ * @color {cmyk} 75,42,0,3
+ * @colorof Gender Colors
+ */
 $color-blue-gender = #3d8ff7;
+
+/**
+ * @colordef Blue Gender Light
+ * @color {hex} #99c4fe
+ * @color {rgb} 153,196,254
+ * @color {cmyk} 40,23,0,0
+ * @colorof Light Gender Colors
+ */
 $color-blue-gender-light = #99c4fe;
+
+/**
+ * Female
+ *
+ * @colordef Pink Gender
+ * @color {hex} #e23f7b
+ * @color {rgb} 226,63,123
+ * @color {cmyk} 0,72,46,11
+ * @colorof Gender Colors
+ */
 $color-pink-gender = #e23f7b;
+
+/**
+ * @colordef Pink Gender Light
+ * @color {hex} #f48eb6
+ * @color {rgb} 244,142,182
+ * @color {cmyk} 0,42,25,04
+ * @colorof Light Gender Colors
+ */
 $color-pink-gender-light = #f48eb6;
 
+/**
+ * Unknown
+ *
+ * @colordef Grey Light
+ * @color {hex} #666662
+ * @color {rgb} 102,102,98
+ * @color {cmyk} 55,44,48,34
+ * @colorof Gender Colors
+ */
 
 
+/**
+ * Border Color
+ * @section
+ * @subsectionof Other Colors
+ */
+
+/**
+ * @colordef Grey Border
+ * @color {hex} #cccccc
+ * @color {rgb} 204,204,204
+ * @color {cmyk} 0,0,0,2
+ * @colorof Border Color
+ */
+$color-grey-border = #cccccc;
 
 
 /*------------------------------------*\
