@@ -1,7 +1,11 @@
+/**
+ * Forms
+ * @section
+ */
 /*------------------------------------*\
   $CONTENTS
 \*------------------------------------*/
-/**
+/*
  * FIELD_GRUOP..........Contains an input field and another inline element
  * FIELD_INPUT..........Input field within the group
  * FIELD_ATTACHMENT.....Placed on either side of a field input
@@ -17,6 +21,37 @@
   $FIELD_GRUOP
 \*------------------------------------*/
 /**
+ * Field Groups
+ *
+ * @section
+ * @subsectionof Forms
+ *
+ * @example
+ * <label class="example__title" for="withCheckbox">With Checkbox</label>
+ * <div class="fs-field-group">
+ *   <input class="fs-field-group__input" id="withCheckbox" type="text" placeholder="Example Text"/>
+ *   <div class="fs-field-group__attachment">
+ *     <label for="markAsExact" class="sr-only">Mark as exact</label>
+ *     <input type="checkbox" id="markAsExact"/>
+ *   </div>
+ * </div>
+ *
+ * <label class="example__title" for="withButton">With Button</label>
+ * <div class="fs-field-group">
+ *   <input class="fs-field-group__input" id="withButton" type="text" placeholder="Example Text"/>
+ *   <div class="fs-field-group__button">
+ *     <button class="fs-button fs-button--recommended fs-button--small">Submit</button>
+ *   </div>
+ * </div>
+ *
+ * <label class="example__title" for="withHelpText">With Help Text</label>
+ * <div class="fs-field-group fs-field-group--help">
+ *   <input class="fs-field-group__input" id="withHelpText" type="text" placeholder="Example Text" aria-describedby="helpText"/>
+ *   <small class="fs-field-group__help" id="helpText">This is an example of inline help text that could be helpful. It will wrap when there is more text.</small>
+ * </div>
+ */
+
+/*
  * 1. Input fields require 2 levels of selector specificity
  *    (e.g. input.fs-field-group__input) to override styles from the default
  *    input[type="text"] selector.
@@ -47,7 +82,7 @@
 
     ~ .fs-field-group__attachment {
       border-left: 0;
-      border-right: 1px solid $color-grey-accent;
+      border-right: 1px solid $color-grey-border;
     }
   }
 
@@ -60,7 +95,7 @@
   \*------------------------------------*/
   &__attachment {
     background: #eee;
-    border: 1px solid $color-grey-accent;
+    border: 1px solid $color-grey-border;
     border-right: 0;
     display: table-cell;
     padding: 0 8px;
@@ -123,11 +158,6 @@
   &--help {
     input.fs-field-group__input { /* [1] */
       border-radius: $border-radius;
-      width: 50% unquote('\9'); /* IE9 */
-
-      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        width: 100% /* IE10 reset of IE9 style */
-      }
     }
   }
 

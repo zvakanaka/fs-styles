@@ -2,6 +2,88 @@ fs-styles
 =========
 Global styles for the FamilySearch.org website. Based on the principles of [Atomic Design](http://bradfrost.com/blog/post/atomic-web-design/).
 
+# How to Use
+
+To use fs-styles in you app, turn on the `fsStylesEx` experiment. This will bring in the latest version of the styles.
+
+## Importing the style guide into your Stylus file
+
+Use `@import 'helpers/*` to import all the style guide variables, mixins, and functions into your Stylus files.
+
+### Variables
+
+There are a wide range of variables that the style guide creates, from media query sizes and break points, to colors and font sizes. See the [variable file](assets/css/helpers/_variables.styl) for the complete list of variables.
+
+### Mixins
+
+By default, the style guide will autoprfix most of the important CSS properties for you. See the [mixin file](assets/css/helpers/_mixins.styl) for the complete list of properties.
+
+### Functions
+
+- **overflow: ellipsis** - Shortcut for displaying ellipsis text on truncation.
+
+  ```stylus
+  .text {
+    overflow: ellipsis;
+  }
+
+  // compiles to
+  .text {
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+  }
+  ```
+
+- **clearfix()** - Output the clearfix hack for the element.
+
+  ```stylus
+  .content {
+    clearfix()
+  }
+
+  // compiles to
+  .content:before,
+  .content:after {
+    content: ""
+    display: table
+  }
+
+  .content:after {
+    clear: both
+  }
+  ```
+
+- **pxToRem(value [...value])** - Take a unit and output both px and rem properties (useful for responsive typography). Accepts multiple values.
+
+  ```stylus
+  .content {
+    padding: pxToRem(16px);
+    margin: pxToRem(16px 14px);
+  }
+
+  // compiles to
+  .content {
+    padding: 16px;
+    padding: 1rem;
+    margin: 16px 14px;
+    margin: 1rem 0.875rem;
+  }
+  ```
+
+- **calcLineHeight(lineHeight, fontSize)** - Calculate the line-height as a multiplier of the font-size (useful for responsive typography).
+
+  ```stylus
+  .text {
+    line-height: calcLineHeight(20, 16);
+  }
+
+  // compiles to
+  .text {
+    line-height: 1.25;
+  }
+  ```
+
 # Folder Organization
 To help organize a large CSS code base, we have split the files into different folders. Each file is then compiled into `familysearch-styles.styl` which is what is used on the site.
 *See [Architecture SASS Project](http://www.sitepoint.com/architecture-sass-project/) and [SMACSS Categorizing](http://smacss.com/book/categorizing) for more details*
@@ -13,6 +95,11 @@ Elements   | Basic, indivisible building blocks of the site that include colors,
 Modules    | Groupings of Elements that form a reusable aspect of the interface.
 Components | Groupings of Modules that form relatively complex secitons of the interface.
 Layout     | Styles for content layout such as grids, headers, footers, etc.
+
+# Comments
+The styles make use of a custom [CSSDoc](CSSDoc.md) style for comments which can be parsed to generate a style guide.
+
+Always remember to update the comments when changing styles, or to create a new comment block for new styles.
 
 # File Organization
 A little effort goes a long way. Please take the time to organize your CSS file so that others may quickly find what they are looking for. Divide your code into meaningful sections that denote what the rules are affecting.

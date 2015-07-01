@@ -1,11 +1,43 @@
+/**
+ * Badges
+ * @section
+ */
+
 /*------------------------------------*\
   $BADGES
 \*------------------------------------*/
+/**
+ * Badges
+ *
+ * @section
+ * @subsectionof Badges
+ *
+ * @example
+ * <p>
+ *   <span class="fs-badge">0</span>
+ *   <span class="fs-badge">2</span>
+ *   <span class="fs-badge">3</span>
+ *   <span class="fs-badge">4</span>
+ *   <span class="fs-badge">5</span>
+ *   <span class="fs-badge">6</span>
+ *   <span class="fs-badge">7</span>
+ *   <span class="fs-badge">8</span>
+ *   <span class="fs-badge">9</span>
+ *   <span class="fs-badge">10</span>
+ * </p>
+ * <p>
+ *   <span>Memories<span class="fs-badge">7</span></span>
+ * </p>
+ * <p>
+ *   <span style="background: #4d4d4a; color: #fff; display: inline-block; padding: 5px;">Memories<span class="fs-badge fs-badge--light">7</span>
+ *   </span>
+ * </p>
+ */
 .fs-badge {
-  background: #fff;
+  background: $color-grey;
   border-radius: 9px;
   box-sizing: border-box;
-  color: #000;
+  color: #fff;
   display: inline-block;
   font-size: pxToRem($font-size-small);
   font-weight: normal;
@@ -15,8 +47,8 @@
   padding: 1px 8px;
   text-shadow: none;
 
-  &--dark {
-    background: $color-grey;
-    color: #fff;
+  &--light {
+    background: #fff;
+    color: $color-grey-body;
   }
 }

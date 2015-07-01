@@ -1,11 +1,16 @@
+/**
+ * Buttons
+ * @section
+ */
+
 /*------------------------------------*\
   $CONTENTS
 \*------------------------------------*/
-/**
+/*
  * VARIABLES............Variables just for buttons
- * DEFAULT_BUTTON.......Standard button for primary actions
- * SECONDARY_BUTTON.....Button used for secondary actions
- * TERTIARY_BUTTON......Button used for tertiary actions
+ * DEFAULT_BUTTON.......Standard button
+ * RECOMMENDED_BUTTON...Button used for recommended actions
+ * MINOR_BUTTON.........Button used for minor actions
  * LARGE_BUTTON.........A larger button used for campaign pages
  * SMALL_BUTTON.........A smaller button used for apps and inline form elements
  * LOADING_ANIMATION....Animation for a loading button
@@ -19,13 +24,16 @@
 /*------------------------------------*\
   $VARIABLES
 \*------------------------------------*/
-$blue-light = #358fe8;
-$blue-dark = #003e99;
+$blue = #3073dd;
+$blue-light = #3882f8;
+$blue-dark = #1f61c9;
 
-$grey-light = #e6e7e8;
-$grey-dark = #bcbec0;
+$grey = #f5f4f1;
+$grey-light = #fbfaf9;
+$grey-dark = #e8e6e0;
+$grey-border = #beb8a7;
 
-$link-blue = #0051c4;
+$link-blue = #0060d7;
 
 
 
@@ -35,6 +43,54 @@ $link-blue = #0051c4;
   $DEFAULT_BUTTON
 \*------------------------------------*/
 /**
+ * Types
+ *
+ * ##### Acceptable Use
+ *
+ * In most cases, the `fs-button` should be used for a button.
+ *
+ * The `fs-button--recommended` should be used to recommend an action to the user.
+ *
+ * The `fs-button--minor` should be used for actions that you wish to de-emphasize.
+ *
+ * ##### Avoid
+ *
+ * Do not use the `fs-button--recommended` for any actions that would cause the use to lose
+ * data (such as deleting a message).
+ *
+ * Do not use the `fs-button--large` for anything other than landing pages and marketing
+ * campaign pages.
+ *
+ * @section
+ * @subsectionof Buttons
+ *
+ * @example
+ * <p>
+ *   <small class="example__title">Options</small>
+ *   <button type="button" class="fs-button fs-button--recommended">Recommended</button>
+ *   <button type="button" class="fs-button">Button</button>
+ *   <button type="button" class="fs-button fs-button--minor">Minor</button>
+ * </p>
+ * <p>
+ *   <small class="example__title">Sizes</small>
+ *   <button type="button" class="fs-button fs-button--large">Large</button>
+ *   <button type="button" class="fs-button">Default</button>
+ *   <button type="button" class="fs-button fs-button--small">Small</button>
+ * </p>
+ * <p>
+ *   <small class="example__title">Elements</small>
+ *   <button type="button" class="fs-button">Button</button>
+ *   <a href="javascript:void(0)" class="fs-button" role="button">Anchor</a>
+ *   <input type="submit" class="fs-button" value="Submit"/>
+ * </p>
+ * <p>
+ *   <small class="example__title">Disabled</small>
+ *   <button type="button" class="fs-button fs-button--recommended" disabled>Recommended</button>
+ *   <button type="button" class="fs-button" disabled>Button</button>
+ * </p>
+ */
+
+/*
  * 1. Default button height should be 35px.
  * 2. Links need to override :focus and :visited color.
  * 3. :hover should always be declared before :active so that :active overrides
@@ -43,18 +99,16 @@ $link-blue = #0051c4;
 .fs-button {
   -webkit-appearance: none;
   -webkit-touch-callout: none;
-  background-color: $blue-light;
-  background-image: linear-gradient($blue-light, $blue-dark);
+  background-color: $grey;
   border-radius: $border-radius;
-  border: none;
-  box-shadow: 0 3px 0 0 rgba(0,0,0,0.05);
-  color: #fff;
+  border: 1px solid $grey-border;
+  color: $color-grey-body;
   cursor: pointer;
   display: inline-block;
   font-size: pxToRem($font-size-medium);
   font-weight: normal;
   line-height: 1;
-  padding: pxToRem(9.5px 20px); /* [1] */
+  padding: pxToRem(8.5px 20px); /* [1] */
   position: relative;
   text-decoration: none;
   transition: padding .2s;
@@ -63,32 +117,33 @@ $link-blue = #0051c4;
   white-space: nowrap;
 
   &:hover { /* [3] */
-    background: $blue-light;
-    color: #fff;
+    background: $grey-light;
+    color: $color-grey-body;
     text-decoration: none;
 
     // disable hover effects when disabled
     &:disabled,
     &.disabled {
-      background-image: linear-gradient($blue-light, $blue-dark);
+      background-color: $grey;
     }
   }
 
   &:active {
-    background-image: linear-gradient($blue-dark, $blue-light);
-    box-shadow: none;
+    background-color: $grey-dark;
   }
 
   &:disabled,
   &.disabled {
     cursor: not-allowed;
-    opacity: 0.5;
+    background-color: $grey;
+    border: 1px solid lighten($grey-border, 20%);
+    color: rgba($color-grey-body, 0.3);
   }
 
   &:focus,
   &:visited {
+    color: $color-grey-body; /* [2] */
     text-decoration: none;
-    color: #fff; /* [2] */
   }
 
   &:after {
@@ -102,26 +157,25 @@ $link-blue = #0051c4;
 
 
   /*------------------------------------*\
-    $SECONDARY_BUTTON
+    $RECOMMENDED_BUTTON
   \*------------------------------------*/
-  &--secondary {
-    background-color: $grey-light;
-    background-image: linear-gradient($grey-light, $grey-dark);
-    color: $color-grey-body;
+  &--recommended {
+    background-color: $blue;
+    border: 1px solid darken($blue, 5%);
+    color: #fff;
 
     &:hover { /* [3] */
-      background: $grey-light;
-      color: $color-grey-body;
+      background: $blue-light;
+      color: #fff;
     }
 
     &:active {
-      background-image: linear-gradient($grey-dark, $grey-light);
-      color: $color-grey-body;
+      background-color: $blue-dark;
     }
 
     &:focus,
     &:visited {
-      color: $color-grey-body; /* [2] */
+      color: #fff; /* [2] */
     }
 
     &:disabled,
@@ -129,7 +183,7 @@ $link-blue = #0051c4;
 
       // disable hover effects when disabled
       &:hover {
-        background-image: linear-gradient($grey-light, $grey-dark);
+        color: rgba($color-grey-body, 0.3);
       }
     }
   }
@@ -139,12 +193,12 @@ $link-blue = #0051c4;
 
 
   /*------------------------------------*\
-    $TERTIARY_BUTTON
+    $MINOR_BUTTON
   \*------------------------------------*/
-  &--tertiary {
+  &--minor {
     background: transparent;
-    box-shadow: 0 0 0 transparent;
     color: $link-blue;
+    border-color: transparent;
 
     &:hover { /* [3] */
       background: transparent;
@@ -171,13 +225,12 @@ $link-blue = #0051c4;
   /*------------------------------------*\
     $LARGE_BUTTON
   \*------------------------------------*/
-  /**
+  /*
    * 1. Large button height should be 50px
    */
   &--large {
     border-radius: 5px;
-    box-shadow: 0 5px 0 rgba(0,0,0,0.05);
-    padding: pxToRem(17px 20px); /* [1] */
+    padding: pxToRem(16px 20px); /* [1] */
   }
 
 
@@ -187,11 +240,11 @@ $link-blue = #0051c4;
   /*------------------------------------*\
     $SMALL_BUTTON
   \*------------------------------------*/
-  /**
+  /*
    * 1. Small button height should be 30px
    */
   &--small {
-    padding: pxToRem(7px 20px); /* [1] */
+    padding: pxToRem(6px 20px); /* [1] */
 
     &.is-loading {
       padding-right: 42px;
@@ -211,16 +264,39 @@ $link-blue = #0051c4;
   /*------------------------------------*\
     $LOADING_ANIMATION
   \*------------------------------------*/
+  /**
+   * Animations
+   *
+   * The `fs-button--loading` class will only work for buttons and anchor tags. Input tags
+   * will not work.
+   *
+   * ##### Acceptable Use
+   *
+   * Disable the button while the <code>fs-button--loading</code> class is active.
+   *
+   * @section
+   * @subsectionof Buttons
+   *
+   * @example
+   * <div class="row-fluid">
+   *   <p class="span9">
+   *     <small class="example__title">Loading - <code>fs-button--loading</code></small>
+   *     <button type="button" class="fs-button fs-button--recommended animation__toggle" data-animation="fs-button--loading" data-animation-for="fs-button--loading" data-animation-show="true">
+   *       <span class="animation__show">Loading</span>
+   *     </button>
+   *   </p>
+   * </div>
+   *
+   * @code
+   * <p>
+   *   <button type="button" class="fs-button fs-button--loading">Loading</button>
+   * <p>
+   */
   &--loading {
     padding-right: 47px;
 
     &:after {
-      -moz-animation: rotate 1s infinite steps(12);
-      -ms-animation: rotate 1s infinite steps(12);
-      -o-animation: rotate 1s infinite steps(12);
-      -webkit-animation: rotate 1s infinite steps(12);
-      animation: rotate 1s infinite steps(12);
-      background-image: url('data:image/svg+xml;charset=utf-8,%3Csvg%20version%3D%221.2%22%20baseProfile%3D%22tiny%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%0A%09%20x%3D%220px%22%20y%3D%220px%22%20width%3D%22128px%22%20height%3D%22128px%22%20viewBox%3D%220%200%20128%20128%22%20xml%3Aspace%3D%22preserve%22%3E%0A%3Cline%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20style%3D%22opacity%3A0.1%22%20stroke-width%3D%2212%22%20stroke-linecap%3D%22round%22%20stroke-miterlimit%3D%2210%22%20x1%3D%2264.001%22%20y1%3D%228.125%22%20x2%3D%2264.001%22%20y2%3D%2227.762%22/%3E%0A%3Cline%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20style%3D%22opacity%3A0.91%22%20stroke-width%3D%2212%22%20stroke-linecap%3D%22round%22%20stroke-miterlimit%3D%2210%22%20x1%3D%2236.062%22%20y1%3D%2215.611%22%20x2%3D%2245.88%22%20y2%3D%2232.618%22/%3E%0A%3Cline%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20style%3D%22opacity%3A0.83%22%20stroke-width%3D%2212%22%20stroke-linecap%3D%22round%22%20stroke-miterlimit%3D%2210%22%20x1%3D%2215.611%22%20y1%3D%2236.062%22%20x2%3D%2232.618%22%20y2%3D%2245.882%22/%3E%0A%3Cline%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20style%3D%22opacity%3A0.74%22%20stroke-width%3D%2212%22%20stroke-linecap%3D%22round%22%20stroke-miterlimit%3D%2210%22%20x1%3D%228.126%22%20y1%3D%2264%22%20x2%3D%2227.764%22%20y2%3D%2264%22/%3E%0A%3Cline%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20style%3D%22opacity%3A0.66%22%20stroke-width%3D%2212%22%20stroke-linecap%3D%22round%22%20stroke-miterlimit%3D%2210%22%20x1%3D%2215.612%22%20y1%3D%2291.938%22%20x2%3D%2232.619%22%20y2%3D%2282.117%22/%3E%0A%3Cline%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20style%3D%22opacity%3A0.58%22%20stroke-width%3D%2212%22%20stroke-linecap%3D%22round%22%20stroke-miterlimit%3D%2210%22%20x1%3D%2236.064%22%20y1%3D%22112.389%22%20x2%3D%2245.883%22%20y2%3D%2295.381%22/%3E%0A%3Cline%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20style%3D%22opacity%3A0.49%22%20stroke-width%3D%2212%22%20stroke-linecap%3D%22round%22%20stroke-miterlimit%3D%2210%22%20x1%3D%2264.001%22%20y1%3D%22119.873%22%20x2%3D%2264.001%22%20y2%3D%22100.236%22/%3E%0A%3Cline%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20style%3D%22opacity%3A0.41%22%20stroke-width%3D%2212%22%20stroke-linecap%3D%22round%22%20stroke-miterlimit%3D%2210%22%20x1%3D%2291.939%22%20y1%3D%22112.387%22%20x2%3D%2282.121%22%20y2%3D%2295.381%22/%3E%0A%3Cline%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20style%3D%22opacity%3A0.33%22%20stroke-width%3D%2212%22%20stroke-linecap%3D%22round%22%20stroke-miterlimit%3D%2210%22%20x1%3D%22112.391%22%20y1%3D%2291.936%22%20x2%3D%2295.387%22%20y2%3D%2282.116%22/%3E%0A%3Cline%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20style%3D%22opacity%3A0.24%22%20stroke-width%3D%2212%22%20stroke-linecap%3D%22round%22%20stroke-miterlimit%3D%2210%22%20x1%3D%22119.875%22%20y1%3D%2263.997%22%20x2%3D%22100.241%22%20y2%3D%2263.998%22/%3E%0A%3Cline%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20style%3D%22opacity%3A0.16%22%20stroke-width%3D%2212%22%20stroke-linecap%3D%22round%22%20stroke-miterlimit%3D%2210%22%20x1%3D%22112.389%22%20y1%3D%2236.06%22%20x2%3D%2295.384%22%20y2%3D%2245.877%22/%3E%0A%3Cline%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20style%3D%22opacity%3A0.083%22%20stroke-width%3D%2212%22%20stroke-linecap%3D%22round%22%20stroke-miterlimit%3D%2210%22%20x1%3D%2291.938%22%20y1%3D%2215.609%22%20x2%3D%2282.118%22%20y2%3D%2232.614%22/%3E%0A%3C/svg%3E');
+      @extends $icon-spinner-light;
       background-size: contain;
       height: 20px;
       margin-top: -2px;
@@ -229,29 +305,9 @@ $link-blue = #0051c4;
       right: 15px;
       width: 20px;
     }
-  }
-}
 
-
-
-
-
-/*------------------------------------*\
-  $KEYFRAMES
-\*------------------------------------*/
-@keyframes rotate {
-  from {
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    transform: rotate(360deg);
+    &[disabled]:after {
+      @extends $icon-spinner;
+    }
   }
 }

@@ -1,7 +1,7 @@
 /*------------------------------------*\
   $CONTENTS
 \*------------------------------------*/
-/**
+/*
  * DEFAULT_STATE........Default field state
  * VALID_STATE..........Valid field state
  * INVALID_STATE........Invalid field state
@@ -14,11 +14,44 @@
 /*------------------------------------*\
   $DEFAULT_STATE
 \*------------------------------------*/
+/**
+ * Field Validation
+ *
+ * @section
+ * @subsectionof Forms
+ *
+ * @example
+ * <label class="example__title" for="defaultState">Default State</label>
+ * <div class="fs-field-validation">
+ *   <input id="defaultState" type="text" placeholder="Example Text"/>
+ *   <p class="fs-field-validation__valid-message">Please save changes below.</p>
+ *   <p class="fs-field-validation__invalid-message">Please enter a valid email.</p>
+ * </div>
+ *
+ * <label class="example__title" for="validState">Valid State</label>
+ * <div class="fs-field-validation fs-field-validation--valid">
+ *   <input id="validState" type="text" placeholder="Example Text" aria-describedby="validMessage"/>
+ *   <p class="fs-field-validation__valid-message" id="validMessage">Please save changes below.</p>
+ *   <p class="fs-field-validation__invalid-message">Please enter a valid email.</p>
+ * </div>
+ *
+ * <label class="example__title" for="invalidState">Invalid State</label>
+ * <div class="fs-field-validation fs-field-validation--invalid">
+ *   <input id="invalidState" type="text" placeholder="Example Text" aria-describedby="invalidMessage"/>
+ *   <p class="fs-field-validation__valid-message">Please save changes below.</p>
+ *   <p class="fs-field-validation__invalid-message" id="invalidMessage">Please enter a valid email.</p>
+ * </div>
+ */
 .fs-field-validation {
   border-radius: $border-radius;
   margin: -6px;
   padding: 6px;
   position: relative;
+
+  input {
+    background-repeat: no-repeat;
+    background-position: 98% center;
+  }
 
   &__valid-message,
   &__invalid-message {
@@ -38,7 +71,8 @@
     border: 1px solid #bfd730;
 
     input {
-      background: #fff url('data:image/svg+xml;charset=utf-8,%3Csvg%20version%3D%221.2%22%20baseProfile%3D%22tiny%22%20id%3D%22Art%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%0A%09%20x%3D%220px%22%20y%3D%220px%22%20width%3D%2220px%22%20height%3D%2220px%22%20viewBox%3D%220%200%2020%2020%22%20xml%3Aspace%3D%22preserve%22%3E%0A%3Cpath%20fill%3D%22%2344650F%22%20d%3D%22M7%2C16.589c-0.174%2C0-0.337-0.067-0.46-0.189l-5.939-5.94c-0.122-0.122-0.189-0.285-0.188-0.458%0A%09c0-0.173%2C0.068-0.336%2C0.191-0.458l1.964-1.944c0.122-0.122%2C0.286-0.188%2C0.46-0.188c0.176%2C0%2C0.34%2C0.068%2C0.463%2C0.19l2.924%2C2.924%0A%09c0.16%2C0.16%2C0.373%2C0.248%2C0.602%2C0.248c0.228%2C0%2C0.44-0.088%2C0.601-0.248l7.924-7.924c0.123-0.122%2C0.286-0.189%2C0.46-0.189%0A%09s0.337%2C0.067%2C0.46%2C0.189l1.939%2C1.939C18.521%2C4.663%2C18.589%2C4.826%2C18.589%2C5s-0.067%2C0.337-0.189%2C0.459L7.46%2C16.399%0A%09C7.337%2C16.521%2C7.174%2C16.589%2C7%2C16.589z%22%2F%3E%0A%3Crect%20fill%3D%22none%22%20width%3D%2220%22%20height%3D%2220%22%2F%3E%0A%3C%2Fsvg%3E') no-repeat 98% center;
+      @extends $icon-check
+      background-color: #fff;
       border-color: #bfd730;
 
       &:focus {
@@ -64,7 +98,7 @@
     border: 1px solid #f8b0ab;
 
     input {
-      background: #fff url('data:image/svg+xml;charset=utf-8,%3Csvg%20version%3D%221.2%22%20baseProfile%3D%22tiny%22%20id%3D%22Art%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%0A%09%20x%3D%220px%22%20y%3D%220px%22%20width%3D%2220px%22%20height%3D%2220px%22%20viewBox%3D%220%200%2020%2020%22%20xml%3Aspace%3D%22preserve%22%3E%0A%3Crect%20fill%3D%22none%22%20width%3D%2220%22%20height%3D%2220%22%2F%3E%0A%3Cpath%20fill%3D%22%23A71E1A%22%20d%3D%22M13.083%2C11.003C13.037%2C11.552%2C12.55%2C12%2C12%2C12H9c-0.55%2C0-1.037-0.448-1.083-0.997L7.083%2C0.997%0A%09C7.037%2C0.448%2C7.45%2C0%2C8%2C0h4.998c0.55%2C0%2C0.963%2C0.448%2C0.917%2C0.997L13.083%2C11.003z%20M11.573%2C19c0.55%2C0%2C1.034-0.449%2C1.075-0.997%0A%09l0.225-3.006C12.915%2C14.449%2C12.498%2C14%2C11.948%2C14H9.05c-0.55%2C0-0.966%2C0.449-0.925%2C0.997l0.225%2C3.006C8.391%2C18.551%2C8.875%2C19%2C9.425%2C19%0A%09H11.573z%22%2F%3E%0A%3C%2Fsvg%3E') no-repeat 98% center;
+      @extends $icon-exclamation
       border-color: #f8b0ab;
 
       &:focus {
