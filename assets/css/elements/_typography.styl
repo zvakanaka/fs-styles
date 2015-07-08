@@ -330,6 +330,9 @@ ol, ul, li {
   line-height: calcLineHeight($line-height-medium, $font-size-medium);
 }
 
-li + li {
-  margin-top: 5px;
-}
+// FIXME: messes up most custom lists (like the header), need to figure out a better
+// way to do this
+
+// li + li {
+//   margin-top: 5px;
+// }
