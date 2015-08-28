@@ -240,6 +240,8 @@
 .fs-button:hover:disabled,
 .fs-button:hover.disabled {
   background-color: #f5f4f1;
+  color: rgba(51,51,49,0.3);
+  text-decoration: none;
 }
 .fs-button:active {
   background-color: #e8e6e0;
@@ -255,6 +257,7 @@
 .fs-button:visited {
   color: #333331; /* [2] */
   text-decoration: none;
+  outline-offset: 2px; /* [4] */
 }
 .fs-button:after {
   content: '';
@@ -748,21 +751,6 @@ li {
 .fs-card__body {
   padding: 15px;
 }
-.fs-card {
-  background: #fff;
-  border-radius: 4px;
-  box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.35), 0px 3px 2px 0px rgba(0,0,0,0.18);
-  margin-bottom: 10px;
-}
-.fs-card__title {
-  border-radius: 4px 4px 0 0;
-  padding: 10px 15px;
-  border-bottom: 1px solid #ccc;
-  margin: 0;
-}
-.fs-card__body {
-  padding: 15px;
-}
 .fs-field-group {
   display: table;
   width: 100%;
@@ -976,22 +964,30 @@ input.fs-field-group__input ~ .fs-field-group__attachment {
 .fs-person-vitals__name--split {
   display: none;
 }
-.fs-person-details__container:before,
-.fs-person-details__container:after {
-  content: "";
-  display: table;
+.fs-person-vitals__fs-person-details {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-.fs-person-details__container:after {
-  clear: both;
+.fs-person-details__container {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: nowrap;
+  flex-wrap: nowrap;
 }
 .fs-person-details__lifeSpan,
 .fs-person-details__separator,
 .fs-person-details__id,
 .fs-person-details__birthPlace {
-  float: left;
   font-size: 14px;
   font-size: 0.875rem;
   line-height: 1.286;
+  white-space: nowrap;
+}
+.fs-person-details__lifeSpan {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .fs-person-details__selection-stopper {
   float: left;
@@ -1000,13 +996,6 @@ input.fs-field-group__input ~ .fs-field-group__attachment {
 }
 .fs-person-details__lifeSpan:empty + .fs-person-details__separator {
   display: none;
-}
-.fs-person-details__birthPlace {
-  clear: both;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  width: 100%;
 }
 .fs-person__fs-person-parents {
   clear: both;
