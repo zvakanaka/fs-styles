@@ -95,6 +95,7 @@ $link-blue = #0060d7;
  * 2. Links need to override :focus and :visited color.
  * 3. :hover should always be declared before :active so that :active overrides
  *    :hover styles
+ * 4. Make button outline offset override bootstrap outline-offset for link buttons
  */
 .fs-button {
   -webkit-appearance: none;
@@ -146,6 +147,7 @@ $link-blue = #0060d7;
   &:visited {
     color: $color-grey-body; /* [2] */
     text-decoration: none;
+    outline-offset: 2px; /* [4] */
   }
 
   &:after {
