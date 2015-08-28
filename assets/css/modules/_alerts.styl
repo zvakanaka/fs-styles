@@ -1,4 +1,4 @@
-/**
+*
  * Alerts
  * @section
  */
@@ -76,6 +76,7 @@
 
   &:before {
     @extends $icon-check;
+    background-size: 100%;
     content: '';
     height: pxToRem(20px);
     left: 7px;
@@ -167,14 +168,17 @@
  *   <p>Account saved successfully.</p>
  * </div>
  */
+
+ /*
+  * 1. Using a font for the close x never was consistent across multiple devices and the
+  *    font usually was never centered in the box. Instead, we'll just make an x.
+  */
 .fs-dialog__close {
   -webkit-appearance: none;
   -webkit-touch-callout: none;
   background: transparent;
   border: none;
   box-shadow: 0 0 0 transparent;
-  color: rgba(0,0,0,0.3);
-  font-weight: bold;
   height: pxToRem(20px);
   line-height: 1;
   padding: 0;
@@ -184,18 +188,41 @@
   user-select: none;
   width: pxToRem(20px);
 
+  /* [1] */
+  &:before,
+  &:after {
+    background-color: #a8a8a8;
+    border-radius: $border-radius;
+    content: '';
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: pxToRem(12px);
+  }
+
   &:before {
-    content: '×';
-    font-size: 24px;
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  &:after {
+    transform: translate(-50%, -50%) rotate(-45deg);
   }
 
   &:hover,
   &:focus {
-    color: $color-grey-body;
+    &:before,
+    &:after {
+      background-color: $color-grey-body;
+    }
   }
 
   &:active {
-    color: rgba(0,0,0,0.6);
+    &:before,
+    &:after {
+      background-color: #6f6f6f;
+    }
   }
 }
 
@@ -226,4 +253,3 @@
  * <div class="fs-alert fs-alert--error">
  *   <p><strong>Opportunities:</strong> We're sorry, but an error occurred while looking for temple opportunities.</p>
  * </div>
- */
