@@ -33,16 +33,21 @@
 }
 
 .fs-person-details__container {
-  clearfix();
+  display: flex;
+  flex-wrap: nowrap;
 }
 
 .fs-person-details__lifeSpan,
 .fs-person-details__separator,
 .fs-person-details__id,
 .fs-person-details__birthPlace {
-  float: left;
   font-size: pxToRem($font-size-small);
   line-height: calcLineHeight($line-height-small, $font-size-small);
+  white-space: nowrap;
+}
+
+.fs-person-details__lifeSpan {
+  overflow: ellipsis;
 }
 
 .fs-person-details__selection-stopper {
