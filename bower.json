@@ -15,6 +15,9 @@
   "main": [
     "dist/familysearch-styles.css"
   ],
+  "ignore": [
+    "**/.*"
+  ],
   "moduleType": "globals",
   "license": "SEE LICENSE IN LICENSE.txt",
   "ignore": [
