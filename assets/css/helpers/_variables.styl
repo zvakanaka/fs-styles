@@ -1,5 +1,10 @@
 /*------------------------------------*\
   $CONTENTS
+  Variables should start with the most generic term and end with the most specific term
+  (such as `$color-green-primary`).
+
+  Doing so will group common variables into categories which are easier to remember and
+  search for.
 \*------------------------------------*/
 /*
  * MEDIA_QUERIES...Media query sizes
@@ -14,7 +19,7 @@
 
 /*------------------------------------*\
   $MEDIA_QUERIES
-  Match Bootstrap 3 breakpoints for consistency
+  Match Bootstrap 2 breakpoints for consistency
 \*------------------------------------*/
 // screen sizes
 $screen-mobile-max = 767px;
@@ -31,12 +36,13 @@ $screen-desktop-hd-min = 1200px;
  * Media query breakpoints
  *
  * @example
- * @media $break-mobile  //=> @media screen and (max-width: 767px)
+ *  @media $break-mobile
+ *  //=> @media screen and (max-width: 767px)
  */
 $break-mobile = "screen and (max-width:" + $screen-mobile-max  + ")";
 
 $break-tablet-above = "screen and (min-width:" + $screen-tablet-min +")";
-$break-tablet = "screen and (min-width:" + $screen-tablet-min +") and (min-width:" + $screen-tablet-max +")";
+$break-tablet = "screen and (min-width:" + $screen-tablet-min +") and (max-width:" + $screen-tablet-max +")";
 $break-tablet-below = "screen and (max-width:" + $screen-tablet-max +")";
 
 $break-desktop-above = "screen and (min-width:" + $screen-desktop-min +")";
@@ -51,8 +57,11 @@ $break-desktop-hd = "screen and (min-width:" + $screen-desktop-hd-min +")";
 
 /*------------------------------------*\
   $COLORS
-  Use the stylus function "rgba(hex, opacity)" to add alpha transparency to a color
+  Use the stylus function 'rgba(hex, opacity)' to add alpha transparency to a color
   @see http://learnboost.github.io/stylus/docs/bifs.html#rgbacolor--rgba
+
+  Use the stylus function 'lighten(hex, amount)' to lighten a color by adding white
+  @see https://learnboost.github.io/stylus/docs/bifs.html#lightencolor-amount
 \*------------------------------------*/
 /**
  * Colors
@@ -122,9 +131,10 @@ $color-brown-primary = #9c947a;
  * @colordef Black
  * @color {hex} #000000
  * @color {rgb} 0,0,0
- * @color {cmyk} 100,100,100,100
+ * @color {cmyk} 75,68,67,90
  * @colorof Single Color Logos
  */
+$color-black = #000000;
 
  /**
  * @colordef White
@@ -133,6 +143,7 @@ $color-brown-primary = #9c947a;
  * @color {cmyk} 0,0,0,0
  * @colorof Single Color Logos
  */
+$color-white = #ffffff;
 
 /**
  * Accent Colors
@@ -142,7 +153,7 @@ $color-brown-primary = #9c947a;
  * Use accent colors to help draw attention and create visual interest within your designs.
  *
  * You can lighten the value of the color by adjusting the amount of white added to it (use
- * the [Stylus function](https://learnboost.github.io/stylus/docs/bifs.html#lightencolor-amount) `lighten(color, amount)`).
+ * the [Stylus function](https://learnboost.github.io/stylus/docs/bifs.html#lightencolor-amount) `lighten(color, amount)`) or by adjusting the opacity of the color (use the [Stylus function](https://learnboost.github.io/stylus/docs/bifs.html#rgbacolor--rgba) `rgba(hex, alpha)`).
  *
  * ##### Avoid
  *
@@ -425,7 +436,7 @@ $base-line-height = 20;
 
 // font sizes
 $font-size-small = 14px;
-$font-size-medium = ($base-font-size)px;
+$font-size-medium = unit($base-font-size, 'px');
 $font-size-large = 21px;
 $font-size-large-x = 28px;
 $font-size-large-xx = 36px;

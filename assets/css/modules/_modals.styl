@@ -139,8 +139,10 @@
  *
  * ##### Acceptable Use
  *
- * Add the CSS property `overflow: hidden` to the `body` tag to prevent the body from
- * scrolling while a modal is open.
+ * To open a modal, add the class `fs-modal--show` to the `fs-modal__overlay` div.
+ *
+ * You should also add the CSS property `overflow: hidden` to the `body` tag to prevent
+ * the body from scrolling while a modal is open.
  *
  * @section
  * @subsectionof Modals
@@ -148,7 +150,7 @@
  * @example
  * <div class="row-fluid">
  *   <p class="span9">
- *     <small class="example__title">Show Modal Animation</small>
+ *     <small class="example__title">Open - <code>fs-modal--show</code></small>
  *     <button class="fs-button fs-button--recommended animation__toggle" data-animation-for="fs-modal--show" data-animation-show="true">Show Modal</button>
  *     <div class="fs-modal__overlay" data-animation="fs-modal--show">
  *       <div class="fs-modal">
@@ -171,7 +173,7 @@
  * </div>
  *
  * @code
- * <div class="fs-modal__overlay">
+ * <div class="fs-modal__overlay fs-modal--show">
  *   <div class="fs-modal">
  *
  *     <div class="fs-modal__content">
@@ -197,7 +199,7 @@
   top: 50%;
   transform: translate(-50%, -50%);
   visibility: hidden;
-  width: 100%;
+  width: 90%;
   max-width: 545px;
   z-index: 9999;
 
@@ -218,7 +220,7 @@
     position: fixed;
     right: 0;
     top: 0;
-    transition: all 0.3s;
+    transition: transform 0.3s, opacity 0.3s;
     visibility: hidden;
     z-index: 9998;
 
@@ -236,7 +238,7 @@
     opacity: 0;
     position: relative;
     transform: scale(0.7);
-    transition: all 0.3s;
+    transition: transform 0.3s, opacity 0.3s;
 
     > div:last-child {
       border-radius: 0 0 $border-radius $border-radius;

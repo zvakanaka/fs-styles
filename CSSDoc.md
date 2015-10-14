@@ -23,45 +23,61 @@
 
 - @code : Document custom code output for a documented item (use like @example)
 
+  ```css
+  /**
+   * @example
+   * <h1 class="just-for-example">Hello</h1>
+   *
+   * @code
+   * <h1>Hello</h1>
+   */
+  ```
+
 - @colordef : Document a color (related to @typedef)
 - @color : Document the type of a defined color
 - @colorof : This color belongs to a parent section (related to @memberof)
 
-	/**
-	 * @colordef Color Name
-	 * @color [{system}] <value>
-	 *
-	 * @color {hex} #fff
-	 *
-	 * @colorof Section Name
-	 */
+  ```css
+  /**
+   * @colordef Color Name
+   * @color [{system}] <value>
+   *
+   * @color {hex} #fff
+   *
+   * @colorof Section Name
+   */
+  ```
 
 - @icondef : Document an icon (related to @typedef)
 - @iconof : This icon belongs to a parent section (related to @memberof)
 
-	/**
-	 * @icondef Icon Name
-	 * @iconof Section Name
-	 */
+  ```css
+  /**
+   * @icondef Icon Name
+   * @iconof Section Name
+   */
+  ```
 
 - @section : Document a section (related to @class or @namespace)
 - @subsectionof : This section belongs to a parent section (related to @memberof)
 
-	/**
-	 * Primary Section Name
-	 *
-	 * Primary section description.
-	 *
-	 * @section
-	 */
+  ```css
+  /**
+   * Primary Section Name
+   *
+   * Primary section description.
+   *
+   * @section
+   */
 
-	/**
-	 * Section Name
-	 *
-	 * A description of the section and how to use it's content, etc.
-	 *
-	 * @section
-	 * @subsectionof Primary Section Name
-	 */
+  /**
+   * Section Name
+   *
+   * A description of the section and how to use it's content, etc.
+   *
+   * @section
+   * @subsectionof Primary Section Name
+   */
+  ```
 
 - @someTag : Any additional tags will be added as properties to the comment
