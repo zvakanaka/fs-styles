@@ -26,7 +26,11 @@
  *
  * ##### Acceptable Use
  *
- * The lifespan and the id should never wrap. If they do, the container is too small.
+ * Use a person to display the name, lifespan, and id of a person.
+ *
+ * ##### Avoid
+ *
+ * Avoid letting the persons lifespan and id line wrap.
  *
  * @section
  * @subsectionof Persons
@@ -156,6 +160,11 @@
 /**
  * Person with Gender Icon
  *
+ * ##### Acceptable Use
+ *
+ * Use the person gender to indicate the gender of the person, especially if the name of the
+ * person could be ambiguous.
+ *
  * @section
  * @subsectionof Persons
  *
@@ -173,6 +182,68 @@
  *         <span class="fs-person-details__lifeSpan" data-test="lifeSpan">1900-1960</span>
  *         <span class="fs-person-details__separator">&nbsp;•&nbsp;</span>
  *         <span class="fs-person-details__id" data-test="pid">5XG4-L2Y</span>
+ *         <span class="fs-person-details__selection-stopper">​</span>
+ *       </div>
+ *     </div>
+ *   </div>
+ * </div>
+ *
+ * <hr>
+ *
+ * <div class="fs-person-gender">
+ *   <div class="fs-person-gender__container fs-person-gender--medium">
+ *     <div class="fs-person-gender__image fs-couple__connector fs-icon fs-icon-medium-female"></div>
+ *   </div>
+ *   <div class="fs-person-vitals">
+ *     <div class="fs-person-vitals__name">
+ *       <span class="fs-person-vitals__name-full" data-test="full-name">Jane Allison Doe</span>
+ *     </div>
+ *     <div class="fs-person-vitals__fs-person-details">
+ *       <div class="fs-person-details__container">
+ *         <span class="fs-person-details__lifeSpan" data-test="lifeSpan">1920-1980</span>
+ *         <span class="fs-person-details__separator">&nbsp;•&nbsp;</span>
+ *         <span class="fs-person-details__id" data-test="pid">8BA2-AL2</span>
+ *         <span class="fs-person-details__selection-stopper">​</span>
+ *       </div>
+ *     </div>
+ *   </div>
+ * </div>
+ *
+ * <hr>
+ *
+ * <div class="fs-person-gender">
+ *   <div class="fs-person-gender__container fs-person-gender--medium">
+ *     <div class="fs-person-gender__image fs-couple__connector fs-icon fs-icon-medium-unknown"></div>
+ *   </div>
+ *   <div class="fs-person-vitals">
+ *     <div class="fs-person-vitals__name">
+ *       <span class="fs-person-vitals__name-full" data-test="full-name">Alex Doe</span>
+ *     </div>
+ *     <div class="fs-person-vitals__fs-person-details">
+ *       <div class="fs-person-details__container">
+ *         <span class="fs-person-details__lifeSpan" data-test="lifeSpan">1900-1960</span>
+ *         <span class="fs-person-details__separator">&nbsp;•&nbsp;</span>
+ *         <span class="fs-person-details__id" data-test="pid">5XG4-L2Y</span>
+ *         <span class="fs-person-details__selection-stopper">​</span>
+ *       </div>
+ *     </div>
+ *   </div>
+ * </div>
+ *
+ * @code
+ * <div class="fs-person-gender">
+ *   <div class="fs-person-gender__container fs-person-gender--medium">
+ *     <div class="fs-person-gender__image fs-couple__connector fs-icon fs-icon-medium-male"></div>
+ *   </div>
+ *   <div class="fs-person-vitals">
+ *     <div class="fs-person-vitals__name">
+ *       <span class="fs-person-vitals__name-full" data-test="full-name">John Henry Doe</span>
+ *     </div>
+ *     <div class="fs-person-vitals__fs-person-details">
+ *       <div class="fs-person-details__container">
+ *         <span class="fs-person-details__lifeSpan" data-test="lifeSpan">1898-1921</span>
+ *         <span class="fs-person-details__separator">&nbsp;•&nbsp;</span>
+ *         <span class="fs-person-details__id" data-test="pid">3Gl9-B43</span>
  *         <span class="fs-person-details__selection-stopper">​</span>
  *       </div>
  *     </div>
@@ -230,10 +301,98 @@
 /**
  * Person with Portrait
  *
+ * ##### Acceptable Use
+ *
+ * Use a person portrait to show an image of the person. If no image is available, a large
+ * gender icon will be used as a placeholder.
+ *
  * @section
  * @subsectionof Persons
  *
  * @example
+ * <div class="fs-person-portrait">
+ *   <div class="fs-person-portrait__container">
+ *     <div class="fs-person-portrait__portrait fs-couple__connector fs-icon-before fs-icon-large-male"></div>
+ *   </div>
+ *   <div class="fs-person-portrait__gender-wrapper">
+ *     <div class="fs-person-gender">
+ *       <div class="fs-person-gender__container fs-person-gender--small">
+ *         <div class="fs-person-gender__image fs-couple__connector fs-icon fs-icon-small-male"></div>
+ *       </div>
+ *       <div class="fs-person-vitals">
+ *         <div class="fs-person-vitals__name">
+ *           <span class="fs-person-vitals__name-full" data-test="full-name">John Henry Doe</span>
+ *         </div>
+ *         <div class="fs-person-vitals__fs-person-details">
+ *           <div class="fs-person-details__container">
+ *             <span class="fs-person-details__lifeSpan" data-test="lifeSpan">1900-1960</span>
+ *             <span class="fs-person-details__separator">&nbsp;•&nbsp;</span>
+ *             <span class="fs-person-details__id" data-test="pid">5XG4-L2Y</span>
+ *             <span class="fs-person-details__selection-stopper">​</span>
+ *           </div>
+ *         </div>
+ *       </div>
+ *     </div>
+ *   </div>
+ * </div>
+ *
+ * <hr>
+ *
+ * <div class="fs-person-portrait">
+ *   <div class="fs-person-portrait__container">
+ *     <div class="fs-person-portrait__portrait fs-couple__connector fs-icon-before fs-icon-large-female"></div>
+ *   </div>
+ *   <div class="fs-person-portrait__gender-wrapper">
+ *     <div class="fs-person-gender">
+ *       <div class="fs-person-gender__container fs-person-gender--small">
+ *         <div class="fs-person-gender__image fs-couple__connector fs-icon fs-icon-small-female"></div>
+ *       </div>
+ *       <div class="fs-person-vitals">
+ *         <div class="fs-person-vitals__name">
+ *           <span class="fs-person-vitals__name-full" data-test="full-name">Jane Allison Doe</span>
+ *         </div>
+ *         <div class="fs-person-vitals__fs-person-details">
+ *           <div class="fs-person-details__container">
+ *             <span class="fs-person-details__lifeSpan" data-test="lifeSpan">1920-1980</span>
+ *             <span class="fs-person-details__separator">&nbsp;•&nbsp;</span>
+ *             <span class="fs-person-details__id" data-test="pid">8BA2-AL2</span>
+ *             <span class="fs-person-details__selection-stopper">​</span>
+ *           </div>
+ *         </div>
+ *       </div>
+ *     </div>
+ *   </div>
+ * </div>
+ *
+ * <hr>
+ *
+ * <div class="fs-person-portrait">
+ *   <div class="fs-person-portrait__container">
+ *     <div class="fs-person-portrait__portrait fs-couple__connector fs-icon-before fs-icon-large-unknown"></div>
+ *   </div>
+ *   <div class="fs-person-portrait__gender-wrapper">
+ *     <div class="fs-person-gender">
+ *       <div class="fs-person-gender__container fs-person-gender--small">
+ *         <div class="fs-person-gender__image fs-couple__connector fs-icon fs-icon-small-unknown"></div>
+ *       </div>
+ *       <div class="fs-person-vitals">
+ *         <div class="fs-person-vitals__name">
+ *           <span class="fs-person-vitals__name-full" data-test="full-name">Alex Doe</span>
+ *         </div>
+ *         <div class="fs-person-vitals__fs-person-details">
+ *           <div class="fs-person-details__container">
+ *             <span class="fs-person-details__lifeSpan" data-test="lifeSpan">1898-1921</span>
+ *             <span class="fs-person-details__separator">&nbsp;•&nbsp;</span>
+ *             <span class="fs-person-details__id" data-test="pid">3Gl9-B43</span>
+ *             <span class="fs-person-details__selection-stopper">​</span>
+ *           </div>
+ *         </div>
+ *       </div>
+ *     </div>
+ *   </div>
+ * </div>
+ *
+ * @code
  * <div class="fs-person-portrait">
  *   <div class="fs-person-portrait__container">
  *     <div class="fs-person-portrait__portrait fs-couple__connector fs-icon-before fs-icon-large-male"></div>
@@ -321,6 +480,239 @@
 /*------------------------------------*\
   $STYLE_VARIATIONS
 \*------------------------------------*/
+
+/**
+ * Couple Relationship
+ *
+ * ##### Acceptable Use
+ *
+ * Use a couple relationship to indicate a marriage between two persons.
+ *
+ * @section
+ * @subsectionof Persons
+ *
+ * @example
+ * <div class="fs-couple fs-couple--info">
+ *
+ *   <div class="fs-person-gender fs-person--husband">
+ *     <div class="fs-person-gender__container fs-person-gender--medium">
+ *       <div class="fs-person-gender__image fs-couple__connector fs-icon fs-icon-medium-male"></div>
+ *     </div>
+ *     <div class="fs-person-vitals">
+ *       <div class="fs-person-vitals__name">
+ *         <span class="fs-person-vitals__name-full" data-test="full-name">John Henry Doe</span>
+ *       </div>
+ *       <div class="fs-person-vitals__fs-person-details">
+ *         <div class="fs-person-details__container">
+ *           <span class="fs-person-details__lifeSpan" data-test="lifeSpan">1900-1960</span>
+ *           <span class="fs-person-details__separator">&nbsp;•&nbsp;</span>
+ *           <span class="fs-person-details__id" data-test="pid">5XG4-L2Y</span>
+ *           <span class="fs-person-details__selection-stopper">​</span>
+ *         </div>
+ *       </div>
+ *     </div>
+ *   </div>
+ *
+ *   <div class="fs-person-gender fs-person--wife">
+ *     <div class="fs-person-gender__container fs-person-gender--medium">
+ *       <div class="fs-person-gender__image fs-couple__connector fs-icon fs-icon-medium-female"></div>
+ *     </div>
+ *     <div class="fs-person-vitals">
+ *       <div class="fs-person-vitals__name">
+ *         <span class="fs-person-vitals__name-full" data-test="full-name">Jane Allison Doe</span>
+ *       </div>
+ *       <div class="fs-person-vitals__fs-person-details">
+ *         <div class="fs-person-details__container">
+ *           <span class="fs-person-details__lifeSpan" data-test="lifeSpan">1920-1980</span>
+ *           <span class="fs-person-details__separator">&nbsp;•&nbsp;</span>
+ *           <span class="fs-person-details__id" data-test="pid">8BA2-AL2</span>
+ *           <span class="fs-person-details__selection-stopper">​</span>
+ *         </div>
+ *       </div>
+ *     </div>
+ *   </div>
+ *
+ * </div>
+ */
+.fs-couple {
+  position: relative;
+
+  &--info .fs-person-gender__image:after,
+  &--portrait .fs-person-portrait__portrait:after {
+    content: '';
+    width: 8px;
+    border: 1px solid currentcolor;
+    border-right: 0;
+    position: absolute;
+  }
+
+  .fs-person-gender__image:after {
+    right: 100%;
+  }
+
+  .fs-person-portrait__portrait:after {
+    left: -13px;  // 9px connector (width + border) + 4px portrait border
+  }
+}
+
+.fs-person--husband,
+.fs-person--wife {
+  margin-left: -9px;  // 9px connector (width + border)
+  padding-left: 9px;  // 9px connector (width + border)
+  overflow: hidden;
+}
+
+.fs-couple__connector:after {
+  height: 150px;  // large number that would go outside the overflow of the husband/wife
+}
+
+.fs-person--husband {
+  padding-bottom: 5px;
+
+  .fs-couple__connector:after {
+    border-bottom: 0;
+    top: 50%;
+  }
+}
+
+.fs-person--wife {
+  .fs-couple__connector:after {
+    border-top: 0;
+    bottom: 50%;
+  }
+}
+
+// needed for couple within couple (e.g. showing parents of couples)
+.fs-person__fs-person-parents .fs-person--wife .fs-couple__connector:after {
+  border-bottom: 1px solid currentcolor;
+  top: inherit;
+}
+
+.fs-person__fs-person-parents .fs-person--husband .fs-couple__connector:after {
+  border-top: 1px solid currentcolor;
+  bottom: inherit;
+}
+
+
+/**
+ * Display Variations
+ *
+ * @section
+ * @subsectionof Persons
+ *
+ * @example
+ * <small class="example__title">Light Theme</small>
+ * <div class="fs-person-portrait fs-person--light">
+ *   <div class="fs-person-portrait__container">
+ *     <div class="fs-person-portrait__portrait fs-couple__connector fs-icon-before fs-icon-large-male"></div>
+ *   </div>
+ *   <div class="fs-person-portrait__gender-wrapper">
+ *     <div class="fs-person-gender">
+ *       <div class="fs-person-gender__container fs-person-gender--small">
+ *         <div class="fs-person-gender__image fs-couple__connector fs-icon fs-icon-small-male"></div>
+ *       </div>
+ *       <div class="fs-person-vitals">
+ *         <div class="fs-person-vitals__name">
+ *           <span class="fs-person-vitals__name-full" data-test="full-name">John Henry Doe</span>
+ *         </div>
+ *         <div class="fs-person-vitals__fs-person-details">
+ *           <div class="fs-person-details__container">
+ *             <span class="fs-person-details__lifeSpan" data-test="lifeSpan">1900-1960</span>
+ *             <span class="fs-person-details__separator">&nbsp;•&nbsp;</span>
+ *             <span class="fs-person-details__id" data-test="pid">5XG4-L2Y</span>
+ *             <span class="fs-person-details__selection-stopper">​</span>
+ *           </div>
+ *         </div>
+ *       </div>
+ *     </div>
+ *   </div>
+ * </div>
+ *
+ * <small class="example__title">Dark Theme</small>
+ * <div class="fs-person-portrait fs-person--dark" style="background: #4d4d4a; padding: 5px;">
+ *   <div class="fs-person-portrait__container">
+ *     <div class="fs-person-portrait__portrait fs-couple__connector fs-icon-before fs-icon-large-male"></div>
+ *   </div>
+ *   <div class="fs-person-portrait__gender-wrapper">
+ *     <div class="fs-person-gender">
+ *       <div class="fs-person-gender__container fs-person-gender--small">
+ *         <div class="fs-person-gender__image fs-couple__connector fs-icon fs-icon-small-male"></div>
+ *       </div>
+ *       <div class="fs-person-vitals">
+ *         <div class="fs-person-vitals__name">
+ *           <span class="fs-person-vitals__name-full" data-test="full-name">John Henry Doe</span>
+ *         </div>
+ *         <div class="fs-person-vitals__fs-person-details">
+ *           <div class="fs-person-details__container">
+ *             <span class="fs-person-details__lifeSpan" data-test="lifeSpan">1900-1960</span>
+ *             <span class="fs-person-details__separator">&nbsp;•&nbsp;</span>
+ *             <span class="fs-person-details__id" data-test="pid">5XG4-L2Y</span>
+ *             <span class="fs-person-details__selection-stopper">​</span>
+ *           </div>
+ *         </div>
+ *       </div>
+ *     </div>
+ *   </div>
+ * </div>
+ *
+ * <small class="example__title">Inline</small>
+ * <div class="fs-person-portrait fs-person--inline">
+ *   <div class="fs-person-portrait__container">
+ *     <div class="fs-person-portrait__portrait fs-couple__connector fs-icon-before fs-icon-large-male"></div>
+ *   </div>
+ *   <div class="fs-person-portrait__gender-wrapper">
+ *     <div class="fs-person-gender">
+ *       <div class="fs-person-gender__container fs-person-gender--small">
+ *         <div class="fs-person-gender__image fs-couple__connector fs-icon fs-icon-small-male"></div>
+ *       </div>
+ *       <div class="fs-person-vitals">
+ *         <div class="fs-person-vitals__name">
+ *           <span class="fs-person-vitals__name-full" data-test="full-name">John Henry Doe</span>
+ *         </div>
+ *         <div class="fs-person-vitals__fs-person-details">
+ *           <div class="fs-person-details__container">
+ *             <span class="fs-person-details__lifeSpan" data-test="lifeSpan">1900-1960</span>
+ *             <span class="fs-person-details__separator">&nbsp;•&nbsp;</span>
+ *             <span class="fs-person-details__id" data-test="pid">5XG4-L2Y</span>
+ *             <span class="fs-person-details__selection-stopper">​</span>
+ *           </div>
+ *         </div>
+ *       </div>
+ *     </div>
+ *   </div>
+ * </div>
+ *
+ * <small class="example__title">Stacked</small>
+ * <div class="fs-person-portrait fs-person--stacked">
+ *   <div class="fs-person-portrait__container">
+ *     <div class="fs-person-portrait__portrait fs-couple__connector fs-icon-before fs-icon-large-male"></div>
+ *   </div>
+ *   <div class="fs-person-portrait__gender-wrapper">
+ *     <div class="fs-person-gender">
+ *       <div class="fs-person-gender__container fs-person-gender--small">
+ *         <div class="fs-person-gender__image fs-couple__connector fs-icon fs-icon-small-male"></div>
+ *       </div>
+ *       <div class="fs-person-vitals">
+ *         <div class="fs-person-vitals__name fs-person-vitals__name--eurotypic">
+ *           <span class="fs-person-vitals__name--split">
+ *             <span class="fs-person-vitals__name-given" data-test="given-name">John Henry</span><br>
+ *             <span class="fs-person-vitals__name-family" data-test="family-name">Doe</span>
+ *           </span>
+ *           <span class="fs-person-vitals__name-full" data-test="full-name">John Henry Doe</span>
+ *         </div>
+ *         <div class="fs-person-vitals__fs-person-details">
+ *           <div class="fs-person-details__container">
+ *             <span class="fs-person-details__lifeSpan" data-test="lifeSpan">1900-1960</span>
+ *             <span class="fs-person-details__separator">&nbsp;•&nbsp;</span>
+ *             <span class="fs-person-details__id" data-test="pid">5XG4-L2Y</span>
+ *             <span class="fs-person-details__selection-stopper">​</span>
+ *           </div>
+ *         </div>
+ *       </div>
+ *     </div>
+ *   </div>
+ * </div>
+ */
 .fs-person {
 
   // INLINE
@@ -439,112 +831,6 @@
       background-repeat: no-repeat;
     }
   }
-}
-
-// COUPLE
-/**
- * Couple Relationship
- *
- * @section
- * @subsectionof Persons
- *
- * @example
- * <div class="fs-couple fs-couple--info">
- *   <div class="fs-person-gender fs-person--husband">
- *     <div class="fs-person-gender__container fs-person-gender--medium">
- *       <div class="fs-person-gender__image fs-couple__connector fs-icon fs-icon-medium-male"></div>
- *     </div>
- *     <div class="fs-person-vitals">
- *       <div class="fs-person-vitals__name">
- *         <span class="fs-person-vitals__name-full" data-test="full-name">John Henry Doe</span>
- *       </div>
- *       <div class="fs-person-vitals__fs-person-details">
- *         <div class="fs-person-details__container">
- *           <span class="fs-person-details__lifeSpan" data-test="lifeSpan">1900-1960</span>
- *           <span class="fs-person-details__separator">&nbsp;•&nbsp;</span>
- *           <span class="fs-person-details__id" data-test="pid">5XG4-L2Y</span>
- *           <span class="fs-person-details__selection-stopper">​</span>
- *         </div>
- *       </div>
- *     </div>
- *   </div>
- *   <div class="fs-person-gender fs-person--wife">
- *     <div class="fs-person-gender__container fs-person-gender--medium">
- *       <div class="fs-person-gender__image fs-couple__connector fs-icon fs-icon-medium-female"></div>
- *     </div>
- *     <div class="fs-person-vitals">
- *       <div class="fs-person-vitals__name">
- *         <span class="fs-person-vitals__name-full" data-test="full-name">Jane Sidney Doe</span>
- *       </div>
- *       <div class="fs-person-vitals__fs-person-details">
- *         <div class="fs-person-details__container">
- *           <span class="fs-person-details__lifeSpan" data-test="lifeSpan">1920-1980</span>
- *           <span class="fs-person-details__separator">&nbsp;•&nbsp;</span>
- *           <span class="fs-person-details__id" data-test="pid">8BA2-AL2</span>
- *           <span class="fs-person-details__selection-stopper">​</span>
- *         </div>
- *       </div>
- *     </div>
- *   </div>
- * </div>
- */
-.fs-couple {
-  position: relative;
-
-  &--info .fs-person-gender__image:after,
-  &--portrait .fs-person-portrait__portrait:after {
-    content: '';
-    width: 8px;
-    border: 1px solid currentcolor;
-    border-right: 0;
-    position: absolute;
-  }
-
-  .fs-person-gender__image:after {
-    right: 100%;
-  }
-
-  .fs-person-portrait__portrait:after {
-    left: -13px;  // 9px connector (width + border) + 4px portrait border
-  }
-}
-
-.fs-person--husband,
-.fs-person--wife {
-  margin-left: -9px;  // 9px connector (width + border)
-  padding-left: 9px;  // 9px connector (width + border)
-  overflow: hidden;
-}
-
-.fs-couple__connector:after {
-  height: 150px;  // large number that would go outside the overflow of the husband/wife
-}
-
-.fs-person--husband {
-  padding-bottom: 5px;
-
-  .fs-couple__connector:after {
-    border-bottom: 0;
-    top: 50%;
-  }
-}
-
-.fs-person--wife {
-  .fs-couple__connector:after {
-    border-top: 0;
-    bottom: 50%;
-  }
-}
-
-// needed for couple within couple (e.g. showing parents of couples)
-.fs-person__fs-person-parents .fs-person--wife .fs-couple__connector:after {
-  border-bottom: 1px solid currentcolor;
-  top: inherit;
-}
-
-.fs-person__fs-person-parents .fs-person--husband .fs-couple__connector:after {
-  border-top: 1px solid currentcolor;
-  bottom: inherit;
 }
 
 
