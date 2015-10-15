@@ -531,6 +531,100 @@ input[type="checkbox"] {
   width: 66px;
   width: 4.125rem;
 }
+.fs-tooltip {
+  display: inline-block;
+  position: relative;
+}
+.fs-tooltip__trigger:hover + .fs-tooltip__tip,
+.fs-tooltip__trigger:focus + .fs-tooltip__tip {
+  width: 200px;
+  height: inherit;
+  clip: auto;
+  overflow: visible;
+  opacity: 1;
+}
+.fs-tooltip__tip {
+  background: #fff;
+  border-radius: 4px;
+  bottom: 100%;
+  box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.35), 0px 3px 2px 0px rgba(0,0,0,0.18);
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  left: 50%;
+  overflow: hidden;
+  padding: 10px;
+  position: absolute;
+  -webkit-transform: translate(-50%, -15px);
+  transform: translate(-50%, -15px);
+  transition: opacity 0.2s;
+  width: 1px;
+  z-index: 99999;
+  opacity: 0;
+}
+.fs-tooltip__tip:before {
+  background: #fff;
+  border-radius: 4px;
+  bottom: 0;
+  content: '';
+  left: 0;
+  position: absolute;
+  right: 0;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+.fs-tooltip__tip:after {
+  background: #fff;
+  bottom: -7px;
+  box-shadow: 1px 0px 4px 1px rgba(0,0,0,0.35), 0px 0px 2px 0px rgba(0,0,0,0.18);
+  content: '';
+  height: 15px;
+  left: 50%;
+  position: absolute;
+  -webkit-transform: translateX(-50%) rotate(45deg);
+  transform: translateX(-50%) rotate(45deg);
+  width: 15px;
+  z-index: -2;
+}
+.fs-tooltip__tip--below {
+  bottom: auto;
+  top: 100%;
+  -webkit-transform: translate(-50%, 15px);
+  transform: translate(-50%, 15px);
+}
+.fs-tooltip__tip--below:after {
+  top: -7px;
+}
+.fs-tooltip__tip--left,
+.fs-tooltip__tip--right {
+  left: auto;
+  bottom: auto;
+  top: 50%;
+}
+.fs-tooltip__tip--left:after,
+.fs-tooltip__tip--right:after {
+  top: 50%;
+  bottom: auto;
+  left: auto;
+  -webkit-transform: translateY(-50%) rotate(45deg);
+  transform: translateY(-50%) rotate(45deg);
+}
+.fs-tooltip__tip--left {
+  right: 100%;
+  -webkit-transform: translate(-20px, -50%);
+  transform: translate(-20px, -50%);
+}
+.fs-tooltip__tip--left:after {
+  right: -7px;
+}
+.fs-tooltip__tip--right {
+  left: 100%;
+  -webkit-transform: translate(15px, -50%);
+  transform: translate(15px, -50%);
+}
+.fs-tooltip__tip--right:after {
+  left: -7px;
+}
 html {
   font-size: 16px;
 }
@@ -641,7 +735,6 @@ a:visited {
   color: #b3467c;
 }
 button {
-  outline-offset: -2px;
   font-family: "ProximaNova", sans-serif;
 }
 small {
@@ -655,6 +748,13 @@ ul,
 li {
   line-height: 1.25;
 }
+* {
+*
+  *: ;
+*
+}
+*
+*
 .fs-alert {
   background: #f1f6d3;
   border-radius: 4px;
@@ -672,6 +772,7 @@ li {
   \*------------------------------------*/
 }
 .fs-alert:before {
+  background-size: 100%;
   content: '';
   height: 20px;
   height: 1.25rem;
@@ -707,8 +808,6 @@ li {
   background: transparent;
   border: none;
   box-shadow: 0 0 0 transparent;
-  color: rgba(0,0,0,0.3);
-  font-weight: bold;
   height: 20px;
   height: 1.25rem;
   line-height: 1;
@@ -724,17 +823,39 @@ li {
   user-select: none;
   width: 20px;
   width: 1.25rem;
+/* [1] */
+}
+.fs-dialog__close:before,
+.fs-dialog__close:after {
+  background-color: #a8a8a8;
+  border-radius: 4px;
+  content: '';
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: 12px;
+  width: 0.75rem;
 }
 .fs-dialog__close:before {
-  content: '×';
-  font-size: 24px;
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+  transform: translate(-50%, -50%) rotate(45deg);
 }
-.fs-dialog__close:hover,
-.fs-dialog__close:focus {
-  color: #333331;
+.fs-dialog__close:after {
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+  transform: translate(-50%, -50%) rotate(-45deg);
 }
-.fs-dialog__close:active {
-  color: rgba(0,0,0,0.6);
+.fs-dialog__close:hover:before,
+.fs-dialog__close:focus:before,
+.fs-dialog__close:hover:after,
+.fs-dialog__close:focus:after {
+  background-color: #333331;
+}
+.fs-dialog__close:active:before,
+.fs-dialog__close:active:after {
+  background-color: #6f6f6f;
 }
 .fs-card {
   background: #fff;
@@ -884,7 +1005,7 @@ input.fs-field-group__input ~ .fs-field-group__attachment {
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   visibility: hidden;
-  width: 100%;
+  width: 90%;
   max-width: 545px;
   z-index: 9999;
 }
@@ -904,7 +1025,7 @@ input.fs-field-group__input ~ .fs-field-group__attachment {
   position: fixed;
   right: 0;
   top: 0;
-  transition: all 0.3s;
+  transition: transform 0.3s, opacity 0.3s;
   visibility: hidden;
   z-index: 9998;
 }
@@ -921,7 +1042,7 @@ input.fs-field-group__input ~ .fs-field-group__attachment {
   position: relative;
   -webkit-transform: scale(0.7);
   transform: scale(0.7);
-  transition: all 0.3s;
+  transition: transform 0.3s, opacity 0.3s;
 }
 .fs-modal__content > div:last-child {
   border-radius: 0 0 4px 4px;
@@ -1109,6 +1230,51 @@ input.fs-field-group__input ~ .fs-field-group__attachment {
   display: table-cell;
   vertical-align: middle;
 }
+.fs-couple {
+  position: relative;
+}
+.fs-couple--info .fs-person-gender__image:after,
+.fs-couple--portrait .fs-person-portrait__portrait:after {
+  content: '';
+  width: 8px;
+  border: 1px solid currentcolor;
+  border-right: 0;
+  position: absolute;
+}
+.fs-couple .fs-person-gender__image:after {
+  right: 100%;
+}
+.fs-couple .fs-person-portrait__portrait:after {
+  left: -13px;
+}
+.fs-person--husband,
+.fs-person--wife {
+  margin-left: -9px;
+  padding-left: 9px;
+  overflow: hidden;
+}
+.fs-couple__connector:after {
+  height: 150px;
+}
+.fs-person--husband {
+  padding-bottom: 5px;
+}
+.fs-person--husband .fs-couple__connector:after {
+  border-bottom: 0;
+  top: 50%;
+}
+.fs-person--wife .fs-couple__connector:after {
+  border-top: 0;
+  bottom: 50%;
+}
+.fs-person__fs-person-parents .fs-person--wife .fs-couple__connector:after {
+  border-bottom: 1px solid currentcolor;
+  top: inherit;
+}
+.fs-person__fs-person-parents .fs-person--husband .fs-couple__connector:after {
+  border-top: 1px solid currentcolor;
+  bottom: inherit;
+}
 .fs-person--inline .fs-person-vitals__name {
   display: table-cell;
   vertical-align: top;
@@ -1186,51 +1352,6 @@ input.fs-field-group__input ~ .fs-field-group__attachment {
   background-position: inherit;
   background-size: inherit;
   background-repeat: no-repeat;
-}
-.fs-couple {
-  position: relative;
-}
-.fs-couple--info .fs-person-gender__image:after,
-.fs-couple--portrait .fs-person-portrait__portrait:after {
-  content: '';
-  width: 8px;
-  border: 1px solid currentcolor;
-  border-right: 0;
-  position: absolute;
-}
-.fs-couple .fs-person-gender__image:after {
-  right: 100%;
-}
-.fs-couple .fs-person-portrait__portrait:after {
-  left: -13px;
-}
-.fs-person--husband,
-.fs-person--wife {
-  margin-left: -9px;
-  padding-left: 9px;
-  overflow: hidden;
-}
-.fs-couple__connector:after {
-  height: 150px;
-}
-.fs-person--husband {
-  padding-bottom: 5px;
-}
-.fs-person--husband .fs-couple__connector:after {
-  border-bottom: 0;
-  top: 50%;
-}
-.fs-person--wife .fs-couple__connector:after {
-  border-top: 0;
-  bottom: 50%;
-}
-.fs-person__fs-person-parents .fs-person--wife .fs-couple__connector:after {
-  border-bottom: 1px solid currentcolor;
-  top: inherit;
-}
-.fs-person__fs-person-parents .fs-person--husband .fs-couple__connector:after {
-  border-top: 1px solid currentcolor;
-  bottom: inherit;
 }
 .disable-portrait-image .fs-person-portrait__portrait:after {
   content: '';
