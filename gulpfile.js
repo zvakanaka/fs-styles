@@ -13,7 +13,7 @@ var header = '/*\n' +
              ' */\n';
 
 gulp.task('build', function() {
-  return gulp.src('assets/css/familysearch-styles.styl')
+  return gulp.src(['assets/css/familysearch-styles.styl', 'assets/css/base.styl'])
     .pipe(stylus())
     .pipe(insert.prepend(header))
     .pipe(gulp.dest('dist'))
