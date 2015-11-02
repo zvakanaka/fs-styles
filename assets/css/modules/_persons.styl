@@ -597,7 +597,7 @@
  * @subsectionof Persons
  *
  * @example
- * <small class="example__title">Light Theme</small>
+ * <small class="example__title">Light Theme - <code>fs-person--light</code></small>
  * <div class="fs-person-portrait fs-person--light">
  *   <div class="fs-person-portrait__container">
  *     <div class="fs-person-portrait__portrait fs-couple__connector fs-icon-before fs-icon-large-male"></div>
@@ -624,7 +624,7 @@
  *   </div>
  * </div>
  *
- * <small class="example__title">Dark Theme</small>
+ * <small class="example__title">Dark Theme - <code>fs-person--dark</code></small>
  * <div class="fs-person-portrait fs-person--dark" style="background: #4d4d4a; padding: 5px;">
  *   <div class="fs-person-portrait__container">
  *     <div class="fs-person-portrait__portrait fs-couple__connector fs-icon-before fs-icon-large-male"></div>
@@ -651,7 +651,7 @@
  *   </div>
  * </div>
  *
- * <small class="example__title">Inline</small>
+ * <small class="example__title">Inline - <code>fs-person--inline</code></small>
  * <div class="fs-person-portrait fs-person--inline">
  *   <div class="fs-person-portrait__container">
  *     <div class="fs-person-portrait__portrait fs-couple__connector fs-icon-before fs-icon-large-male"></div>
@@ -678,7 +678,7 @@
  *   </div>
  * </div>
  *
- * <small class="example__title">Stacked</small>
+ * <small class="example__title">Stacked - <code>fs-person--stacked</code></small>
  * <div class="fs-person-portrait fs-person--stacked">
  *   <div class="fs-person-portrait__container">
  *     <div class="fs-person-portrait__portrait fs-couple__connector fs-icon-before fs-icon-large-male"></div>
@@ -751,15 +751,7 @@
     }
 
     .fs-person-vitals__fs-person-details {
-      left: 50%;
-      position: relative;
-      float: left;
-    }
-
-    .fs-person-details__container {
-      left: -50%;
-      position: relative;
-      float: left;
+      display: inline-block;
     }
 
     .fs-person-vitals__name:not(.fs-person-vitals__name--sinotypic) {

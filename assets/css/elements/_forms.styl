@@ -30,9 +30,12 @@
  */
 label {
   color: $color-grey-light;
+  display: block;
   font-size: pxToRem($font-size-small);
+  font-weight: normal;
   line-height: calcLineHeight($line-height-small, $font-size-small);
   margin-bottom: 5px;
+  cursor: pointer;
 
   > input[type="radio"],
   > input[type="checkbox"] {
@@ -78,6 +81,8 @@ input[type="url"],
 input[type="search"],
 input[type="tel"],
 input[type="color"] {
+  background-color: #fff;
+  border: 1px solid $color-grey-border;
   border-radius: $border-radius;
   box-shadow: inset 0 3px 0 rgba(0,0,0,0.05);
   box-sizing: border-box;
@@ -88,6 +93,7 @@ input[type="color"] {
   line-height: calcLineHeight($line-height-medium, $font-size-medium);
   margin-bottom: 0;
   padding: pxToRem(4px 10px);
+  transition: border linear 0.2s;
   width: 100%;
 
   &:focus {
@@ -225,4 +231,10 @@ input[type="radio"],
 input[type="checkbox"] {
   padding: 0; /* IE9 */
   font-size: pxToRem(14px);
+}
+
+fieldset {
+  padding: 0;
+  margin: 0;
+  border: 0;
 }

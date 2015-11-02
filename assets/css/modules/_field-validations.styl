@@ -42,6 +42,10 @@
  *   <p class="fs-field-validation__invalid-message" id="invalidMessage">Please enter a valid email.</p>
  * </div>
  */
+
+ /*
+  * 1. Allow CSS3 feature of background-position from right to be viewed on older and mobile browsers. See http://stackoverflow.com/questions/5142405/offset-a-background-image-from-the-right-using-css
+  */
 .fs-field-validation {
   border-radius: $border-radius;
   margin: -6px;
@@ -50,7 +54,8 @@
 
   input {
     background-repeat: no-repeat;
-    background-position: 98% center;
+    background-position: 98% center; /* [1] */
+    background-position: right 10px center;
   }
 
   &__valid-message,

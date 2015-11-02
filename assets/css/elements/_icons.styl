@@ -51,6 +51,7 @@
 
 /*
  * 1. Default size to 20x20 so that the icon will always show up
+ * 2. Bootstrap overrides background on print css to be `background: transparent !important`. This means that I have to add !important to all print css for icons. Thanks bootstrap...
  */
 .fs-icon,
 .fs-icon-before:before,
@@ -58,6 +59,12 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
+
+  @media print { /* [2] */
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: contain !important;
+  }
 }
 
 .fs-icon-before:before,
