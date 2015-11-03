@@ -26,11 +26,12 @@
       "email": "steven.lambert@familysearch.org"
     }
   ],
-  "license" : "SEE LICENSE IN LICENSE.txt",
+  "license": "SEE LICENSE IN LICENSE.txt",
   "private": false,
   "dependencies": {},
   "devDependencies": {
     "gulp": "^3.9.0",
+    "gulp-insert": "^0.5.0",
     "gulp-minify-css": "^1.2.1",
     "gulp-rename": "^1.2.2",
     "gulp-size": "^2.0.0",
