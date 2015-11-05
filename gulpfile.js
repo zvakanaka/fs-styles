@@ -4,7 +4,7 @@ var rename = require('gulp-rename');
 var stylus = require('gulp-stylus');
 var size = require('gulp-size');
 var insert = require('gulp-insert');
-var package = require('package.json');
+var package = require('./package.json');
 
 var header = '/*\n' +
              ' * FamilySearch Styles\n' +
@@ -13,7 +13,7 @@ var header = '/*\n' +
              ' */\n';
 
 gulp.task('build', function() {
-  return gulp.src('assets/css/familysearch-styles.styl')
+  return gulp.src(['assets/css/familysearch-styles.styl', 'assets/css/base.styl'])
     .pipe(stylus())
     .pipe(insert.prepend(header))
     .pipe(gulp.dest('dist'))
