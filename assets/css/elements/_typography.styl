@@ -102,7 +102,7 @@ $typography-h5-selectors = 'h5' + ($limit-base-styles ? '' : ', .fs-h5');
   font-family: $font-face-heading;
   letter-spacing: inherit;
   text-transform: inherit;
-  margin-top: 0;
+  margin: pxToRem(0 0 10px 0);
 }
 
 {$typography-h1-selectors} {
@@ -138,12 +138,13 @@ $typography-h5-selectors = 'h5' + ($limit-base-styles ? '' : ', .fs-h5');
 }
 
 {$typography-h5-selectors} {
-  font-family: $font-face-body;
-  margin-top: 0;
   color: $color-grey;
+  font-family: $font-face-body;
   font-size: pxToRem($font-size-small);
+  font-weight: bold;
   letter-spacing: 1px;
   line-height: calcLineHeight($line-height-small, $font-size-small);
+  margin: pxToRem(0 0 10px 0);
   text-transform: uppercase;
 
   & + p {
