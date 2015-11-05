@@ -215,7 +215,8 @@ h4 {
   font-family: "museo", serif;
   letter-spacing: inherit;
   text-transform: inherit;
-  margin-top: 0;
+  margin: 0px 0px 10px 0px;
+  margin: 0rem 0rem 0.625rem 0rem;
 }
 h1 {
   font-size: 48px;
@@ -250,13 +251,15 @@ h4 + p {
   margin-top: 0.75rem;
 }
 h5 {
-  font-family: "ProximaNova", sans-serif;
-  margin-top: 0;
   color: #4d4d4a;
+  font-family: "ProximaNova", sans-serif;
   font-size: 14px;
   font-size: 0.875rem;
+  font-weight: bold;
   letter-spacing: 1px;
   line-height: 1.286;
+  margin: 0px 0px 10px 0px;
+  margin: 0rem 0rem 0.625rem 0rem;
   text-transform: uppercase;
 }
 h5 + p {

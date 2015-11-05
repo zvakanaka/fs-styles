@@ -40,5 +40,8 @@
     "gulp-rename": "^1.2.2",
     "gulp-size": "^2.0.0",
     "gulp-stylus": "^2.0.6"
+  },
+  "scripts":{
+    "prepublish":"gulp build && git add . && git commit -m \"GULP: Build dist\" --allow-empty"
   }
 }
