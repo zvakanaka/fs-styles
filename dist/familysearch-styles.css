@@ -144,29 +144,6 @@
 .fs-alert--warning:before {
   background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20version%3D%221.2%22%20baseProfile%3D%22tiny%22%20id%3D%22Art%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%0A%09%20x%3D%220px%22%20y%3D%220px%22%20width%3D%2220px%22%20height%3D%2220px%22%20viewBox%3D%220%200%2020%2020%22%20xml%3Aspace%3D%22preserve%22%3E%0A%3Crect%20fill%3D%22none%22%20width%3D%2220%22%20height%3D%2220%22%2F%3E%0A%3Cpath%20fill%3D%22%2379520F%22%20d%3D%22M10%2C8.692l3.181%2C5.408H6.819L10%2C8.692%20M10%2C2.21c-0.368%2C0-0.735%2C0.237-1.014%2C0.711L1.189%2C16.177%0A%09C0.631%2C17.125%2C1.075%2C17.9%2C2.175%2C17.9h15.65c1.1%2C0%2C1.544-0.776%2C0.986-1.724L11.014%2C2.921C10.735%2C2.447%2C10.368%2C2.21%2C10%2C2.21L10%2C2.21z%22%0A%09%2F%3E%0A%3C%2Fsvg%3E") !important;
 }
-@font-face {
-  font-family: 'ProximaNova';
-  src: url("https://edge.fscdn.org/assets/img/fonts/proximanova-reg-webfont-cfeb75f8129a554d73242c7c98954d3b.woff") format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'ProximaNova';
-  src: url("https://edge.fscdn.org/assets/img/fonts/proximanova-bold-webfont-c487c4a5cafd39382ef57b52ef5a53f9.woff") format('woff');
-  font-weight: bold;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'museo';
-  src: url("https://edge.fscdn.org/assets/img/fonts/museo_slab_500-webfont-7f1d1cd9f496a600a7cbe688a7e854b5.woff") format('woff');
-  font-weight: bold;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'museo_cyrl';
-  src: url("https://edge.fscdn.org/assets/img/fonts/MuseoCyrl_500-webfont-799cdc8b8cd85e151e21d25e8b8ab9cf.woff") format('woff');
-  font-style: normal;
-}
 .fs-badge {
   background: #4d4d4a;
   border-radius: 9px;
