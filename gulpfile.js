@@ -4,7 +4,7 @@ var rename = require('gulp-rename');
 var stylus = require('gulp-stylus');
 var size = require('gulp-size');
 var insert = require('gulp-insert');
-var package = require('package.json');
+var package = require('./package.json');
 
 var header = '/*\n' +
              ' * FamilySearch Styles\n' +
