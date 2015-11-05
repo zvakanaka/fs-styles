@@ -88,54 +88,47 @@ body {
  * <h2 class="fs-h4">Heading Level 2</h2>
  * <h1 class="fs-h5">Heading Level 1</h1>
  */
-h1, h2, h3, h4,
-.fs-h1, .fs-h2, .fs-h3, .fs-h4 {
+
+header-defaults()
   color: $color-grey;
   font-family: $font-face-heading;
   letter-spacing: inherit;
   text-transform: inherit;
-  margin: 0 0 10px 0;
-}
+  margin-top: 0;
 
-h5, .fs-h5 {
+h5-defaults()
   font-family: $font-face-body;
-  font-weight: bold;
-  margin: 0 0 10px 0;
-}
+  margin-top: 0;
 
-h1, .fs-h1 {
+h1-styles()
   font-size: pxToRem($font-size-large-xxx);
   line-height: calcLineHeight($line-height-large-xxx, $font-size-large-xxx);
 
   & + p {
     margin-top: pxToRem(16px);
   }
-}
 
-h2, .fs-h2 {
+h2-styles()
   font-size: pxToRem($font-size-large-xx);
   line-height: calcLineHeight($line-height-large-xx, $font-size-large-xx);
-}
-
-h3, .fs-h3 {
+  
+h3-styles()
   font-size: pxToRem($font-size-large-x);
   line-height: calcLineHeight($line-height-large-x, $font-size-large-x);
 
   & + p {
     margin-top: pxToRem(14px);
   }
-}
 
-h4, .fs-h4 {
+h4-styles()
   font-size: pxToRem($font-size-large);
   line-height: calcLineHeight($line-height-large, $font-size-large);
 
   & + p {
     margin-top: pxToRem(12px);
   }
-}
 
-h5, .fs-h5 {
+h5-styles()
   color: $color-grey;
   font-size: pxToRem($font-size-small);
   letter-spacing: 1px;
@@ -145,7 +138,65 @@ h5, .fs-h5 {
   & + p {
     margin-top: pxToRem(12px);
   }
-}
+  
+
+if $limit-base-styles
+  h1, h2, h3, h4 {
+    header-defaults()
+  }
+
+  h5 {
+    h5-defaults()
+  }
+
+  h1 {
+    h1-styles()
+  }
+
+  h2 {
+    h2-styles()
+  }
+
+  h3 {
+    h3-styles()
+  }
+
+  h4 {
+    h4-styles()
+  }
+
+  h5 {
+    h5-styles()
+  }
+else
+  h1, h2, h3, h4,
+  .fs-h1, .fs-h2, .fs-h3, .fs-h4 {
+    header-defaults()
+  }
+
+  h5, .fs-h5 {
+    h5-defaults()
+  }
+
+  h1, .fs-h1 {
+    h1-styles()
+  }
+
+  h2, .fs-h2 {
+    h2-styles()
+  }
+
+  h3, .fs-h3 {
+    h3-styles()
+  }
+
+  h4, .fs-h4 {
+    h4-styles()
+  }
+
+  h5, .fs-h5 {
+    h5-styles()
+  }
 
 
 
