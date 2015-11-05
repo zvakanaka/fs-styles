@@ -1,7 +1,7 @@
 /*
  * FamilySearch Styles
  * https://github.com/fs-webdev/fs-styles
- * v1.7.2 | MIT
+ * v1.8.0 | MIT
  */
 @-moz-keyframes rotate {
   from {
@@ -595,14 +595,13 @@ h4,
   font-family: "museo", serif;
   letter-spacing: inherit;
   text-transform: inherit;
-  margin: 0 0 10px 0;
+  margin-top: 0;
 }
 h5,
 .fs-h5,
 .fs-card__title {
   font-family: "ProximaNova", sans-serif;
-  font-weight: bold;
-  margin: 0 0 10px 0;
+  margin-top: 0;
 }
 h1,
 .fs-h1 {
@@ -646,8 +645,8 @@ h4 + p,
 h5,
 .fs-h5,
 .fs-card__title {
-  color: #4d4d4a;
   font-size: 14px;
+  color: #4d4d4a;
   font-size: 0.875rem;
   letter-spacing: 1px;
   line-height: 1.286;

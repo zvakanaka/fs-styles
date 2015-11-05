@@ -1,4 +1,9 @@
 /*
+ * FamilySearch Styles
+ * https://github.com/fs-webdev/fs-styles
+ * v1.8.0 | MIT
+ */
+/*
  * FAMILYSEARCH-STYLES (Base)
  * v1.8.0
  */
@@ -67,10 +72,13 @@
 }
 label {
   color: #666662;
+  display: block;
   font-size: 14px;
   font-size: 0.875rem;
+  font-weight: normal;
   line-height: 1.286;
   margin-bottom: 5px;
+  cursor: pointer;
 }
 label > input[type="radio"],
 label > input[type="checkbox"] {
@@ -110,6 +118,8 @@ input[type="url"],
 input[type="search"],
 input[type="tel"],
 input[type="color"] {
+  background-color: #fff;
+  border: 1px solid #ccc;
   border-radius: 4px;
   box-shadow: inset 0 3px 0 rgba(0,0,0,0.05);
   box-sizing: border-box;
@@ -123,6 +133,7 @@ input[type="color"] {
   margin-bottom: 0;
   padding: 4px 10px;
   padding: 0.25rem 0.625rem;
+  transition: border linear 0.2s;
   width: 100%;
 }
 textarea:focus,
@@ -206,6 +217,11 @@ input[type="checkbox"] {
   font-size: 14px;
   font-size: 0.875rem;
 }
+fieldset {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
 html {
   font-size: 16px;
 }
@@ -261,8 +277,8 @@ h4 + p {
   margin-top: 0.75rem;
 }
 h5 {
-  color: #4d4d4a;
   font-size: 14px;
+  color: #4d4d4a;
   font-size: 0.875rem;
   letter-spacing: 1px;
   line-height: 1.286;
@@ -308,4 +324,13 @@ ol,
 ul,
 li {
   line-height: 1.25;
+  padding: 0;
+}
+ol,
+ul {
+  margin: 0px 0px 10px 25px;
+  margin: 0rem 0rem 0.625rem 1.563rem;
+}
+li {
+  margin: 0;
 }
