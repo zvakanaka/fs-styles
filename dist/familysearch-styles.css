@@ -1214,6 +1214,8 @@ input.fs-field-group__input ~ .fs-field-group__attachment {
 .fs-person-card-portrait__image {
   border-radius: 50%;
   position: relative;
+  height: 100%;
+  width: 100%;
   z-index: 1;
 }
 .fs-person-card-portrait__gender-wrapper {
