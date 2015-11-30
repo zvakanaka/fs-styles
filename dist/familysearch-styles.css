@@ -1275,6 +1275,26 @@ input.fs-field-group__input ~ .fs-field-group__attachment {
   background-size: inherit;
   background-repeat: no-repeat;
 }
+.fs-person--person-card .fs-person-portrait__portrait {
+  background-color: transparent;
+  background-size: 100%;
+  border: 0;
+  box-shadow: none;
+  width: 44px;
+  height: 44px;
+  margin-right: 19px;
+  margin-left: 22px;
+}
+.fs-person--person-card .fs-person-vitals__name {
+  font-family: "museo", serif;
+  font-size: 24px;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+.fs-person--person-card .fs-person-details__id {
+  font-size: 16px;
+  font-size: 1rem;
+}
 .disable-portrait-image .fs-person-portrait__portrait:after {
   content: '';
   display: block;
