@@ -168,19 +168,19 @@
  *   <p>Account saved successfully.</p>
  * </div>
  */
-
-/*
- * 1. Using a font for the close x never was consistent across multiple devices and the
- *    font usually was never centered in the box. Instead, we'll just make an x.
- */
 .fs-dialog__close {
+  @extends $icon-close
+
   -webkit-appearance: none;
   -webkit-touch-callout: none;
-  background: transparent;
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
   border: none;
   box-shadow: 0 0 0 transparent;
   height: pxToRem(20px);
   line-height: 1;
+  opacity: .5;
   padding: 0;
   position: absolute;
   right: pxToRem(10px);
@@ -188,41 +188,13 @@
   user-select: none;
   width: pxToRem(20px);
 
-  /* [1] */
-  &:before,
-  &:after {
-    background-color: #a8a8a8;
-    border-radius: $border-radius;
-    content: '';
-    height: 2px;
-    left: 50%;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: pxToRem(12px);
-  }
-
-  &:before {
-    transform: translate(-50%, -50%) rotate(45deg);
-  }
-
-  &:after {
-    transform: translate(-50%, -50%) rotate(-45deg);
-  }
-
   &:hover,
   &:focus {
-    &:before,
-    &:after {
-      background-color: $color-grey-body;
-    }
+    opacity: 1;
   }
 
   &:active {
-    &:before,
-    &:after {
-      background-color: #6f6f6f;
-    }
+    opacity: .75;
   }
 }
 

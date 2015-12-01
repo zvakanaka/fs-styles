@@ -51,7 +51,8 @@
 
 /*
  * 1. Default size to 20x20 so that the icon will always show up
- * 2. Bootstrap overrides background on print css to be `background: transparent !important`. This means that I have to add !important to all print css for icons. Thanks bootstrap...
+ * 2. Bootstrap overrides background on print css to be `background: transparent !important`.
+ *    This means that I have to add !important to all print css for icons. Thanks bootstrap...
  */
 .fs-icon,
 .fs-icon-before:before,
@@ -106,6 +107,19 @@
   &-before.fs-icon-check:before,
   &-after.fs-icon-check:after {
     @extends $icon-check;
+  }
+
+  /**
+   * fs-icon-close
+   *
+   * @icondef close
+   * @iconof Available Icons
+   * @class fs-icon fs-icon-close
+   */
+  &.fs-icon-close,
+  &-before.fs-icon-close:before,
+  &-after.fs-icon-close:after {
+    @extends $icon-close;
   }
 
   /**
