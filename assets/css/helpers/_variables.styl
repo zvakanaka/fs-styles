@@ -25,9 +25,9 @@
 $screen-mobile-max = 767px;
 
 $screen-tablet-min = 768px;
-$screen-tablet-max = 979px;
+$screen-tablet-max = 991px;
 
-$screen-desktop-min = 980px;
+$screen-desktop-min = 992px;
 $screen-desktop-max = 1199px;
 
 $screen-desktop-hd-min = 1200px;
@@ -38,6 +38,101 @@ $screen-desktop-hd-min = 1200px;
  * @example
  *  @media $break-mobile
  *  //=> @media screen and (max-width: 767px)
+ */
+
+/**
+ * Break Points
+ * @section
+ */
+
+/**
+ * Media Queries
+ *
+ * For consistency, we match Bootstrap 3 break points.
+ *
+ * @section
+ * @subsectionof Break Points
+ * @example
+ * <table>
+ *   <thead>
+ *    <tr>
+ *      <th scope="col">Stylus Variable</th>
+ *      <th scope="col">Mobile<br><small>&lt; 768px</small></th>
+ *      <th scope="col">Tablet<br><small>&gt;= 768px</small></th>
+ *      <th scope="col">Desktop<br><small>&gt;= 992px</small></th>
+ *      <th scope="col">Desktop HD<br> <small>&gt;= 1200px</small></th>
+ *    </tr>
+ *   </thead>
+ *   <tbody>
+ *     <tr>
+ *       <th scope="row"><code>&dollar;break-mobile</code></td>
+ *       <td class="break-point__covered">Visible</td>
+ *       <td>Hidden</td>
+ *       <td>Hidden</td>
+ *       <td>Hidden</td>
+ *     </tr>
+ *  </tbody>
+ *  <tbody>
+ *     <tr>
+ *       <th scope="row"><code>&dollar;break-tablet-below</code</td>
+ *       <td class="break-point__covered">Visible</td>
+ *       <td class="break-point__covered">Visible</td>
+ *       <td>Hidden</td>
+ *       <td>Hidden</td>
+ *     </tr>
+ *     <tr>
+ *       <th scope="row"><code>&dollar;break-tablet</code></td>
+ *       <td>Hidden</td>
+ *       <td class="break-point__covered">Visible</td>
+ *       <td>Hidden</td>
+ *       <td>Hidden</td>
+ *     </tr>
+ *     <tr>
+ *       <th scope="row"><code>&dollar;break-tablet-above</code></td>
+ *       <td>Hidden</td>
+ *       <td class="break-point__covered">Visible</td>
+ *       <td class="break-point__covered">Visible</td>
+ *       <td class="break-point__covered">Visible</td>
+ *     </tr>
+ *  </tbody>
+ *  <tbody>
+ *     <tr>
+ *       <th scope="row"><code>&dollar;break-desktop-below</code></td>
+ *       <td class="break-point__covered">Visible</td>
+ *       <td class="break-point__covered">Visible</td>
+ *       <td class="break-point__covered">Visible</td>
+ *       <td>Hidden</td>
+ *     </tr>
+ *     <tr>
+ *       <th scope="row"><code>&dollar;break-desktop</td>
+ *       <td>Hidden</td>
+ *       <td>Hidden</td>
+ *       <td class="break-point__covered">Visible</td>
+ *       <td>Hidden</td>
+ *     </tr>
+ *     <tr>
+ *       <th scope="row"><code>&dollar;break-desktop-above</code></td>
+ *       <td>Hidden</td>
+ *       <td>Hidden</td>
+ *       <td class="break-point__covered">Visible</td>
+ *       <td class="break-point__covered">Visible</td>
+ *     </tr>
+ *  </tbody>
+ *  <tbody>
+ *     <tr>
+ *       <th scope="row"><code>&dollar;break-desktop-hd</code></td>
+ *       <td>Hidden</td>
+ *       <td>Hidden</td>
+ *       <td>Hidden</td>
+ *       <td class="break-point__covered">Visible</td>
+ *     </tr>
+ *  </tbody>
+ * </table>
+ *
+ * @code
+ *  @media $break-tablet {
+ *  body { width: 600px; }
+ * }
  */
 $break-mobile = "screen and (max-width:" + $screen-mobile-max  + ")";
 
@@ -336,7 +431,7 @@ $color-grey-background-light = #f4f4f4;
  *
  * ##### Acceptable Use
  *
- * The blue and pink gender colors should only be used to represent gender.
+ * The male and female gender colors should only be used to represent gender.
  *
  * Use the Light Gender Colors when on dark backgrounds.
  *

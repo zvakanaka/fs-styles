@@ -198,6 +198,8 @@
   \*------------------------------------*/
 /*------------------------------------*    $MINOR_BUTTON
   \*------------------------------------*/
+/*------------------------------------*    $DESTRUCTIVE_BUTTON
+  \*------------------------------------*/
 /*------------------------------------*    $LARGE_BUTTON
   \*------------------------------------*/
 /*
@@ -312,6 +314,27 @@
 .fs-button--minor:focus,
 .fs-button--minor:visited {
   color: #0060d7; /* [2] */
+}
+.fs-button--destructive {
+  background-color: #cc3227;
+  border: 1px solid #c23025;
+  color: #fff;
+}
+.fs-button--destructive:hover {
+/* [3] */
+  background: #e64034;
+  color: #fff;
+}
+.fs-button--destructive:active {
+  background-color: #af180d;
+}
+.fs-button--destructive:focus,
+.fs-button--destructive:visited {
+  color: #fff; /* [2] */
+}
+.fs-button--destructive:disabled:hover,
+.fs-button--destructive.disabled:hover {
+  color: rgba(51,51,49,0.3);
 }
 .fs-button--large {
   border-radius: 5px;
@@ -655,6 +678,7 @@ fieldset {
 }
 html {
   font-size: 16px;
+  line-height: 1.6;
 }
 body {
   color: #333331;
@@ -1229,6 +1253,7 @@ input.fs-field-group__input ~ .fs-field-group__attachment {
   margin: 5px 20px 5px 0;
 }
 .fs-person-portrait__image {
+  max-width: 100%;
   border-radius: 50%;
   position: relative;
   z-index: 1;

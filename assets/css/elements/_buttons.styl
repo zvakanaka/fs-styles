@@ -11,6 +11,7 @@
  * DEFAULT_BUTTON.......Standard button
  * RECOMMENDED_BUTTON...Button used for recommended actions
  * MINOR_BUTTON.........Button used for minor actions
+ * DESTRUCTIVE_BUTTON...Button used for destructive actions
  * LARGE_BUTTON.........A larger button used for campaign pages
  * SMALL_BUTTON.........A smaller button used for apps and inline form elements
  * LOADING_ANIMATION....Animation for a loading button
@@ -32,6 +33,10 @@ $grey = #f5f4f1;
 $grey-light = #fbfaf9;
 $grey-dark = #e8e6e0;
 $grey-border = #beb8a7;
+
+$red = #cc3227
+$red-light = #e64034;
+$red-dark = #af180d;
 
 $link-blue = #0060d7;
 
@@ -56,6 +61,9 @@ $link-blue = #0060d7;
  *
  * The `fs-button--minor` should be used for actions that you wish to de-emphasize.
  *
+ * The `fs-button--destructive` should be used to confirm actions that will cause the user
+ * to permanently lose data (e.g. deleting a photo).
+ *
  * ##### Avoid
  *
  * Do not use the `fs-button--recommended` for any actions that would cause the use to lose
@@ -73,6 +81,7 @@ $link-blue = #0060d7;
  *   <button type="button" class="fs-button fs-button--recommended">Recommended</button>
  *   <button type="button" class="fs-button">Button</button>
  *   <button type="button" class="fs-button fs-button--minor">Minor</button>
+ *   <button type="button" class="fs-button fs-button--destructive">Destructive</button>
  * </p>
  *
  * <p>
@@ -225,6 +234,42 @@ $link-blue = #0060d7;
     &:focus,
     &:visited {
       color: $link-blue; /* [2] */
+    }
+  }
+
+
+
+
+
+  /*------------------------------------*\
+    $DESTRUCTIVE_BUTTON
+  \*------------------------------------*/
+  &--destructive {
+    background-color: $red;
+    border: 1px solid darken($red, 5%);
+    color: #fff;
+
+    &:hover { /* [3] */
+      background: $red-light;
+      color: #fff;
+    }
+
+    &:active {
+      background-color: $red-dark;
+    }
+
+    &:focus,
+    &:visited {
+      color: #fff; /* [2] */
+    }
+
+    &:disabled,
+    &.disabled {
+
+      // disable hover effects when disabled
+      &:hover {
+        color: rgba($color-grey-body, 0.3);
+      }
     }
   }
 
