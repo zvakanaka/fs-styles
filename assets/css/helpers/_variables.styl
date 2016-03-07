@@ -53,75 +53,77 @@ $screen-desktop-hd-min = 1200px;
  * @section
  * @subsectionof Break Points
  * @example
- * <table>
- *   <thead>
- *    <tr>
- *      <th scope="col">Stylus Variable</th>
- *      <th scope="col">Mobile<br><small>&lt; 768px</small></th>
- *      <th scope="col">Tablet<br><small>&gt;= 768px</small></th>
- *      <th scope="col">Desktop<br><small>&gt;= 992px</small></th>
- *      <th scope="col">Desktop HD<br> <small>&gt;= 1200px</small></th>
- *    </tr>
- *   </thead>
- *   <tbody>
- *     <tr>
- *       <th scope="row"><code>&dollar;break-mobile</code></td>
- *       <td class="break-point__covered">Visible</td>
- *       <td>Hidden</td>
- *       <td>Hidden</td>
- *       <td>Hidden</td>
- *     </tr>
- *     <tr class="break-point__group">
- *       <th scope="row"><code>&dollar;break-tablet-below</code</td>
- *       <td class="break-point__covered">Visible</td>
- *       <td class="break-point__covered">Visible</td>
- *       <td>Hidden</td>
- *       <td>Hidden</td>
- *     </tr>
- *     <tr>
- *       <th scope="row"><code>&dollar;break-tablet</code></td>
- *       <td>Hidden</td>
- *       <td class="break-point__covered">Visible</td>
- *       <td>Hidden</td>
- *       <td>Hidden</td>
- *     </tr>
- *     <tr>
- *       <th scope="row"><code>&dollar;break-tablet-above</code></td>
- *       <td>Hidden</td>
- *       <td class="break-point__covered">Visible</td>
- *       <td class="break-point__covered">Visible</td>
- *       <td class="break-point__covered">Visible</td>
- *     </tr>
- *     <tr class="break-point__group">
- *       <th scope="row"><code>&dollar;break-desktop-below</code></td>
- *       <td class="break-point__covered">Visible</td>
- *       <td class="break-point__covered">Visible</td>
- *       <td class="break-point__covered">Visible</td>
- *       <td>Hidden</td>
- *     </tr>
- *     <tr>
- *       <th scope="row"><code>&dollar;break-desktop</td>
- *       <td>Hidden</td>
- *       <td>Hidden</td>
- *       <td class="break-point__covered">Visible</td>
- *       <td>Hidden</td>
- *     </tr>
- *     <tr>
- *       <th scope="row"><code>&dollar;break-desktop-above</code></td>
- *       <td>Hidden</td>
- *       <td>Hidden</td>
- *       <td class="break-point__covered">Visible</td>
- *       <td class="break-point__covered">Visible</td>
- *     </tr>
- *     <tr class="break-point__group">
- *       <th scope="row"><code>&dollar;break-desktop-hd</code></td>
- *       <td>Hidden</td>
- *       <td>Hidden</td>
- *       <td>Hidden</td>
- *       <td class="break-point__covered">Visible</td>
- *     </tr>
- *  </tbody>
- * </table>
+ * <div class="break-point__wrapper">
+ *   <table>
+ *     <thead>
+ *      <tr>
+ *        <th scope="col">Stylus Variable</th>
+ *        <th scope="col">Mobile<br><small>&lt; 768px</small></th>
+ *        <th scope="col">Tablet<br><small>&gt;= 768px</small></th>
+ *        <th scope="col">Desktop<br><small>&gt;= 992px</small></th>
+ *        <th scope="col">Desktop HD<br> <small>&gt;= 1200px</small></th>
+ *      </tr>
+ *     </thead>
+ *     <tbody>
+ *       <tr>
+ *         <th scope="row"><code>&dollar;break-mobile</code></td>
+ *         <td class="break-point__covered">Visible</td>
+ *         <td>Hidden</td>
+ *         <td>Hidden</td>
+ *         <td>Hidden</td>
+ *       </tr>
+ *       <tr class="break-point__group">
+ *         <th scope="row"><code>&dollar;break-tablet-below</code</td>
+ *         <td class="break-point__covered">Visible</td>
+ *         <td class="break-point__covered">Visible</td>
+ *         <td>Hidden</td>
+ *         <td>Hidden</td>
+ *       </tr>
+ *       <tr>
+ *         <th scope="row"><code>&dollar;break-tablet</code></td>
+ *         <td>Hidden</td>
+ *         <td class="break-point__covered">Visible</td>
+ *         <td>Hidden</td>
+ *         <td>Hidden</td>
+ *       </tr>
+ *       <tr>
+ *         <th scope="row"><code>&dollar;break-tablet-above</code></td>
+ *         <td>Hidden</td>
+ *         <td class="break-point__covered">Visible</td>
+ *         <td class="break-point__covered">Visible</td>
+ *         <td class="break-point__covered">Visible</td>
+ *       </tr>
+ *       <tr class="break-point__group">
+ *         <th scope="row"><code>&dollar;break-desktop-below</code></td>
+ *         <td class="break-point__covered">Visible</td>
+ *         <td class="break-point__covered">Visible</td>
+ *         <td class="break-point__covered">Visible</td>
+ *         <td>Hidden</td>
+ *       </tr>
+ *       <tr>
+ *         <th scope="row"><code>&dollar;break-desktop</td>
+ *         <td>Hidden</td>
+ *         <td>Hidden</td>
+ *         <td class="break-point__covered">Visible</td>
+ *         <td>Hidden</td>
+ *       </tr>
+ *       <tr>
+ *         <th scope="row"><code>&dollar;break-desktop-above</code></td>
+ *         <td>Hidden</td>
+ *         <td>Hidden</td>
+ *         <td class="break-point__covered">Visible</td>
+ *         <td class="break-point__covered">Visible</td>
+ *       </tr>
+ *       <tr class="break-point__group">
+ *         <th scope="row"><code>&dollar;break-desktop-hd</code></td>
+ *         <td>Hidden</td>
+ *         <td>Hidden</td>
+ *         <td>Hidden</td>
+ *         <td class="break-point__covered">Visible</td>
+ *       </tr>
+ *    </tbody>
+ *   </table>
+ * </div>
  *
  * @code
  *  @media $break-tablet {
