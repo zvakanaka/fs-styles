@@ -33,7 +33,7 @@ label {
   display: block;
   font-size: pxToRem($font-size-small);
   font-weight: normal;
-  line-height: calcLineHeight($line-height-small, $font-size-small);
+  line-height: $line-height-small;
   margin-bottom: 5px;
   cursor: pointer;
 
@@ -44,11 +44,11 @@ label {
   }
 
   > input[type="radio"] {
-    margin-top: 1px;
+    margin-top: 4px;
   }
 
   > input[type="checkbox"] {
-    margin-top: 2px;
+    margin-top: 5px;
   }
 }
 
@@ -90,7 +90,7 @@ input[type="color"] {
   font-family: $font-face-body;
   font-size: pxToRem($font-size-medium);
   height: pxToRem(30px);  // needed to override Bootstrap
-  line-height: calcLineHeight($line-height-medium, $font-size-medium);
+  line-height: $line-height-medium;
   margin-bottom: 0;
   padding: pxToRem(4px 10px);
   transition: border linear 0.2s;
@@ -152,7 +152,7 @@ select {
   font-family: $font-face-body;
   font-size: pxToRem($font-size-medium);
   height: pxToRem(30px);
-  line-height: calcLineHeight($line-height-medium, $font-size-medium);
+  line-height: $line-height-medium;
   margin: 0;
   padding: pxToRem(4px 6px);
   width: 100%;

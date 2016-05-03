@@ -53,7 +53,7 @@
 .fs-person-vitals__name {
   overflow: ellipsis;
   font-size: pxToRem($font-size-medium);
-  line-height: calcLineHeight($line-height-medium, $font-size-medium);
+  line-height: $line-height-medium;
 }
 
 .fs-person-vitals__name-full,
@@ -80,7 +80,7 @@
 .fs-person-details__id,
 .fs-person-details__birthPlace {
   font-size: pxToRem($font-size-small);
-  line-height: calcLineHeight($line-height-small, $font-size-small);
+  line-height: $line-height-small;
   white-space: nowrap;
 }
 
@@ -116,7 +116,7 @@
 .fs-person-parents__show-label {
   @extend a;
   display: inline-block;
-  line-height: calcLineHeight($line-height-small, $font-size-small);
+  line-height: $line-height-small;
 }
 
 .fs-person-parents__hide-text {

@@ -518,28 +518,55 @@ $color-grey-border = #cccccc;
   $FONTS
 \*------------------------------------*/
 // font families
-$font-face-body = "ProximaNova", sans-serif;
+$font-face-body = Verdana, sans-serif;
 $font-face-heading = "museo", serif;
 
 // responsive typography settings
 $base-font-size = 16;
-$base-line-height = 20;
+$baseline-grid = 1.625;  // 1.625rem multiples = 26px baseline gri
 
-// font sizes
+/*
+  modular font scale (using golden ratios)
+  16 = base font size
+  scale = 1.625 (close enough to 1.618 but provides more even numbers)
+
+  We'll use a triple-stranded scale (3 different modular scales to fill in the
+  gaps of the others)
+
+  - 18@1:1.625 -
+  18 * 1.625 = 29.25 = 30px
+
+  - 16@1:1.625 -
+  16 * 1.625 = 26 = 26px
+
+  - 14@1:1.625 -
+  14 * 1.625 = 22.75 = 22px
+  22.652 * 1.625 = 36.96875 = 36px
+
+  14px - small, H5, H6
+  16px - body
+  18px - H4
+  22px - H3
+  26px - H2
+  30px - H1
+  36px - Campaign Heading
+*/
 $font-size-small = 14px;
 $font-size-medium = unit($base-font-size, 'px');
-$font-size-large = 21px;
-$font-size-large-x = 28px;
-$font-size-large-xx = 36px;
-$font-size-large-xxx = 48px;
+$font-size-large = 18px;
+$font-size-large-x = 22px;
+$font-size-large-xx = 26px;
+$font-size-large-xxx = 30px;
+$font-size-large-xxxx = 36px;
 
 // line heights
-$line-height-small = 18px;
-$line-height-medium = 20px;
-$line-height-large = 24px;
-$line-height-large-x = 32px;
-$line-height-large-xx = 39px;
-$line-height-large-xxx = 50px;
+$line-height-small = 1.35rem;
+$line-height-medium = unit($baseline-grid, 'rem');
+$line-height-large = unit($baseline-grid, 'rem');
+$line-height-large-x = 1.95rem;
+$line-height-large-xx = 2.15rem;
+$line-height-large-xxx = 2.25rem;
+$line-height-large-xxxx = 2.875rem;
 
 
 

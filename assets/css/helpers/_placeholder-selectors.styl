@@ -7,11 +7,11 @@
 \*------------------------------------*/
 
 /*
- * 1. All svgs should be url encoded, not base64 encoded.
+ * 1. All svgs should be optimized before encoded. Optimize using extreme setting
+ *    (where possible) on https://petercollingridge.appspot.com/svg-editor
+ * 2. All svgs should be url encoded, not base64 encoded.
  *    See https://css-tricks.com/probably-dont-base64-svg/
  *    Encode at http://meyerweb.com/eric/tools/dencoder/
- * 2. All svgs should be optimized before encoded. Optimize using extreme setting
- *    (where possible) on https://petercollingridge.appspot.com/svg-editor
  * 3. Bootstrap overrides background on print css to be `background: transparent !important`.
  *    This means that I have to add !important to all icons. We can't add them to just the print
  *    media because our stylesheet would increase in size by a ton because we're embedding the
