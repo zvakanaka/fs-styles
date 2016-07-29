@@ -113,7 +113,7 @@ $link-blue = #0060d7;
  * 4. Make button outline offset override bootstrap outline-offset for link buttons
  */
 .fs-button {
-  -webkit-appearance: none;
+  appearance: none;
   -webkit-touch-callout: none;
   background-color: $grey;
   border-radius: $border-radius;
@@ -156,6 +156,12 @@ $link-blue = #0060d7;
     background-color: $grey;
     border: 1px solid lighten($grey-border, 20%);
     color: rgba($color-grey-body, 0.3);
+  }
+
+  // fix outline for firefox and safari removed by bootstrap
+  &:focus {
+    outline: auto 2px Highlight;
+    outline: auto 5px -webkit-focus-ring-color;
   }
 
   &:focus,
