@@ -51,7 +51,7 @@ $screen-desktop-hd-min = 1200px;
  * For consistency, we match Bootstrap 3 break points.
  *
  * @section
- * @subsectionof Break Points
+ * @sectionof Break Points
  * @example
  * <div class="break-point__wrapper">
  *   <table>
@@ -125,9 +125,8 @@ $screen-desktop-hd-min = 1200px;
  *   </table>
  * </div>
  *
- * @code
- *  @media $break-tablet {
- *  body { width: 600px; }
+ * @code {stylus} @media $break-tablet {
+ *   body { width: 600px; }
  * }
  */
 $break-mobile = "screen and (max-width:" + $screen-mobile-max  + ")";
@@ -175,19 +174,19 @@ $break-desktop-hd = "screen and (min-width:" + $screen-desktop-hd-min +")";
  * Do not use any other colors for the logo.
  *
  * @section
- * @subsectionof Colors
+ * @sectionof Colors
  */
 
 /**
  * Full Color Logo
  * @section
- * @subsectionof Logo Colors
+ * @sectionof Colors.Logo Colors
  */
 
  /**
  * Single Color Logos
  * @section
- * @subsectionof Logo Colors
+ * @sectionof Colors.Logo Colors
  */
 
 /**
@@ -195,8 +194,8 @@ $break-desktop-hd = "screen and (min-width:" + $screen-desktop-hd-min +")";
  * @color {hex} #87b940
  * @color {rgb} 135,185,64
  * @color {cmyk} 53,7,100,0
- * @colorof Full Color Logo
- * @colorof Single Color Logos
+ * @colorof Colors.Logo Colors.Full Color Logo
+ * @colorof Colors.Logo Colors.Single Color Logos
  */
 $color-green-primary = #87b940;
 
@@ -205,7 +204,7 @@ $color-green-primary = #87b940;
  * @color {hex} #bab7b1
  * @color {rgb} 186,183,177
  * @color {cmyk} 28,23,27,0
- * @colorof Full Color Logo
+ * @colorof Colors.Logo Colors.Full Color Logo
  */
 $color-grey-primary = #bab7b1;
 
@@ -214,7 +213,7 @@ $color-grey-primary = #bab7b1;
  * @color {hex} #9c947a
  * @color {rgb} 156,148,122
  * @color {cmyk} 40,35,54,4
- * @colorof Full Color Logo
+ * @colorof Colors.Logo Colors.Full Color Logo
  */
 $color-brown-primary = #9c947a;
 
@@ -223,7 +222,7 @@ $color-brown-primary = #9c947a;
  * @color {hex} #000000
  * @color {rgb} 0,0,0
  * @color {cmyk} 75,68,67,90
- * @colorof Single Color Logos
+ * @colorof Colors.Logo Colors.Single Color Logos
  */
 $color-black = #000000;
 
@@ -232,7 +231,7 @@ $color-black = #000000;
  * @color {hex} #ffffff
  * @color {rgb} 255,255,255
  * @color {cmyk} 0,0,0,0
- * @colorof Single Color Logos
+ * @colorof Colors.Logo Colors.Single Color Logos
  */
 $color-white = #ffffff;
 
@@ -253,7 +252,7 @@ $color-white = #ffffff;
  * Avoid darkening the value of the color by adjusting the amount of black added to it.
  *
  * @section
- * @subsectionof Colors
+ * @sectionof Colors
  */
 
 /**
@@ -261,7 +260,7 @@ $color-white = #ffffff;
  * @color {hex} #f16458
  * @color {rgb} 241,100,88
  * @color {cmyk} 0,76,64,0
- * @colorof Accent Colors
+ * @colorof Colors.Accent Colors
  */
 $color-red-accent = #f16458;
 
@@ -270,7 +269,7 @@ $color-red-accent = #f16458;
  * @color {hex} #27c4f4
  * @color {rgb} 39,196,244
  * @color {cmyk} 64,0,0,0
- * @colorof Accent Colors
+ * @colorof Colors.Accent Colors
  */
 $color-blue-accent = #27c4f4;
 
@@ -279,7 +278,7 @@ $color-blue-accent = #27c4f4;
  * @color {hex} #fcb34b
  * @color {rgb} 252,179,75
  * @color {cmyk} 0,34,80,0
- * @colorof Accent Colors
+ * @colorof Colors.Accent Colors
  */
 $color-orange-accent = #fcb34b;
 
@@ -288,7 +287,7 @@ $color-orange-accent = #fcb34b;
  * @color {hex} #bfd730
  * @color {rgb} 191,215,48
  * @color {cmyk} 30,0,100,0
- * @colorof Accent Colors
+ * @colorof Colors.Accent Colors
  */
 $color-green-accent = #bfd730;
 
@@ -297,7 +296,7 @@ $color-green-accent = #bfd730;
  * @color {hex} #996799
  * @color {rgb} 153,103,153
  * @color {cmyk} 36,70,11,0
- * @colorof Accent Colors
+ * @colorof Colors.Accent Colors
  */
 $color-purple-accent = #996799;
 
@@ -306,7 +305,7 @@ $color-purple-accent = #996799;
  * @color {hex} #9c947a
  * @color {rgb} 156,148,122
  * @color {cmyk} 40,35,54,4
- * @colorof Accent Colors
+ * @colorof Colors.Accent Colors
  */
 $color-brown-accent = #9c947a;
 
@@ -314,7 +313,7 @@ $color-brown-accent = #9c947a;
  * Adjusting the Value
  *
  * @section
- * @subsectionof Accent Colors
+ * @sectionof Colors.Accent Colors
  *
  * @example
  * <div class="row-fluid">
@@ -337,7 +336,7 @@ $color-brown-accent = #9c947a;
  * Do not use other colors for text.
  *
  * @section
- * @subsectionof Colors
+ * @sectionof Colors
  */
 
 /**
@@ -347,7 +346,7 @@ $color-brown-accent = #9c947a;
  * @color {hex} #333331
  * @color {rgb} 51,51,49
  * @color {cmyk} 64,57,59,38
- * @colorof Text Colors
+ * @colorof Colors.Text Colors
  */
 $color-grey-body = #333331;
 
@@ -358,7 +357,7 @@ $color-grey-body = #333331;
  * @color {hex} #4d4d4a
  * @color {rgb} 77,77,74
  * @color {cmyk} 61,51,53,49
- * @colorof Text Colors
+ * @colorof Colors.Text Colors
  */
 $color-grey = #4d4d4a;
 
@@ -369,7 +368,7 @@ $color-grey = #4d4d4a;
  * @color {hex} #666662
  * @color {rgb} 102,102,98
  * @color {cmyk} 55,44,48,34
- * @colorof Text Colors
+ * @colorof Colors.Text Colors
  */
 $color-grey-light = #666662;
 
@@ -377,7 +376,7 @@ $color-grey-light = #666662;
  * Background Colors
  *
  * @section
- * @subsectionof Colors
+ * @sectionof Colors
  */
 
 /**
@@ -385,7 +384,7 @@ $color-grey-light = #666662;
  * @color {hex} #333331
  * @color {rgb} 51,51,49
  * @color {cmyk} 64,57,59,38
- * @colorof Background Colors
+ * @colorof Colors.Background Colors
  */
 
 /**
@@ -393,7 +392,7 @@ $color-grey-light = #666662;
  * @color {hex} #4d4d4a
  * @color {rgb} 77,77,74
  * @color {cmyk} 61,51,53,49
- * @colorof Background Colors
+ * @colorof Colors.Background Colors
  */
 
 /**
@@ -401,7 +400,7 @@ $color-grey-light = #666662;
  * @color {hex} #666662
  * @color {rgb} 102,102,98
  * @color {cmyk} 55,44,48,34
- * @colorof Background Colors
+ * @colorof Colors.Background Colors
  */
 
 /**
@@ -409,7 +408,7 @@ $color-grey-light = #666662;
  * @color {hex} #ecebea
  * @color {rgb} 236,235,234
  * @color {cmyk} 0,42,85,74
- * @colorof Background Colors
+ * @colorof Colors.Background Colors
  */
 $color-grey-background = #ecebea;
 
@@ -418,7 +417,7 @@ $color-grey-background = #ecebea;
  * @color {hex} #f4f4f4
  * @color {rgb} 244,244,244
  * @color {cmyk} 0,0,0,43
- * @colorof Background Colors
+ * @colorof Colors.Background Colors
  */
 $color-grey-background-light = #f4f4f4;
 
@@ -432,19 +431,19 @@ $color-grey-background-light = #f4f4f4;
  * Use the Light Gender Colors when on dark backgrounds.
  *
  * @section
- * @subsectionof Colors
+ * @sectionof Colors
  */
 
 /**
  * Gender Colors
  * @section
- * @subsectionof Other Colors
+ * @sectionof Colors.Other Colors
  */
 
  /**
  * Light Gender Colors
  * @section
- * @subsectionof Other Colors
+ * @sectionof Colors.Other Colors
  */
 
 /**
@@ -454,7 +453,7 @@ $color-grey-background-light = #f4f4f4;
  * @color {hex} #3d8ff7
  * @color {rgb} 601,143,247
  * @color {cmyk} 75,42,0,3
- * @colorof Gender Colors
+ * @colorof Colors.Other Colors.Gender Colors
  */
 $color-blue-gender = #3d8ff7;
 
@@ -463,7 +462,7 @@ $color-blue-gender = #3d8ff7;
  * @color {hex} #99c4fe
  * @color {rgb} 153,196,254
  * @color {cmyk} 40,23,0,0
- * @colorof Light Gender Colors
+ * @colorof Colors.Other Colors.Light Gender Colors
  */
 $color-blue-gender-light = #99c4fe;
 
@@ -474,7 +473,7 @@ $color-blue-gender-light = #99c4fe;
  * @color {hex} #e23f7b
  * @color {rgb} 226,63,123
  * @color {cmyk} 0,72,46,11
- * @colorof Gender Colors
+ * @colorof Colors.Other Colors.Gender Colors
  */
 $color-pink-gender = #e23f7b;
 
@@ -483,7 +482,7 @@ $color-pink-gender = #e23f7b;
  * @color {hex} #f48eb6
  * @color {rgb} 244,142,182
  * @color {cmyk} 0,42,25,04
- * @colorof Light Gender Colors
+ * @colorof Colors.Other Colors.Light Gender Colors
  */
 $color-pink-gender-light = #f48eb6;
 
@@ -494,14 +493,14 @@ $color-pink-gender-light = #f48eb6;
  * @color {hex} #666662
  * @color {rgb} 102,102,98
  * @color {cmyk} 55,44,48,34
- * @colorof Gender Colors
+ * @colorof Colors.Other Colors.Gender Colors
  */
 
 
 /**
  * Border Color
  * @section
- * @subsectionof Other Colors
+ * @sectionof Colors.Other Colors
  */
 
 /**
@@ -509,7 +508,7 @@ $color-pink-gender-light = #f48eb6;
  * @color {hex} #cccccc
  * @color {rgb} 204,204,204
  * @color {cmyk} 0,0,0,2
- * @colorof Border Color
+ * @colorof Colors.Other Colors.Border Color
  */
 $color-grey-border = #cccccc;
 

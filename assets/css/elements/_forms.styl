@@ -10,7 +10,7 @@
  * Text Field
  *
  * @section
- * @subsectionof Forms
+ * @sectionof Forms
  *
  * @example
  * <fieldset>
@@ -132,7 +132,7 @@ textarea {
  * understand how to use them.
  *
  * @section
- * @subsectionof Forms
+ * @sectionof Forms
  *
  * @example
  * <label for="select">Select</label>
@@ -175,11 +175,12 @@ select {
  * Each checkbox must have a label next to it.
  *
  * @section
- * @subsectionof Forms
+ * @sectionof Forms
  *
  * @example
  * <form action="#">
- *   <fieldset class="options">
+ *   <fieldset>
+ *     <legend>List of checkboxes</legend>
  *     <ul>
  *       <li>
  *         <label><input name="checkbox" type="checkbox" checked="checked"/>Choice A</label>
@@ -208,11 +209,12 @@ select {
  * better displayed as a [select menu](#select-menu).
  *
  * @section
- * @subsectionof Forms
+ * @sectionof Forms
  *
  * @example
  * <form action="#">
- *   <fieldset class="options">
+ *   <fieldset>
+ *     <legend>List of radio buttons</legend>
  *     <ul>
  *       <li>
  *         <label><input name="radio" type="radio" checked="checked"/>Option 1</label>
@@ -237,4 +239,12 @@ fieldset {
   padding: 0;
   margin: 0;
   border: 0;
+}
+
+legend {
+  border: 0;
+  color: $color-grey-body;
+  font-size: pxToRem($font-size-medium);
+  line-height: remToPx($line-height-medium);
+  margin: 0 0 2px 0;
 }

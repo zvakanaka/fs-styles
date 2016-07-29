@@ -223,7 +223,7 @@
    * Disable the button while the <code>fs-button--loading</code> class is active.
    *
    * @section
-   * @subsectionof Buttons
+   * @sectionof Buttons
    *
    * @example
    * <div class="row-fluid">
@@ -517,6 +517,15 @@ fieldset {
   margin: 0;
   border: 0;
 }
+legend {
+  border: 0;
+  color: #333331;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 26px;
+  line-height: 1.625rem;
+  margin: 0 0 2px 0;
+}
 .fs-icon,
 .fs-icon-before:before,
 .fs-icon-after:after {
@@ -684,6 +693,7 @@ body {
   font-family: Verdana, sans-serif;
   font-size: 16px;
   font-size: 1rem;
+  line-height: 26px;
   line-height: 1.625rem;
 }
 h1,
@@ -702,25 +712,30 @@ h1,
 .fs-h1 {
   font-size: 30px;
   font-size: 1.875rem;
+  line-height: 36px;
   line-height: 2.25rem;
 }
 h2,
 .fs-h2 {
   font-size: 26px;
   font-size: 1.625rem;
+  line-height: 34.4px;
   line-height: 2.15rem;
 }
 h3,
 .fs-h3 {
   font-size: 22px;
   font-size: 1.375rem;
+  line-height: 31.2px;
   line-height: 1.95rem;
+  margin: 0 0 3.25px 0;
   margin: 0 0 0.203125rem 0;
 }
 h4,
 .fs-h4 {
   font-size: 18px;
   font-size: 1.125rem;
+  line-height: 26px;
   line-height: 1.625rem;
 }
 h5,
@@ -732,7 +747,9 @@ h6,
   font-family: Verdana, sans-serif;
   font-size: 14px;
   font-size: 0.875rem;
+  line-height: 21.6px;
   line-height: 1.35rem;
+  margin: 0 0 3.25px 0;
   margin: 0 0 0.203125rem 0;
 }
 .fs-h1--campaign {
@@ -743,6 +760,7 @@ h6,
 p {
   font-size: 16px;
   font-size: 1rem;
+  line-height: 26px;
   line-height: 1.625rem;
   margin: 0;
 }
@@ -773,18 +791,21 @@ button {
 small {
   font-size: 14px;
   font-size: 0.875rem;
+  line-height: 21.6px;
   line-height: 1.35rem;
   color: #666662;
 }
 ol,
 ul,
 li {
+  line-height: 26px;
   line-height: 1.625rem;
   padding: 0;
 }
 ol,
 ul {
-  margin: 0 0 1.625rem 1.625rem;
+  margin: 26px 26px;
+  margin: 0 0  1.625rem 1.625rem;
 }
 li {
   margin: 0;
@@ -806,14 +827,16 @@ li {
   \*------------------------------------*/
 }
 .fs-alert:before {
-  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 20px;
   content: '';
-  height: 20px;
-  height: 1.25rem;
+  height: 26px;
+  height: 1.625rem;
   left: 7px;
   position: absolute;
-  width: 20px;
-  width: 1.25rem;
+  width: 26px;
+  width: 1.625rem;
 }
 .fs-alert__title {
   color: inherit;
@@ -844,8 +867,8 @@ li {
   background-repeat: no-repeat;
   border: none;
   box-shadow: 0 0 0 transparent;
-  height: 20px;
-  height: 1.25rem;
+  height: 26px;
+  height: 1.625rem;
   line-height: 1;
   opacity: 0.5;
   padding: 0;
@@ -858,8 +881,8 @@ li {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  width: 20px;
-  width: 1.25rem;
+  width: 26px;
+  width: 1.625rem;
 }
 .fs-dialog__close:hover,
 .fs-dialog__close:focus {
@@ -1408,7 +1431,7 @@ input.fs-field-group__input ~ .fs-field-group__attachment {
     max-width: 1200px;
   }
 }
-.fs-subnav-container {
+.fs-subnav__container {
   background: #fff;
   border-bottom: 1px solid rgba(151,151,151,0.8);
   position: relative;
@@ -1416,11 +1439,11 @@ input.fs-field-group__input ~ .fs-field-group__attachment {
   box-sizing: border-box;
 }
 @media screen and (max-width: 767px) {
-  .fs-subnav-container {
+  .fs-subnav__container {
     display: none;
   }
 }
-.fs-subnav-container:before {
+.fs-subnav__container:before {
   border: 2px solid rgba(0,0,0,0.05);
   bottom: -3px;
   content: '';
@@ -1462,7 +1485,7 @@ input.fs-field-group__input ~ .fs-field-group__attachment {
   vertical-align: middle;
 }
 .fs-subnav__item--split:hover .fs-subnav__item {
-  background: #e1edc1;
+  background: #f1f8e3;
 }
 .fs-subnav__item--split .fs-subnav__item:first-child {
   border-radius: 4px 0 0 4px;
@@ -1475,7 +1498,7 @@ input.fs-field-group__input ~ .fs-field-group__attachment {
   float: left;
 }
 .fs-subnav__item--split .fs-subnav__item:hover {
-  background: #f1f8e3;
+  background: #e1edc1;
 }
 .fs-subnav--secondary {
   float: right;
