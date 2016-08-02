@@ -113,9 +113,11 @@ Example:
       }
     </style>
     
-    <content class="tooltip-content"></content>
-    <span role="tooltip" class='fs-tooltip__body' hidden='{{!text}}'>{{text}}</span>
+    <span role="tooltip" class='fs-tooltip__body'>
+      <content select='[tooltip-body]'></content>
+    </span>
 
+    <content></content>
   </template>
 
 </dom-module>
