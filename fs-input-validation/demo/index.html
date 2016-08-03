@@ -95,19 +95,19 @@
   <h3>Code</h3>
   <pre>
     <code>
-        &lt;fs-input-validation id=&#39;v2&#39;&gt;
-          &lt;input type=&quot;text&quot; id=&#39;i2&#39; required pattern=&#39;^[0-9]+$&#39;/&gt;
-          &lt;p valid-text&gt;This is valid&lt;/p&gt;
-          &lt;p invalid-text&gt;This is invalid&lt;/p&gt;
-        &lt;/fs-input-validation&gt;
-        &lt;script&gt;
-          var input2 = document.querySelector(&#39;#i2&#39;);
-          var validation2 = document.querySelector(&#39;#v2&#39;);
+      &lt;fs-input-validation id=&#39;v2&#39;&gt;
+        &lt;input type=&quot;text&quot; id=&#39;i2&#39; required pattern=&#39;^[0-9]+$&#39;/&gt;
+        &lt;p valid-text&gt;This is valid&lt;/p&gt;
+        &lt;p invalid-text&gt;This is invalid&lt;/p&gt;
+      &lt;/fs-input-validation&gt;
+      &lt;script&gt;
+        var input2 = document.querySelector(&#39;#i2&#39;);
+        var validation2 = document.querySelector(&#39;#v2&#39;);
 
-          input2.addEventListener(&#39;input&#39;, function() {
-            validation2.status = input2.checkValidity() ? &#39;valid&#39; : &#39;invalid&#39;;
-          });
-        &lt;/script&gt;  
+        input2.addEventListener(&#39;input&#39;, function() {
+          validation2.status = input2.checkValidity() ? &#39;valid&#39; : &#39;invalid&#39;;
+        });
+      &lt;/script&gt;  
     </code>
   </pre>
 </body>
