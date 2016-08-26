@@ -157,8 +157,8 @@
   box-sizing: border-box;
   color: #fff;
   display: inline-block;
-  font-size: 14px;
-  font-size: 0.875rem;
+  font-size: 12px;
+  font-size: 0.857rem;
   font-weight: normal;
   line-height: 1;
   margin: 0 4px;
@@ -181,12 +181,12 @@
   color: #333331;
   cursor: pointer;
   display: inline-block;
-  font-size: 16px;
+  font-size: 14px;
   font-size: 1rem;
   font-weight: normal;
   line-height: 1;
   padding: 8.5px 20px;
-  padding: 0.531rem 1.25rem; /* [1] */
+  padding: 0.607rem 1.429rem; /* [1] */
   position: relative;
   text-decoration: none;
   transition: padding 0.2s;
@@ -345,11 +345,11 @@
 .fs-button--large {
   border-radius: 5px;
   padding: 16px 20px;
-  padding: 1rem 1.25rem; /* [1] */
+  padding: 1.143rem 1.429rem; /* [1] */
 }
 .fs-button--small {
   padding: 6px 20px;
-  padding: 0.375rem 1.25rem; /* [1] */
+  padding: 0.429rem 1.429rem; /* [1] */
 }
 .fs-button--small.is-loading {
   padding-right: 42px;
@@ -374,8 +374,8 @@
 label {
   color: #666662;
   display: block;
-  font-size: 14px;
-  font-size: 0.875rem;
+  font-size: 12px;
+  font-size: 0.857rem;
   font-weight: normal;
   line-height: 1.35rem;
   margin-bottom: 5px;
@@ -426,14 +426,14 @@ input[type="color"] {
   box-sizing: border-box;
   color: #333331;
   font-family: Verdana, sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   font-size: 1rem;
   height: 30px;
-  height: 1.875rem;
+  height: 2.143rem;
   line-height: 1.625rem;
   margin-bottom: 0;
   padding: 4px 10px;
-  padding: 0.25rem 0.625rem;
+  padding: 0.286rem 0.714rem;
   transition: border linear 0.2s;
   width: 100%;
 }
@@ -498,14 +498,14 @@ select {
   border: 1px solid #ccc;
   color: #333331;
   font-family: Verdana, sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   font-size: 1rem;
   height: 30px;
-  height: 1.875rem;
+  height: 2.143rem;
   line-height: 1.625rem;
   margin: 0;
   padding: 4px 6px;
-  padding: 0.25rem 0.375rem;
+  padding: 0.286rem 0.429rem;
   width: 100%;
 }
 select:focus {
@@ -516,7 +516,7 @@ input[type="radio"],
 input[type="checkbox"] {
   padding: 0; /* IE9 */
   font-size: 14px;
-  font-size: 0.875rem;
+  font-size: 1rem;
 }
 fieldset {
   padding: 0;
@@ -526,9 +526,9 @@ fieldset {
 legend {
   border: 0;
   color: #333331;
-  font-size: 16px;
+  font-size: 14px;
   font-size: 1rem;
-  line-height: 26px;
+  line-height: 22.75px;
   line-height: 1.625rem;
   margin: 0 0 2px 0;
 }
@@ -552,9 +552,9 @@ legend {
 .fs-icon-after:after {
 /* [1] */
   height: 20px;
-  height: 1.25rem;
+  height: 1.429rem;
   width: 20px;
-  width: 1.25rem;
+  width: 1.429rem;
 }
 .fs-icon-before:before,
 .fs-icon-after:after {
@@ -564,38 +564,38 @@ legend {
 }
 .fs-icon-before:before {
   margin-right: 6px;
-  margin-right: 0.375rem;
+  margin-right: 0.429rem;
 }
 .fs-icon-after:after {
   margin-left: 6px;
-  margin-left: 0.375rem;
+  margin-left: 0.429rem;
 }
 .fs-icon[class*=fs-icon-small-],
 .fs-icon-before[class*=fs-icon-small-]:before,
 .fs-icon-after[class*=fs-icon-small-]:after {
 /* [1] */
   height: 8px;
-  height: 0.5rem;
+  height: 0.571rem;
   width: 8px;
-  width: 0.5rem;
+  width: 0.571rem;
 }
 .fs-icon[class*=fs-icon-medium-],
 .fs-icon-before[class*=fs-icon-medium-]:before,
 .fs-icon-after[class*=fs-icon-medium-]:after {
 /* [2] */
   height: 22px;
-  height: 1.375rem;
+  height: 1.571rem;
   width: 22px;
-  width: 1.375rem;
+  width: 1.571rem;
 }
 .fs-icon[class*=fs-icon-large-],
 .fs-icon-before[class*=fs-icon-large-]:before,
 .fs-icon-after[class*=fs-icon-large-]:after {
 /* [3] */
   height: 66px;
-  height: 4.125rem;
+  height: 4.714rem;
   width: 66px;
-  width: 4.125rem;
+  width: 4.714rem;
 }
 .fs-tooltip {
   display: inline-block;
@@ -692,14 +692,19 @@ legend {
   left: -7px;
 }
 html {
-  font-size: 16px;
+  font-size: 14px;
+}
+@media screen and (max-width: 767px) {
+  html {
+    font-size: 12px;
+  }
 }
 body {
   color: #333331;
   font-family: Verdana, sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   font-size: 1rem;
-  line-height: 26px;
+  line-height: 22.75px;
   line-height: 1.625rem;
 }
 h1,
@@ -717,31 +722,31 @@ h4,
 h1,
 .fs-h1 {
   font-size: 30px;
-  font-size: 1.875rem;
-  line-height: 36px;
-  line-height: 2.25rem;
+  font-size: 2.143rem;
+  line-height: 35px;
+  line-height: 2.5rem;
 }
 h2,
 .fs-h2 {
   font-size: 26px;
-  font-size: 1.625rem;
-  line-height: 34.4px;
+  font-size: 1.857rem;
+  line-height: 30.1px;
   line-height: 2.15rem;
 }
 h3,
 .fs-h3 {
   font-size: 22px;
-  font-size: 1.375rem;
-  line-height: 31.2px;
+  font-size: 1.571rem;
+  line-height: 27.3px;
   line-height: 1.95rem;
-  margin: 0 0 3.25px 0;
+  margin: 0 0 2.844px 0;
   margin: 0 0 0.203125rem 0;
 }
 h4,
 .fs-h4 {
   font-size: 18px;
-  font-size: 1.125rem;
-  line-height: 26px;
+  font-size: 1.286rem;
+  line-height: 22.75px;
   line-height: 1.625rem;
 }
 h5,
@@ -751,22 +756,22 @@ h6,
 .fs-card__title {
   color: #4d4d4a;
   font-family: Verdana, sans-serif;
-  font-size: 14px;
-  font-size: 0.875rem;
-  line-height: 21.6px;
+  font-size: 12px;
+  font-size: 0.857rem;
+  line-height: 18.9px;
   line-height: 1.35rem;
-  margin: 0 0 3.25px 0;
+  margin: 0 0 2.844px 0;
   margin: 0 0 0.203125rem 0;
 }
 .fs-h1--campaign {
   font-size: 36px;
-  font-size: 2.25rem;
+  font-size: 2.571rem;
   line-height: 4.875rem;
 }
 p {
-  font-size: 16px;
+  font-size: 14px;
   font-size: 1rem;
-  line-height: 26px;
+  line-height: 22.75px;
   line-height: 1.625rem;
   margin: 0;
 }
@@ -795,22 +800,22 @@ button {
   font-family: Verdana, sans-serif;
 }
 small {
-  font-size: 14px;
-  font-size: 0.875rem;
-  line-height: 21.6px;
+  font-size: 12px;
+  font-size: 0.857rem;
+  line-height: 18.9px;
   line-height: 1.35rem;
   color: #666662;
 }
 ol,
 ul,
 li {
-  line-height: 26px;
+  line-height: 22.75px;
   line-height: 1.625rem;
   padding: 0;
 }
 ol,
 ul {
-  margin: 26px 26px;
+  margin: 22.75px 22.75px;
   margin: 0 0  1.625rem 1.625rem;
 }
 li {
@@ -823,7 +828,7 @@ li {
   color: #44650f;
   display: block;
   padding: 10px 40px 10px 34px;
-  padding: 0.625rem 2.5rem 0.625rem 2.125rem;
+  padding: 0.714rem 2.857rem 0.714rem 2.429rem;
   position: relative;
 /*------------------------------------*    $INFO
   \*------------------------------------*/
@@ -837,11 +842,11 @@ li {
   background-repeat: no-repeat;
   background-size: 20px;
   content: '';
-  height: 26px;
+  height: 22.75px;
   height: 1.625rem;
   left: 7px;
   position: absolute;
-  width: 26px;
+  width: 22.75px;
   width: 1.625rem;
 }
 .fs-alert__title {
@@ -873,21 +878,21 @@ li {
   background-repeat: no-repeat;
   border: none;
   box-shadow: 0 0 0 transparent;
-  height: 26px;
+  height: 22.75px;
   height: 1.625rem;
   line-height: 1;
   opacity: 0.5;
   padding: 0;
   position: absolute;
   right: 10px;
-  right: 0.625rem;
+  right: 0.714rem;
   top: 10px;
-  top: 0.625rem;
+  top: 0.714rem;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  width: 26px;
+  width: 22.75px;
   width: 1.625rem;
 }
 .fs-dialog__close:hover,
@@ -1112,7 +1117,7 @@ input.fs-field-group__input ~ .fs-field-group__attachment {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-size: 16px;
+  font-size: 14px;
   font-size: 1rem;
   line-height: 1.625rem;
 }
@@ -1141,8 +1146,8 @@ input.fs-field-group__input ~ .fs-field-group__attachment {
 .fs-person-details__separator,
 .fs-person-details__id,
 .fs-person-details__birthPlace {
-  font-size: 14px;
-  font-size: 0.875rem;
+  font-size: 12px;
+  font-size: 0.857rem;
   line-height: 1.35rem;
   white-space: nowrap;
 }
@@ -1401,7 +1406,7 @@ input.fs-field-group__input ~ .fs-field-group__attachment {
 .fs-person--person-card .fs-person-vitals__name {
   font-family: "museo", serif;
   font-size: 24px;
-  font-size: 1.5rem;
+  font-size: 1.714rem;
   line-height: 1;
 }
 .fs-person--person-card a.fs-person-vitals__name-full:visited {
@@ -1409,7 +1414,7 @@ input.fs-field-group__input ~ .fs-field-group__attachment {
 }
 .fs-person--person-card .fs-person-details__id {
   font-size: 16px;
-  font-size: 1rem;
+  font-size: 1.143rem;
 }
 .disable-portrait-image .fs-person-portrait__portrait:after {
   content: '';
@@ -1466,8 +1471,8 @@ input.fs-field-group__input ~ .fs-field-group__attachment {
   border: 0;
   color: #666662;
   display: inline-block;
-  font-size: 14px;
-  font-size: 0.875rem;
+  font-size: 12px;
+  font-size: 0.857rem;
   line-height: 1.35rem;
   margin-right: 1px;
   padding: 4px 10px;
