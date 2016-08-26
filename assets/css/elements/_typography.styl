@@ -24,8 +24,27 @@
 html {
   font-size: $font-size-medium;
 
+  // CJK specific stack
+  &.locale-zh {
+    font-size: 16px;
+  }
+
+  &.locale-ja {
+    font-size: 16px;
+  }
+
+  &.locale-ko {
+    font-size: 16px;
+  }
+
   @media $break-mobile {
     font-size: $font-size-small;
+
+    &.locale-zh,
+    &.locale-ja,
+    &.locale-ko {
+      font-size: 14px;
+    }
   }
 }
 
@@ -34,6 +53,19 @@ body {
   font-family: $font-face-body;
   font-size: pxToRem($font-size-medium);
   line-height: remToPx($line-height-medium);
+
+  // CJK specific stack
+  .locale-zh & {
+    font-family: "黑體-繁", "Heiti TC", "华文细黑", "STXihei", "微軟正黑體", "Microsoft JengHei", "中易黑体", "SimHei", sans-serif;
+  }
+
+  .locale-ja & {
+    font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "ＭＳ ゴシック", "MS Gothic", sans-serif;
+  }
+
+  .locale-ko & {
+    font-family: "Apple SD Gothic Neo", "애플고딕", "AppleGothic", "맑은 고딕", "Malgun Gothic", "굴림", "Gulim", sans-serif;
+  }
 }
 
 
@@ -131,7 +163,7 @@ $typography-h5-selectors = 'h5, h6' + ($limit-base-styles ? '' : ', .fs-h5, .fs-
 
 {$typography-h5-selectors} {
   color: $color-grey;
-  font-family: $font-face-body;
+  font-family: inherit;
   font-size: pxToRem($font-size-small);
   line-height: remToPx($line-height-small);
   margin: remToPx(0 0 0.203125rem 0);
@@ -252,7 +284,7 @@ a:visited {
  * <p>Keybord input: <kbd>Cmd</kbd></p>
  */
 button {
-  font-family: $font-face-body;
+  font-family: inherit;
 }
 
 small {
