@@ -51,6 +51,10 @@
  * 1. Input fields require 2 levels of selector specificity
  *    (e.g. input.fs-field-group__input) to override styles from the default
  *    input[type="text"] selector.
+ * 2. Inputs do not strictly adhere to line-height and font-size to determine
+ *    the height of the element and adds about 1.23px top/bottom to the height.
+ *    We can compensate for this by setting the line-height to normal for both
+ *    the button and the input.
  */
 .fs-field-group {
   display: table;
@@ -141,6 +145,7 @@
 
     .fs-button {
       border-radius: 0;
+      line-height: normal; /* [2] */
     }
   }
 

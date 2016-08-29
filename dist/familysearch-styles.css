@@ -423,12 +423,11 @@ input[type="color"] {
   font-family: inherit;
   font-size: 14px;
   font-size: 1rem;
-  height: 30px;
-  height: 2.143rem;
-  line-height: 1.625rem;
+  height: inherit;
+  line-height: normal; /* [2] */
   margin-bottom: 0;
-  padding: 4px 10px;
-  padding: 0.286rem 0.714rem;
+  padding: 6px 10px;
+  padding: 0.429rem 0.714rem; /* [1] */
   transition: border linear 0.2s;
   width: 100%;
 }
@@ -1002,6 +1001,7 @@ input.fs-field-group__input ~ .fs-field-group__attachment {
 }
 .fs-field-group__button .fs-button {
   border-radius: 0;
+  line-height: normal; /* [2] */
 }
 .fs-field-group--help input.fs-field-group__input {
 /* [1] */
