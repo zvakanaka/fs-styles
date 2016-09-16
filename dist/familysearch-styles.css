@@ -1138,6 +1138,8 @@ input.fs-field-group__input ~ .fs-field-group__attachment {
   font-size: 14px;
   font-size: 1rem;
   line-height: 1.625rem;
+  font-weight: bold;
+  color: #4d4d4a;
 }
 .fs-person-vitals__name-full,
 .fs-person-vitals__name-given,
@@ -1359,6 +1361,9 @@ input.fs-field-group__input ~ .fs-field-group__attachment {
   display: table-row;
   text-align: center;
 }
+.fs-person--stacked .fs-person-vitals {
+  padding-top: 10px;
+}
 .fs-person--stacked .fs-person-portrait__portrait {
   margin: 0 auto;
 }
@@ -1366,7 +1371,11 @@ input.fs-field-group__input ~ .fs-field-group__attachment {
   display: none;
 }
 .fs-person--stacked .fs-person-vitals__fs-person-details {
+  margin-top: 5px;
   display: inline-block;
+}
+.fs-person--stacked .fs-person-vitals__name:not(.fs-person-vitals__name--sinotypic) {
+  line-height: 1.5rem;
 }
 .fs-person--stacked .fs-person-vitals__name:not(.fs-person-vitals__name--sinotypic) .fs-person-vitals__name--split {
   display: inline;

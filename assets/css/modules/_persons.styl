@@ -54,6 +54,8 @@
   overflow: ellipsis;
   font-size: pxToRem($font-size-medium);
   line-height: $line-height-medium;
+  font-weight: bold;
+  color: $color-grey;
 }
 
 .fs-person-vitals__name-full,
@@ -743,6 +745,10 @@
       text-align: center;
     }
 
+    .fs-person-vitals {
+      padding-top: 10px;
+    }
+
     .fs-person-portrait__portrait {
       margin: 0 auto;
     }
@@ -752,10 +758,12 @@
     }
 
     .fs-person-vitals__fs-person-details {
+      margin-top: 5px;
       display: inline-block;
     }
 
     .fs-person-vitals__name:not(.fs-person-vitals__name--sinotypic) {
+      line-height: 1.5rem;
 
       .fs-person-vitals__name--split {
         display: inline;
