@@ -1391,6 +1391,14 @@ input.fs-field-group__input ~ .fs-field-group__attachment {
 .fs-person--dark .fs-person-vitals__name {
   color: #fff;
 }
+.fs-person--dark.fs-person-vitals,
+.fs-person--dark .fs-person-vitals {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.fs-person--dark .fs-person-details__container {
+  color: #ecebea;
+}
 .fs-person--dark .fs-person-portrait__portrait {
   background-color: #57585a;
   border-color: #6c6d6f;
