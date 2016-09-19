@@ -1387,7 +1387,8 @@ input.fs-field-group__input ~ .fs-field-group__attachment {
 .fs-person--dark.fs-person-vitals,
 .fs-person--dark .fs-person-vitals,
 .fs-person--dark .fs-person-gender__container,
-.fs-person--dark .fs-person-portrait__container {
+.fs-person--dark .fs-person-portrait__container,
+.fs-person--dark .fs-person-vitals__name {
   color: #fff;
 }
 .fs-person--dark .fs-person-portrait__portrait {
