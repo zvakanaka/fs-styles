@@ -1141,6 +1141,9 @@ input.fs-field-group__input ~ .fs-field-group__attachment {
   font-weight: bold;
   color: #4d4d4a;
 }
+.fs-person-vitals__link {
+  font-weight: normal;
+}
 .fs-person-vitals__name-full,
 .fs-person-vitals__name-given,
 .fs-person-vitals__name-family {
