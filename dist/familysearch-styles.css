@@ -1,7 +1,7 @@
 /*
  * FamilySearch Styles
  * https://github.com/fs-webdev/fs-styles
- * v1.10.0 | MIT
+ * v1.10.2 | MIT
  */
 @-moz-keyframes rotate {
   from {
@@ -1443,7 +1443,6 @@ input.fs-field-group__input ~ .fs-field-group__attachment {
   margin-left: 22px;
 }
 .fs-person--person-card .fs-person-vitals__name {
-  font-family: "museo", serif;
   font-size: 24px;
   font-size: 1.714rem;
   line-height: 1;
