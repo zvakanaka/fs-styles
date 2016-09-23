@@ -50,12 +50,23 @@
  *   </div>
  * </div>
  */
+
+ /*
+  * 1. In CJK languages we shouldn't bold the person name because it makes the characters harder
+  *    to read.
+  */
 .fs-person-vitals__name {
   overflow: ellipsis;
   font-size: pxToRem($font-size-medium);
   line-height: $line-height-medium;
   font-weight: bold;
   color: $color-grey;
+
+  .locale-zh &,
+  .locale-ja &,
+  .locale-ko & {
+    font-weight: normal; /* [1] */
+  }
 }
 
 .fs-person-vitals__link {
