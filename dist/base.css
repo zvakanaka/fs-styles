@@ -1,7 +1,7 @@
 /*
  * FamilySearch Styles
  * https://github.com/fs-webdev/fs-styles
- * v1.10.0 | MIT
+ * v1.10.2 | MIT
  */
 /*
  * FAMILYSEARCH-STYLES (Base)
@@ -50,10 +50,10 @@
 label {
   color: #666662;
   display: block;
-  font-size: 14px;
-  font-size: 0.875rem;
+  font-size: 12px;
+  font-size: 0.857rem;
   font-weight: normal;
-  line-height: 1.286;
+  line-height: 1.35rem;
   margin-bottom: 5px;
   cursor: pointer;
 }
@@ -61,24 +61,19 @@ label > input[type="radio"],
 label > input[type="checkbox"] {
   float: left;
   margin-right: 8px;
-}
-label > input[type="radio"] {
-  margin-top: 1px;
-}
-label > input[type="checkbox"] {
   margin-top: 2px;
 }
 ::-webkit-input-placeholder {
-  font-family: "ProximaNova", sans-serif;
+  font-family: inherit;
 }
 ::-moz-placeholder {
-  font-family: "ProximaNova", sans-serif;
+  font-family: inherit;
 }
 :-ms-input-placeholder {
-  font-family: "ProximaNova", sans-serif;
+  font-family: inherit;
 }
 input {
-  font-family: "ProximaNova", sans-serif;
+  font-family: inherit;
 }
 textarea,
 input[type=text],
@@ -101,15 +96,14 @@ input[type="color"] {
   box-shadow: inset 0 3px 0 rgba(0,0,0,0.05);
   box-sizing: border-box;
   color: #333331;
-  font-family: "ProximaNova", sans-serif;
-  font-size: 16px;
+  font-family: inherit;
+  font-size: 14px;
   font-size: 1rem;
-  height: 30px;
-  height: 1.875rem;
-  line-height: 1.25;
+  height: inherit;
+  line-height: normal; /* [2] */
   margin-bottom: 0;
-  padding: 4px 10px;
-  padding: 0.25rem 0.625rem;
+  padding: 6px 10px;
+  padding: 0.429rem 0.714rem; /* [1] */
   transition: border linear 0.2s;
   width: 100%;
 }
@@ -173,15 +167,15 @@ select {
   background-color: #fff;
   border: 1px solid #ccc;
   color: #333331;
-  font-family: "ProximaNova", sans-serif;
-  font-size: 16px;
+  font-family: inherit;
+  font-size: 14px;
   font-size: 1rem;
   height: 30px;
-  height: 1.875rem;
-  line-height: 1.25;
+  height: 2.143rem;
+  line-height: 1.625rem;
   margin: 0;
   padding: 4px 6px;
-  padding: 0.25rem 0.375rem;
+  padding: 0.286rem 0.429rem;
   width: 100%;
 }
 select:focus {
@@ -192,20 +186,92 @@ input[type="radio"],
 input[type="checkbox"] {
   padding: 0; /* IE9 */
   font-size: 14px;
-  font-size: 0.875rem;
+  font-size: 1rem;
 }
 fieldset {
   padding: 0;
   margin: 0;
   border: 0;
 }
+legend {
+  border: 0;
+  color: #333331;
+  font-size: 14px;
+  font-size: 1rem;
+  line-height: 22.75px;
+  line-height: 1.625rem;
+  margin: 0 0 2px 0;
+}
 html {
+  font-size: 14px;
+}
+html.locale-zh,
+html.locale-ja,
+html.locale-ko {
   font-size: 16px;
+}
+@media screen and (max-width: 767px) {
+  html {
+    font-size: 12px;
+  }
+  html.locale-zh,
+  html.locale-ja,
+  html.locale-ko {
+    font-size: 14px;
+  }
 }
 body {
   color: #333331;
-  font-family: "ProximaNova", sans-serif;
-  font-size: 16px;
+  font-family: Verdana, sans-serif;
+  font-size: 14px;
+  font-size: 1rem;
+  line-height: 22.75px;
+  line-height: 1.625rem;
+}
+.locale-zh body,
+.locale-zh h1,
+.locale-zh h2,
+.locale-zh h3,
+.locale-zh h4,
+.locale-zh h5,
+.locale-zh h6,
+.locale-zh .fs-h1,
+.locale-zh .fs-h2,
+.locale-zh .fs-h3,
+.locale-zh .fs-h4,
+.locale-zh .fs-h5,
+.locale-zh .fs-h6 {
+  font-family: "黑體-繁", "Heiti TC", "华文细黑", "STXihei", "微軟正黑體", "Microsoft JengHei", "中易黑体", "SimHei", sans-serif;
+}
+.locale-ja body,
+.locale-ja h1,
+.locale-ja h2,
+.locale-ja h3,
+.locale-ja h4,
+.locale-ja h5,
+.locale-ja h6,
+.locale-ja .fs-h1,
+.locale-ja .fs-h2,
+.locale-ja .fs-h3,
+.locale-ja .fs-h4,
+.locale-ja .fs-h5,
+.locale-ja .fs-h6 {
+  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "ＭＳ ゴシック", "MS Gothic", sans-serif;
+}
+.locale-ko body,
+.locale-ko h1,
+.locale-ko h2,
+.locale-ko h3,
+.locale-ko h4,
+.locale-ko h5,
+.locale-ko h6,
+.locale-ko .fs-h1,
+.locale-ko .fs-h2,
+.locale-ko .fs-h3,
+.locale-ko .fs-h4,
+.locale-ko .fs-h5,
+.locale-ko .fs-h6 {
+  font-family: "Apple SD Gothic Neo", "애플고딕", "AppleGothic", "맑은 고딕", "Malgun Gothic", "굴림", "Gulim", sans-serif;
 }
 h1,
 h2,
@@ -213,65 +279,58 @@ h3,
 h4 {
   color: #4d4d4a;
   font-family: "museo", serif;
-  letter-spacing: inherit;
-  text-transform: inherit;
-  margin: 0px 0px 10px 0px;
-  margin: 0rem 0rem 0.625rem 0rem;
-}
-h1 {
-  font-size: 48px;
-  font-size: 3rem;
-  line-height: 1.042;
-}
-h1 + p {
-  margin-top: 16px;
-  margin-top: 1rem;
-}
-h2 {
-  font-size: 36px;
-  font-size: 2.25rem;
-  line-height: 1.083;
-}
-h3 {
-  font-size: 28px;
-  font-size: 1.75rem;
-  line-height: 1.143;
-}
-h3 + p {
-  margin-top: 14px;
-  margin-top: 0.875rem;
-}
-h4 {
-  font-size: 21px;
-  font-size: 1.313rem;
-  line-height: 1.143;
-}
-h4 + p {
-  margin-top: 12px;
-  margin-top: 0.75rem;
-}
-h5 {
-  color: #4d4d4a;
-  font-family: "ProximaNova", sans-serif;
-  font-size: 14px;
-  font-size: 0.875rem;
-  font-weight: bold;
-  letter-spacing: 1px;
-  line-height: 1.286;
-  margin: 0px 0px 10px 0px;
-  margin: 0rem 0rem 0.625rem 0rem;
-  text-transform: uppercase;
-}
-h5 + p {
-  margin-top: 12px;
-  margin-top: 0.75rem;
-}
-p {
-  line-height: 1.25;
   margin: 0;
 }
-p + p {
-  margin-top: 26px;
+h1 {
+  font-size: 30px;
+  font-size: 2.143rem;
+  line-height: 35px;
+  line-height: 2.5rem;
+}
+h2 {
+  font-size: 26px;
+  font-size: 1.857rem;
+  line-height: 30.1px;
+  line-height: 2.15rem;
+}
+h3 {
+  font-size: 22px;
+  font-size: 1.571rem;
+  line-height: 27.3px;
+  line-height: 1.95rem;
+  margin: 0 0 2.844px 0;
+  margin: 0 0 0.203125rem 0;
+}
+h4 {
+  font-size: 18px;
+  font-size: 1.286rem;
+  line-height: 22.75px;
+  line-height: 1.625rem;
+}
+h5,
+h6 {
+  color: #4d4d4a;
+  font-family: inherit;
+  font-size: 14px;
+  font-size: 1rem;
+  line-height: 22.75px;
+  line-height: 1.625rem;
+  margin: 0 0 2.844px 0;
+  margin: 0 0 0.203125rem 0;
+}
+.fs-h1--campaign {
+  font-size: 36px;
+  font-size: 2.571rem;
+  line-height: 4.875rem;
+}
+p {
+  font-size: 14px;
+  font-size: 1rem;
+  line-height: 22.75px;
+  line-height: 1.625rem;
+  margin: 0;
+}
+p + * {
   margin-top: 1.625rem;
 }
 a {
@@ -290,24 +349,26 @@ a:visited {
   color: #b3467c;
 }
 button {
-  font-family: "ProximaNova", sans-serif;
+  font-family: inherit;
 }
 small {
-  font-size: 14px;
-  font-size: 0.875rem;
-  line-height: 1.059;
+  font-size: 12px;
+  font-size: 0.857rem;
+  line-height: 18.9px;
+  line-height: 1.35rem;
   color: #666662;
 }
 ol,
 ul,
 li {
-  line-height: 1.25;
+  line-height: 22.75px;
+  line-height: 1.625rem;
   padding: 0;
 }
 ol,
 ul {
-  margin: 0px 0px 10px 25px;
-  margin: 0rem 0rem 0.625rem 1.563rem;
+  margin: 22.75px 22.75px;
+  margin: 0 0  1.625rem 1.625rem;
 }
 li {
   margin: 0;

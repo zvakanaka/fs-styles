@@ -25,9 +25,9 @@
 $screen-mobile-max = 767px;
 
 $screen-tablet-min = 768px;
-$screen-tablet-max = 979px;
+$screen-tablet-max = 991px;
 
-$screen-desktop-min = 980px;
+$screen-desktop-min = 992px;
 $screen-desktop-max = 1199px;
 
 $screen-desktop-hd-min = 1200px;
@@ -38,6 +38,96 @@ $screen-desktop-hd-min = 1200px;
  * @example
  *  @media $break-mobile
  *  //=> @media screen and (max-width: 767px)
+ */
+
+/**
+ * Break Points
+ * @section
+ */
+
+/**
+ * Media Queries
+ *
+ * For consistency, we match Bootstrap 3 break points.
+ *
+ * @section
+ * @sectionof Break Points
+ * @example
+ * <div class="break-point__wrapper">
+ *   <table>
+ *     <thead>
+ *      <tr>
+ *        <th scope="col">Stylus Variable</th>
+ *        <th scope="col">Mobile<br><small>&lt; 768px</small></th>
+ *        <th scope="col">Tablet<br><small>&gt;= 768px</small></th>
+ *        <th scope="col">Desktop<br><small>&gt;= 992px</small></th>
+ *        <th scope="col">Desktop HD<br> <small>&gt;= 1200px</small></th>
+ *      </tr>
+ *     </thead>
+ *     <tbody>
+ *       <tr>
+ *         <th scope="row"><code>&dollar;break-mobile</code></td>
+ *         <td class="break-point__covered">Visible</td>
+ *         <td>Hidden</td>
+ *         <td>Hidden</td>
+ *         <td>Hidden</td>
+ *       </tr>
+ *       <tr class="break-point__group">
+ *         <th scope="row"><code>&dollar;break-tablet-below</code</td>
+ *         <td class="break-point__covered">Visible</td>
+ *         <td class="break-point__covered">Visible</td>
+ *         <td>Hidden</td>
+ *         <td>Hidden</td>
+ *       </tr>
+ *       <tr>
+ *         <th scope="row"><code>&dollar;break-tablet</code></td>
+ *         <td>Hidden</td>
+ *         <td class="break-point__covered">Visible</td>
+ *         <td>Hidden</td>
+ *         <td>Hidden</td>
+ *       </tr>
+ *       <tr>
+ *         <th scope="row"><code>&dollar;break-tablet-above</code></td>
+ *         <td>Hidden</td>
+ *         <td class="break-point__covered">Visible</td>
+ *         <td class="break-point__covered">Visible</td>
+ *         <td class="break-point__covered">Visible</td>
+ *       </tr>
+ *       <tr class="break-point__group">
+ *         <th scope="row"><code>&dollar;break-desktop-below</code></td>
+ *         <td class="break-point__covered">Visible</td>
+ *         <td class="break-point__covered">Visible</td>
+ *         <td class="break-point__covered">Visible</td>
+ *         <td>Hidden</td>
+ *       </tr>
+ *       <tr>
+ *         <th scope="row"><code>&dollar;break-desktop</td>
+ *         <td>Hidden</td>
+ *         <td>Hidden</td>
+ *         <td class="break-point__covered">Visible</td>
+ *         <td>Hidden</td>
+ *       </tr>
+ *       <tr>
+ *         <th scope="row"><code>&dollar;break-desktop-above</code></td>
+ *         <td>Hidden</td>
+ *         <td>Hidden</td>
+ *         <td class="break-point__covered">Visible</td>
+ *         <td class="break-point__covered">Visible</td>
+ *       </tr>
+ *       <tr class="break-point__group">
+ *         <th scope="row"><code>&dollar;break-desktop-hd</code></td>
+ *         <td>Hidden</td>
+ *         <td>Hidden</td>
+ *         <td>Hidden</td>
+ *         <td class="break-point__covered">Visible</td>
+ *       </tr>
+ *    </tbody>
+ *   </table>
+ * </div>
+ *
+ * @code {stylus} @media $break-tablet {
+ *   body { width: 600px; }
+ * }
  */
 $break-mobile = "screen and (max-width:" + $screen-mobile-max  + ")";
 
@@ -84,19 +174,19 @@ $break-desktop-hd = "screen and (min-width:" + $screen-desktop-hd-min +")";
  * Do not use any other colors for the logo.
  *
  * @section
- * @subsectionof Colors
+ * @sectionof Colors
  */
 
 /**
  * Full Color Logo
  * @section
- * @subsectionof Logo Colors
+ * @sectionof Colors.Logo Colors
  */
 
  /**
  * Single Color Logos
  * @section
- * @subsectionof Logo Colors
+ * @sectionof Colors.Logo Colors
  */
 
 /**
@@ -104,8 +194,8 @@ $break-desktop-hd = "screen and (min-width:" + $screen-desktop-hd-min +")";
  * @color {hex} #87b940
  * @color {rgb} 135,185,64
  * @color {cmyk} 53,7,100,0
- * @colorof Full Color Logo
- * @colorof Single Color Logos
+ * @colorof Colors.Logo Colors.Full Color Logo
+ * @colorof Colors.Logo Colors.Single Color Logos
  */
 $color-green-primary = #87b940;
 
@@ -114,7 +204,7 @@ $color-green-primary = #87b940;
  * @color {hex} #bab7b1
  * @color {rgb} 186,183,177
  * @color {cmyk} 28,23,27,0
- * @colorof Full Color Logo
+ * @colorof Colors.Logo Colors.Full Color Logo
  */
 $color-grey-primary = #bab7b1;
 
@@ -123,7 +213,7 @@ $color-grey-primary = #bab7b1;
  * @color {hex} #9c947a
  * @color {rgb} 156,148,122
  * @color {cmyk} 40,35,54,4
- * @colorof Full Color Logo
+ * @colorof Colors.Logo Colors.Full Color Logo
  */
 $color-brown-primary = #9c947a;
 
@@ -132,7 +222,7 @@ $color-brown-primary = #9c947a;
  * @color {hex} #000000
  * @color {rgb} 0,0,0
  * @color {cmyk} 75,68,67,90
- * @colorof Single Color Logos
+ * @colorof Colors.Logo Colors.Single Color Logos
  */
 $color-black = #000000;
 
@@ -141,7 +231,7 @@ $color-black = #000000;
  * @color {hex} #ffffff
  * @color {rgb} 255,255,255
  * @color {cmyk} 0,0,0,0
- * @colorof Single Color Logos
+ * @colorof Colors.Logo Colors.Single Color Logos
  */
 $color-white = #ffffff;
 
@@ -162,7 +252,7 @@ $color-white = #ffffff;
  * Avoid darkening the value of the color by adjusting the amount of black added to it.
  *
  * @section
- * @subsectionof Colors
+ * @sectionof Colors
  */
 
 /**
@@ -170,7 +260,7 @@ $color-white = #ffffff;
  * @color {hex} #f16458
  * @color {rgb} 241,100,88
  * @color {cmyk} 0,76,64,0
- * @colorof Accent Colors
+ * @colorof Colors.Accent Colors
  */
 $color-red-accent = #f16458;
 
@@ -179,7 +269,7 @@ $color-red-accent = #f16458;
  * @color {hex} #27c4f4
  * @color {rgb} 39,196,244
  * @color {cmyk} 64,0,0,0
- * @colorof Accent Colors
+ * @colorof Colors.Accent Colors
  */
 $color-blue-accent = #27c4f4;
 
@@ -188,7 +278,7 @@ $color-blue-accent = #27c4f4;
  * @color {hex} #fcb34b
  * @color {rgb} 252,179,75
  * @color {cmyk} 0,34,80,0
- * @colorof Accent Colors
+ * @colorof Colors.Accent Colors
  */
 $color-orange-accent = #fcb34b;
 
@@ -197,7 +287,7 @@ $color-orange-accent = #fcb34b;
  * @color {hex} #bfd730
  * @color {rgb} 191,215,48
  * @color {cmyk} 30,0,100,0
- * @colorof Accent Colors
+ * @colorof Colors.Accent Colors
  */
 $color-green-accent = #bfd730;
 
@@ -206,7 +296,7 @@ $color-green-accent = #bfd730;
  * @color {hex} #996799
  * @color {rgb} 153,103,153
  * @color {cmyk} 36,70,11,0
- * @colorof Accent Colors
+ * @colorof Colors.Accent Colors
  */
 $color-purple-accent = #996799;
 
@@ -215,7 +305,7 @@ $color-purple-accent = #996799;
  * @color {hex} #9c947a
  * @color {rgb} 156,148,122
  * @color {cmyk} 40,35,54,4
- * @colorof Accent Colors
+ * @colorof Colors.Accent Colors
  */
 $color-brown-accent = #9c947a;
 
@@ -223,7 +313,7 @@ $color-brown-accent = #9c947a;
  * Adjusting the Value
  *
  * @section
- * @subsectionof Accent Colors
+ * @sectionof Colors.Accent Colors
  *
  * @example
  * <div class="row-fluid">
@@ -246,7 +336,7 @@ $color-brown-accent = #9c947a;
  * Do not use other colors for text.
  *
  * @section
- * @subsectionof Colors
+ * @sectionof Colors
  */
 
 /**
@@ -256,7 +346,7 @@ $color-brown-accent = #9c947a;
  * @color {hex} #333331
  * @color {rgb} 51,51,49
  * @color {cmyk} 64,57,59,38
- * @colorof Text Colors
+ * @colorof Colors.Text Colors
  */
 $color-grey-body = #333331;
 
@@ -267,7 +357,7 @@ $color-grey-body = #333331;
  * @color {hex} #4d4d4a
  * @color {rgb} 77,77,74
  * @color {cmyk} 61,51,53,49
- * @colorof Text Colors
+ * @colorof Colors.Text Colors
  */
 $color-grey = #4d4d4a;
 
@@ -278,7 +368,7 @@ $color-grey = #4d4d4a;
  * @color {hex} #666662
  * @color {rgb} 102,102,98
  * @color {cmyk} 55,44,48,34
- * @colorof Text Colors
+ * @colorof Colors.Text Colors
  */
 $color-grey-light = #666662;
 
@@ -286,7 +376,7 @@ $color-grey-light = #666662;
  * Background Colors
  *
  * @section
- * @subsectionof Colors
+ * @sectionof Colors
  */
 
 /**
@@ -294,7 +384,7 @@ $color-grey-light = #666662;
  * @color {hex} #333331
  * @color {rgb} 51,51,49
  * @color {cmyk} 64,57,59,38
- * @colorof Background Colors
+ * @colorof Colors.Background Colors
  */
 
 /**
@@ -302,7 +392,7 @@ $color-grey-light = #666662;
  * @color {hex} #4d4d4a
  * @color {rgb} 77,77,74
  * @color {cmyk} 61,51,53,49
- * @colorof Background Colors
+ * @colorof Colors.Background Colors
  */
 
 /**
@@ -310,7 +400,7 @@ $color-grey-light = #666662;
  * @color {hex} #666662
  * @color {rgb} 102,102,98
  * @color {cmyk} 55,44,48,34
- * @colorof Background Colors
+ * @colorof Colors.Background Colors
  */
 
 /**
@@ -318,7 +408,7 @@ $color-grey-light = #666662;
  * @color {hex} #ecebea
  * @color {rgb} 236,235,234
  * @color {cmyk} 0,42,85,74
- * @colorof Background Colors
+ * @colorof Colors.Background Colors
  */
 $color-grey-background = #ecebea;
 
@@ -327,7 +417,7 @@ $color-grey-background = #ecebea;
  * @color {hex} #f4f4f4
  * @color {rgb} 244,244,244
  * @color {cmyk} 0,0,0,43
- * @colorof Background Colors
+ * @colorof Colors.Background Colors
  */
 $color-grey-background-light = #f4f4f4;
 
@@ -336,24 +426,24 @@ $color-grey-background-light = #f4f4f4;
  *
  * ##### Acceptable Use
  *
- * The blue and pink gender colors should only be used to represent gender.
+ * The male and female gender colors should only be used to represent gender.
  *
  * Use the Light Gender Colors when on dark backgrounds.
  *
  * @section
- * @subsectionof Colors
+ * @sectionof Colors
  */
 
 /**
  * Gender Colors
  * @section
- * @subsectionof Other Colors
+ * @sectionof Colors.Other Colors
  */
 
  /**
  * Light Gender Colors
  * @section
- * @subsectionof Other Colors
+ * @sectionof Colors.Other Colors
  */
 
 /**
@@ -363,7 +453,7 @@ $color-grey-background-light = #f4f4f4;
  * @color {hex} #3d8ff7
  * @color {rgb} 601,143,247
  * @color {cmyk} 75,42,0,3
- * @colorof Gender Colors
+ * @colorof Colors.Other Colors.Gender Colors
  */
 $color-blue-gender = #3d8ff7;
 
@@ -372,7 +462,7 @@ $color-blue-gender = #3d8ff7;
  * @color {hex} #99c4fe
  * @color {rgb} 153,196,254
  * @color {cmyk} 40,23,0,0
- * @colorof Light Gender Colors
+ * @colorof Colors.Other Colors.Light Gender Colors
  */
 $color-blue-gender-light = #99c4fe;
 
@@ -383,7 +473,7 @@ $color-blue-gender-light = #99c4fe;
  * @color {hex} #e23f7b
  * @color {rgb} 226,63,123
  * @color {cmyk} 0,72,46,11
- * @colorof Gender Colors
+ * @colorof Colors.Other Colors.Gender Colors
  */
 $color-pink-gender = #e23f7b;
 
@@ -392,7 +482,7 @@ $color-pink-gender = #e23f7b;
  * @color {hex} #f48eb6
  * @color {rgb} 244,142,182
  * @color {cmyk} 0,42,25,04
- * @colorof Light Gender Colors
+ * @colorof Colors.Other Colors.Light Gender Colors
  */
 $color-pink-gender-light = #f48eb6;
 
@@ -403,14 +493,14 @@ $color-pink-gender-light = #f48eb6;
  * @color {hex} #666662
  * @color {rgb} 102,102,98
  * @color {cmyk} 55,44,48,34
- * @colorof Gender Colors
+ * @colorof Colors.Other Colors.Gender Colors
  */
 
 
 /**
  * Border Color
  * @section
- * @subsectionof Other Colors
+ * @sectionof Colors.Other Colors
  */
 
 /**
@@ -418,7 +508,7 @@ $color-pink-gender-light = #f48eb6;
  * @color {hex} #cccccc
  * @color {rgb} 204,204,204
  * @color {cmyk} 0,0,0,2
- * @colorof Border Color
+ * @colorof Colors.Other Colors.Border Color
  */
 $color-grey-border = #cccccc;
 
@@ -427,28 +517,55 @@ $color-grey-border = #cccccc;
   $FONTS
 \*------------------------------------*/
 // font families
-$font-face-body = "ProximaNova", sans-serif;
+$font-face-body = Verdana, sans-serif;
 $font-face-heading = "museo", serif;
 
 // responsive typography settings
-$base-font-size = 16;
-$base-line-height = 20;
+$base-font-size = 14;
+$baseline-grid = 1.625;  // 1.625rem multiples = 26px baseline grid
 
-// font sizes
-$font-size-small = 14px;
+/*
+  modular font scale (using golden ratios)
+  16 = base font size
+  scale = 1.625 (close enough to 1.618 but provides more even numbers)
+
+  We'll use a triple-stranded scale (3 different modular scales to fill in the
+  gaps of the others)
+
+  - 18@1:1.625 -
+  18 * 1.625 = 29.25 = 30px
+
+  - 16@1:1.625 -
+  16 * 1.625 = 26 = 26px
+
+  - 14@1:1.625 -
+  14 * 1.625 = 22.75 = 22px
+  22.652 * 1.625 = 36.96875 = 36px
+
+  12px - small
+  14px - body, H5, H6
+  18px - H4
+  22px - H3
+  26px - H2
+  30px - H1
+  36px - Campaign Heading
+*/
+$font-size-small = 12px;
 $font-size-medium = unit($base-font-size, 'px');
-$font-size-large = 21px;
-$font-size-large-x = 28px;
-$font-size-large-xx = 36px;
-$font-size-large-xxx = 48px;
+$font-size-large = 18px;
+$font-size-large-x = 22px;
+$font-size-large-xx = 26px;
+$font-size-large-xxx = 30px;
+$font-size-large-xxxx = 36px;
 
 // line heights
-$line-height-small = 18px;
-$line-height-medium = 20px;
-$line-height-large = 24px;
-$line-height-large-x = 32px;
-$line-height-large-xx = 39px;
-$line-height-large-xxx = 50px;
+$line-height-small = 1.35rem;
+$line-height-medium = unit($baseline-grid, 'rem');
+$line-height-large = unit($baseline-grid, 'rem');
+$line-height-large-x = 1.95rem;
+$line-height-large-xx = 2.15rem;
+$line-height-large-xxx = 2.5rem;
+$line-height-large-xxxx = 2.875rem;
 
 
 

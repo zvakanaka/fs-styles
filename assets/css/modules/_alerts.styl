@@ -42,7 +42,7 @@
  * popover instead.
  *
  * @section
- * @subsectionof Alerts
+ * @sectionof Alerts
  *
  * @example
  * <small class="example__title">Success</small>
@@ -76,12 +76,14 @@
 
   &:before {
     @extends $icon-check;
-    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 20px;
     content: '';
-    height: pxToRem(20px);
+    height: remToPx($baseline-grid);
     left: 7px;
     position: absolute;
-    width: pxToRem(20px);
+    width: remToPx($baseline-grid);
   }
 
   &__title {
@@ -160,7 +162,7 @@
  * absolutely necessary.
  *
  * @section
- * @subsectionof Alerts
+ * @sectionof Alerts
  *
  * @example
  * <div class="fs-alert">
@@ -178,7 +180,7 @@
   background-repeat: no-repeat;
   border: none;
   box-shadow: 0 0 0 transparent;
-  height: pxToRem(20px);
+  height: remToPx($baseline-grid);
   line-height: 1;
   opacity: .5;
   padding: 0;
@@ -186,7 +188,7 @@
   right: pxToRem(10px);
   top: pxToRem(10px);
   user-select: none;
-  width: pxToRem(20px);
+  width: remToPx($baseline-grid);
 
   &:hover,
   &:focus {
@@ -212,7 +214,7 @@
  * glance of what the alert is about.
  *
  * @section
- * @subsectionof Alerts
+ * @sectionof Alerts
  *
  * @example
  * <small class="example__title">Heading title</small>

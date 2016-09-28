@@ -1,3 +1,9 @@
+/**
+ * Subnav
+ * @section
+ */
+
+
 /*------------------------------------*\
   $CONTENTS
 \*------------------------------------*/
@@ -15,6 +21,50 @@
 /*------------------------------------*\
   $SUBNAV
 \*------------------------------------*/
+/**
+ * Types
+ *
+ * @section
+ * @sectionof Subnav
+ *
+ * @example
+ * <div class="fs-subnav__container">
+ *   <nav class="fs-subnav">
+ *     <a href="javascript:void(0);" class="fs-subnav__item">Link 1</a>
+ *     <a href="javascript:void(0);" class="fs-subnav__item fs-subnav__item--active">Link 2</a>
+ *     <a href="javascript:void(0);" class="fs-subnav__item">Link 3</a>
+ *     <a href="javascript:void(0);" class="fs-subnav__item">Link 4</a>
+ *   </nav>
+ * </div>
+ *
+ * <small class="example__title">With split link</small>
+ * <div class="fs-subnav__container">
+ *   <nav class="fs-subnav">
+ *     <a href="javascript:void(0);" class="fs-subnav__item">Link 1</a>
+ *     <a href="javascript:void(0);" class="fs-subnav__item fs-subnav__item--active">Link 2</a>
+ *     <div class="fs-subnav__item--split">
+ *       <a href="javascript:void(0);" class="fs-subnav__item">Person</a>
+ *       <button href="modules" class="fs-subnav__item">▾</button>
+ *     </div>
+ *     <a href="javascript:void(0);" class="fs-subnav__item">Link 4</a>
+ *   </nav>
+ * </div>
+ *
+ * <small class="example__title">With secondary link</small>
+ * <div class="fs-subnav__container">
+ *   <nav class="fs-subnav">
+ *     <a href="javascript:void(0);" class="fs-subnav__item">Link 1</a>
+ *     <a href="javascript:void(0);" class="fs-subnav__item fs-subnav__item--active">Link 2</a>
+ *     <a href="javascript:void(0);" class="fs-subnav__item">Link 3</a>
+ *     <a href="javascript:void(0);" class="fs-subnav__item">Link 4</a>
+ *     <div class="fs-subnav--secondary">
+ *       <a href="javascript:void(0);" class="fs-subnav__item">Link 5</a>
+ *     </div>
+ *   </nav>
+ * </div>
+ */
+
+
 /*
  * 1. Subnav should have a fixed height of 35px.
  * 2. Leftmost and rightmost links should be flush with the grid.
@@ -29,7 +79,7 @@
     max-width: $screen-desktop-hd-min;
   }
 
-  &-container {
+  &__container {
     background: #fff;
     border-bottom: 1px solid rgba(151,151,151,0.8);
     position: relative;
@@ -68,7 +118,7 @@
     color: $color-grey-light;
     display: inline-block;
     font-size: pxToRem($font-size-small);
-    line-height: calcLineHeight($line-height-small, $font-size-small);
+    line-height: $line-height-small;
     margin-right: 1px;
     padding: 4px 10px;
     vertical-align: middle;
@@ -98,7 +148,7 @@
       vertical-align: middle;
 
       &:hover .fs-subnav__item {
-        background: #e1edc1;
+        background: #f1f8e3;
       }
 
       .fs-subnav__item {
@@ -116,7 +166,7 @@
         }
 
         &:hover {
-          background: #f1f8e3;
+          background: #e1edc1;
         }
       }
     }

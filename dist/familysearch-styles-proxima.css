@@ -1,7 +1,7 @@
 /*
  * FamilySearch Styles
  * https://github.com/fs-webdev/fs-styles
- * v1.10.2 | MIT
+ * v1.10.0 | MIT
  */
 @-moz-keyframes rotate {
   from {
@@ -157,8 +157,8 @@
   box-sizing: border-box;
   color: #fff;
   display: inline-block;
-  font-size: 12px;
-  font-size: 0.857rem;
+  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: normal;
   line-height: 1;
   margin: 0 4px;
@@ -172,8 +172,6 @@
 }
 .fs-button {
   -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
   -webkit-touch-callout: none;
   background-color: #f5f4f1;
   border-radius: 4px;
@@ -181,12 +179,12 @@
   color: #333331;
   cursor: pointer;
   display: inline-block;
-  font-size: 14px;
+  font-size: 16px;
   font-size: 1rem;
   font-weight: normal;
   line-height: 1;
   padding: 8.5px 20px;
-  padding: 0.607rem 1.429rem; /* [1] */
+  padding: 0.531rem 1.25rem; /* [1] */
   position: relative;
   text-decoration: none;
   transition: padding 0.2s;
@@ -196,23 +194,26 @@
   user-select: none;
   vertical-align: middle;
   white-space: nowrap;
-/*------------------------------------*    $RECOMMENDED_BUTTON
+/*------------------------------------*
+    $RECOMMENDED_BUTTON
   \*------------------------------------*/
-/*------------------------------------*    $MINOR_BUTTON
+/*------------------------------------*
+    $MINOR_BUTTON
   \*------------------------------------*/
-/*------------------------------------*    $DESTRUCTIVE_BUTTON
-  \*------------------------------------*/
-/*------------------------------------*    $LARGE_BUTTON
+/*------------------------------------*
+    $LARGE_BUTTON
   \*------------------------------------*/
 /*
    * 1. Large button height should be 50px
    */
-/*------------------------------------*    $SMALL_BUTTON
+/*------------------------------------*
+    $SMALL_BUTTON
   \*------------------------------------*/
 /*
    * 1. Small button height should be 30px
    */
-/*------------------------------------*    $LOADING_ANIMATION
+/*------------------------------------*
+    $LOADING_ANIMATION
   \*------------------------------------*/
 /**
    * Animations
@@ -225,7 +226,7 @@
    * Disable the button while the <code>fs-button--loading</code> class is active.
    *
    * @section
-   * @sectionof Buttons
+   * @subsectionof Buttons
    *
    * @example
    * <div class="row-fluid">
@@ -264,10 +265,6 @@
   background-color: #f5f4f1;
   border: 1px solid #cbc6b9;
   color: rgba(51,51,49,0.3);
-}
-.fs-button:focus {
-  outline: auto 2px Highlight;
-  outline: auto 5px -webkit-focus-ring-color;
 }
 .fs-button:focus,
 .fs-button:visited {
@@ -321,35 +318,14 @@
 .fs-button--minor:visited {
   color: #0060d7; /* [2] */
 }
-.fs-button--destructive {
-  background-color: #cc3227;
-  border: 1px solid #c23025;
-  color: #fff;
-}
-.fs-button--destructive:hover {
-/* [3] */
-  background: #e64034;
-  color: #fff;
-}
-.fs-button--destructive:active {
-  background-color: #af180d;
-}
-.fs-button--destructive:focus,
-.fs-button--destructive:visited {
-  color: #fff; /* [2] */
-}
-.fs-button--destructive:disabled:hover,
-.fs-button--destructive.disabled:hover {
-  color: rgba(51,51,49,0.3);
-}
 .fs-button--large {
   border-radius: 5px;
   padding: 16px 20px;
-  padding: 1.143rem 1.429rem; /* [1] */
+  padding: 1rem 1.25rem; /* [1] */
 }
 .fs-button--small {
   padding: 6px 20px;
-  padding: 0.429rem 1.429rem; /* [1] */
+  padding: 0.375rem 1.25rem; /* [1] */
 }
 .fs-button--small.is-loading {
   padding-right: 42px;
@@ -374,10 +350,10 @@
 label {
   color: #666662;
   display: block;
-  font-size: 12px;
-  font-size: 0.857rem;
+  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: normal;
-  line-height: 1.35rem;
+  line-height: 1.286;
   margin-bottom: 5px;
   cursor: pointer;
 }
@@ -385,19 +361,24 @@ label > input[type="radio"],
 label > input[type="checkbox"] {
   float: left;
   margin-right: 8px;
+}
+label > input[type="radio"] {
+  margin-top: 1px;
+}
+label > input[type="checkbox"] {
   margin-top: 2px;
 }
 ::-webkit-input-placeholder {
-  font-family: inherit;
+  font-family: "ProximaNova", sans-serif;
 }
 ::-moz-placeholder {
-  font-family: inherit;
+  font-family: "ProximaNova", sans-serif;
 }
 :-ms-input-placeholder {
-  font-family: inherit;
+  font-family: "ProximaNova", sans-serif;
 }
 input {
-  font-family: inherit;
+  font-family: "ProximaNova", sans-serif;
 }
 textarea,
 input[type=text],
@@ -420,14 +401,15 @@ input[type="color"] {
   box-shadow: inset 0 3px 0 rgba(0,0,0,0.05);
   box-sizing: border-box;
   color: #333331;
-  font-family: inherit;
-  font-size: 14px;
+  font-family: "ProximaNova", sans-serif;
+  font-size: 16px;
   font-size: 1rem;
-  height: inherit;
-  line-height: normal; /* [2] */
+  height: 30px;
+  height: 1.875rem;
+  line-height: 1.25;
   margin-bottom: 0;
-  padding: 6px 10px;
-  padding: 0.429rem 0.714rem; /* [1] */
+  padding: 4px 10px;
+  padding: 0.25rem 0.625rem;
   transition: border linear 0.2s;
   width: 100%;
 }
@@ -491,15 +473,15 @@ select {
   background-color: #fff;
   border: 1px solid #ccc;
   color: #333331;
-  font-family: inherit;
-  font-size: 14px;
+  font-family: "ProximaNova", sans-serif;
+  font-size: 16px;
   font-size: 1rem;
   height: 30px;
-  height: 2.143rem;
-  line-height: 1.625rem;
+  height: 1.875rem;
+  line-height: 1.25;
   margin: 0;
   padding: 4px 6px;
-  padding: 0.286rem 0.429rem;
+  padding: 0.25rem 0.375rem;
   width: 100%;
 }
 select:focus {
@@ -510,21 +492,12 @@ input[type="radio"],
 input[type="checkbox"] {
   padding: 0; /* IE9 */
   font-size: 14px;
-  font-size: 1rem;
+  font-size: 0.875rem;
 }
 fieldset {
   padding: 0;
   margin: 0;
   border: 0;
-}
-legend {
-  border: 0;
-  color: #333331;
-  font-size: 14px;
-  font-size: 1rem;
-  line-height: 22.75px;
-  line-height: 1.625rem;
-  margin: 0 0 2px 0;
 }
 .fs-icon,
 .fs-icon-before:before,
@@ -546,9 +519,9 @@ legend {
 .fs-icon-after:after {
 /* [1] */
   height: 20px;
-  height: 1.429rem;
+  height: 1.25rem;
   width: 20px;
-  width: 1.429rem;
+  width: 1.25rem;
 }
 .fs-icon-before:before,
 .fs-icon-after:after {
@@ -558,38 +531,38 @@ legend {
 }
 .fs-icon-before:before {
   margin-right: 6px;
-  margin-right: 0.429rem;
+  margin-right: 0.375rem;
 }
 .fs-icon-after:after {
   margin-left: 6px;
-  margin-left: 0.429rem;
+  margin-left: 0.375rem;
 }
 .fs-icon[class*=fs-icon-small-],
 .fs-icon-before[class*=fs-icon-small-]:before,
 .fs-icon-after[class*=fs-icon-small-]:after {
 /* [1] */
   height: 8px;
-  height: 0.571rem;
+  height: 0.5rem;
   width: 8px;
-  width: 0.571rem;
+  width: 0.5rem;
 }
 .fs-icon[class*=fs-icon-medium-],
 .fs-icon-before[class*=fs-icon-medium-]:before,
 .fs-icon-after[class*=fs-icon-medium-]:after {
 /* [2] */
   height: 22px;
-  height: 1.571rem;
+  height: 1.375rem;
   width: 22px;
-  width: 1.571rem;
+  width: 1.375rem;
 }
 .fs-icon[class*=fs-icon-large-],
 .fs-icon-before[class*=fs-icon-large-]:before,
 .fs-icon-after[class*=fs-icon-large-]:after {
 /* [3] */
   height: 66px;
-  height: 4.714rem;
+  height: 4.125rem;
   width: 66px;
-  width: 4.714rem;
+  width: 4.125rem;
 }
 .fs-tooltip {
   display: inline-block;
@@ -686,75 +659,12 @@ legend {
   left: -7px;
 }
 html {
-  font-size: 14px;
-}
-html.locale-zh,
-html.locale-ja,
-html.locale-ko {
   font-size: 16px;
-}
-@media screen and (max-width: 767px) {
-  html {
-    font-size: 12px;
-  }
-  html.locale-zh,
-  html.locale-ja,
-  html.locale-ko {
-    font-size: 14px;
-  }
 }
 body {
   color: #333331;
-  font-family: Verdana, sans-serif;
-  font-size: 14px;
-  font-size: 1rem;
-  line-height: 22.75px;
-  line-height: 1.625rem;
-}
-.locale-zh body,
-.locale-zh h1,
-.locale-zh h2,
-.locale-zh h3,
-.locale-zh h4,
-.locale-zh h5,
-.locale-zh h6,
-.locale-zh .fs-h1,
-.locale-zh .fs-h2,
-.locale-zh .fs-h3,
-.locale-zh .fs-h4,
-.locale-zh .fs-h5,
-.locale-zh .fs-h6 {
-  font-family: "黑體-繁", "Heiti TC", "华文细黑", "STXihei", "微軟正黑體", "Microsoft JengHei", "中易黑体", "SimHei", sans-serif;
-}
-.locale-ja body,
-.locale-ja h1,
-.locale-ja h2,
-.locale-ja h3,
-.locale-ja h4,
-.locale-ja h5,
-.locale-ja h6,
-.locale-ja .fs-h1,
-.locale-ja .fs-h2,
-.locale-ja .fs-h3,
-.locale-ja .fs-h4,
-.locale-ja .fs-h5,
-.locale-ja .fs-h6 {
-  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "ＭＳ ゴシック", "MS Gothic", sans-serif;
-}
-.locale-ko body,
-.locale-ko h1,
-.locale-ko h2,
-.locale-ko h3,
-.locale-ko h4,
-.locale-ko h5,
-.locale-ko h6,
-.locale-ko .fs-h1,
-.locale-ko .fs-h2,
-.locale-ko .fs-h3,
-.locale-ko .fs-h4,
-.locale-ko .fs-h5,
-.locale-ko .fs-h6 {
-  font-family: "Apple SD Gothic Neo", "애플고딕", "AppleGothic", "맑은 고딕", "Malgun Gothic", "굴림", "Gulim", sans-serif;
+  font-family: "ProximaNova", sans-serif;
+  font-size: 16px;
 }
 h1,
 h2,
@@ -766,65 +676,76 @@ h4,
 .fs-h4 {
   color: #4d4d4a;
   font-family: "museo", serif;
-  margin: 0;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  margin: 0px 0px 10px 0px;
+  margin: 0rem 0rem 0.625rem 0rem;
 }
 h1,
 .fs-h1 {
-  font-size: 30px;
-  font-size: 2.143rem;
-  line-height: 35px;
-  line-height: 2.5rem;
+  font-size: 48px;
+  font-size: 3rem;
+  line-height: 1.042;
+}
+h1 + p,
+.fs-h1 + p {
+  margin-top: 16px;
+  margin-top: 1rem;
 }
 h2,
 .fs-h2 {
-  font-size: 26px;
-  font-size: 1.857rem;
-  line-height: 30.1px;
-  line-height: 2.15rem;
+  font-size: 36px;
+  font-size: 2.25rem;
+  line-height: 1.083;
 }
 h3,
 .fs-h3 {
-  font-size: 22px;
-  font-size: 1.571rem;
-  line-height: 27.3px;
-  line-height: 1.95rem;
-  margin: 0 0 2.844px 0;
-  margin: 0 0 0.203125rem 0;
+  font-size: 28px;
+  font-size: 1.75rem;
+  line-height: 1.143;
+}
+h3 + p,
+.fs-h3 + p {
+  margin-top: 14px;
+  margin-top: 0.875rem;
 }
 h4,
 .fs-h4 {
-  font-size: 18px;
-  font-size: 1.286rem;
-  line-height: 22.75px;
-  line-height: 1.625rem;
+  font-size: 21px;
+  font-size: 1.313rem;
+  line-height: 1.143;
+}
+h4 + p,
+.fs-h4 + p {
+  margin-top: 12px;
+  margin-top: 0.75rem;
 }
 h5,
-h6,
 .fs-h5,
-.fs-h6,
 .fs-card__title {
   color: #4d4d4a;
-  font-family: inherit;
+  font-family: "ProximaNova", sans-serif;
   font-size: 14px;
-  font-size: 1rem;
-  line-height: 22.75px;
-  line-height: 1.625rem;
-  margin: 0 0 2.844px 0;
-  margin: 0 0 0.203125rem 0;
+  font-size: 0.875rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  line-height: 1.286;
+  margin: 0px 0px 10px 0px;
+  margin: 0rem 0rem 0.625rem 0rem;
+  text-transform: uppercase;
 }
-.fs-h1--campaign {
-  font-size: 36px;
-  font-size: 2.571rem;
-  line-height: 4.875rem;
+h5 + p,
+.fs-h5 + p,
+.fs-card__title + p {
+  margin-top: 12px;
+  margin-top: 0.75rem;
 }
 p {
-  font-size: 14px;
-  font-size: 1rem;
-  line-height: 22.75px;
-  line-height: 1.625rem;
+  line-height: 1.25;
   margin: 0;
 }
-p + * {
+p + p {
+  margin-top: 26px;
   margin-top: 1.625rem;
 }
 a,
@@ -846,26 +767,24 @@ a:visited {
   color: #b3467c;
 }
 button {
-  font-family: inherit;
+  font-family: "ProximaNova", sans-serif;
 }
 small {
-  font-size: 12px;
-  font-size: 0.857rem;
-  line-height: 18.9px;
-  line-height: 1.35rem;
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 1.059;
   color: #666662;
 }
 ol,
 ul,
 li {
-  line-height: 22.75px;
-  line-height: 1.625rem;
+  line-height: 1.25;
   padding: 0;
 }
 ol,
 ul {
-  margin: 22.75px 22.75px;
-  margin: 0 0  1.625rem 1.625rem;
+  margin: 0px 0px 10px 25px;
+  margin: 0rem 0rem 0.625rem 1.563rem;
 }
 li {
   margin: 0;
@@ -877,26 +796,27 @@ li {
   color: #44650f;
   display: block;
   padding: 10px 40px 10px 34px;
-  padding: 0.714rem 2.857rem 0.714rem 2.429rem;
+  padding: 0.625rem 2.5rem 0.625rem 2.125rem;
   position: relative;
-/*------------------------------------*    $INFO
+/*------------------------------------*
+    $INFO
   \*------------------------------------*/
-/*------------------------------------*    $WARNING
+/*------------------------------------*
+    $WARNING
   \*------------------------------------*/
-/*------------------------------------*    $ERROR
+/*------------------------------------*
+    $ERROR
   \*------------------------------------*/
 }
 .fs-alert:before {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 20px;
+  background-size: 100%;
   content: '';
-  height: 22.75px;
-  height: 1.625rem;
+  height: 20px;
+  height: 1.25rem;
   left: 7px;
   position: absolute;
-  width: 22.75px;
-  width: 1.625rem;
+  width: 20px;
+  width: 1.25rem;
 }
 .fs-alert__title {
   color: inherit;
@@ -927,22 +847,22 @@ li {
   background-repeat: no-repeat;
   border: none;
   box-shadow: 0 0 0 transparent;
-  height: 22.75px;
-  height: 1.625rem;
+  height: 20px;
+  height: 1.25rem;
   line-height: 1;
   opacity: 0.5;
   padding: 0;
   position: absolute;
   right: 10px;
-  right: 0.714rem;
+  right: 0.625rem;
   top: 10px;
-  top: 0.714rem;
+  top: 0.625rem;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  width: 22.75px;
-  width: 1.625rem;
+  width: 20px;
+  width: 1.25rem;
 }
 .fs-dialog__close:hover,
 .fs-dialog__close:focus {
@@ -955,7 +875,7 @@ li {
   background: #fff;
   border-radius: 4px;
   box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.35), 0px 3px 2px 0px rgba(0,0,0,0.18);
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 .fs-card__title {
   border-radius: 4px 4px 0 0;
@@ -969,13 +889,17 @@ li {
 .fs-field-group {
   display: table;
   width: 100%;
-/*------------------------------------*    $FIELD_INPUT
+/*------------------------------------*
+    $FIELD_INPUT
   \*------------------------------------*/
-/*------------------------------------*    $FIELD_ATTACHMENT
+/*------------------------------------*
+    $FIELD_ATTACHMENT
   \*------------------------------------*/
-/*------------------------------------*    $FIELD_BUTTON
+/*------------------------------------*
+    $FIELD_BUTTON
   \*------------------------------------*/
-/*------------------------------------*    $FIELD_HELP
+/*------------------------------------*
+    $FIELD_HELP
   \*------------------------------------*/
 }
 input.fs-field-group__input {
@@ -1033,7 +957,6 @@ input.fs-field-group__input ~ .fs-field-group__attachment {
 }
 .fs-field-group__button .fs-button {
   border-radius: 0;
-  line-height: normal; /* [2] */
 }
 .fs-field-group--help input.fs-field-group__input {
 /* [1] */
@@ -1050,9 +973,11 @@ input.fs-field-group__input ~ .fs-field-group__attachment {
   margin: -6px;
   padding: 6px;
   position: relative;
-/*------------------------------------*    $VALID_STATE
+/*------------------------------------*
+    $VALID_STATE
   \*------------------------------------*/
-/*------------------------------------*    $INVALID_STATE
+/*------------------------------------*
+    $INVALID_STATE
   \*------------------------------------*/
 }
 .fs-field-validation input {
@@ -1167,19 +1092,9 @@ input.fs-field-group__input ~ .fs-field-group__attachment {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-size: 14px;
+  font-size: 16px;
   font-size: 1rem;
-  line-height: 1.625rem;
-  font-weight: bold;
-  color: #4d4d4a;
-}
-.locale-zh .fs-person-vitals__name,
-.locale-ja .fs-person-vitals__name,
-.locale-ko .fs-person-vitals__name {
-  font-weight: normal; /* [1] */
-}
-.fs-person-vitals__link {
-  font-weight: normal;
+  line-height: 1.25;
 }
 .fs-person-vitals__name-full,
 .fs-person-vitals__name-given,
@@ -1206,9 +1121,9 @@ input.fs-field-group__input ~ .fs-field-group__attachment {
 .fs-person-details__separator,
 .fs-person-details__id,
 .fs-person-details__birthPlace {
-  font-size: 12px;
-  font-size: 0.857rem;
-  line-height: 1.35rem;
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 1.286;
   white-space: nowrap;
 }
 .fs-person-details__lifeSpan {
@@ -1238,7 +1153,7 @@ input.fs-field-group__input ~ .fs-field-group__attachment {
 }
 .fs-person-parents__show-label {
   display: inline-block;
-  line-height: 1.35rem;
+  line-height: 1.286;
 }
 .fs-person-parents__hide-text {
   display: none;
@@ -1401,9 +1316,6 @@ input.fs-field-group__input ~ .fs-field-group__attachment {
   display: table-row;
   text-align: center;
 }
-.fs-person--stacked .fs-person-vitals {
-  padding-top: 10px;
-}
 .fs-person--stacked .fs-person-portrait__portrait {
   margin: 0 auto;
 }
@@ -1411,11 +1323,7 @@ input.fs-field-group__input ~ .fs-field-group__attachment {
   display: none;
 }
 .fs-person--stacked .fs-person-vitals__fs-person-details {
-  margin-top: 5px;
   display: inline-block;
-}
-.fs-person--stacked .fs-person-vitals__name:not(.fs-person-vitals__name--sinotypic) {
-  line-height: 1.5rem;
 }
 .fs-person--stacked .fs-person-vitals__name:not(.fs-person-vitals__name--sinotypic) .fs-person-vitals__name--split {
   display: inline;
@@ -1427,21 +1335,12 @@ input.fs-field-group__input ~ .fs-field-group__attachment {
 .fs-person--dark.fs-person-vitals,
 .fs-person--dark .fs-person-vitals,
 .fs-person--dark .fs-person-gender__container,
-.fs-person--dark .fs-person-portrait__container,
-.fs-person--dark .fs-person-vitals__name {
+.fs-person--dark .fs-person-portrait__container {
   color: #fff;
-}
-.fs-person--dark.fs-person-vitals,
-.fs-person--dark .fs-person-vitals {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-.fs-person--dark .fs-person-details__container {
-  color: #ecebea;
 }
 .fs-person--dark .fs-person-portrait__portrait {
   background-color: #57585a;
-  border-color: #8c8d8f;
+  border-color: #6c6d6f;
   box-shadow: none;
 }
 .fs-person--dark .fs-icon-large-male:before {
@@ -1481,7 +1380,7 @@ input.fs-field-group__input ~ .fs-field-group__attachment {
 }
 .fs-person--person-card .fs-person-vitals__name {
   font-size: 24px;
-  font-size: 1.714rem;
+  font-size: 1.5rem;
   line-height: 1;
 }
 .fs-person--person-card a.fs-person-vitals__name-full:visited {
@@ -1489,7 +1388,7 @@ input.fs-field-group__input ~ .fs-field-group__attachment {
 }
 .fs-person--person-card .fs-person-details__id {
   font-size: 16px;
-  font-size: 1.143rem;
+  font-size: 1rem;
 }
 .disable-portrait-image .fs-person-portrait__portrait:after {
   content: '';
@@ -1507,9 +1406,11 @@ input.fs-field-group__input ~ .fs-field-group__attachment {
   top: 50%;
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
-/*------------------------------------*    $MENU_ITEM
+/*------------------------------------*
+    $MENU_ITEM
   \*------------------------------------*/
-/*------------------------------------*    $SECONDARY_NAV
+/*------------------------------------*
+    $SECONDARY_NAV
   \*------------------------------------*/
 }
 @media screen and (min-width: 1200px) {
@@ -1517,7 +1418,7 @@ input.fs-field-group__input ~ .fs-field-group__attachment {
     max-width: 1200px;
   }
 }
-.fs-subnav__container {
+.fs-subnav-container {
   background: #fff;
   border-bottom: 1px solid rgba(151,151,151,0.8);
   position: relative;
@@ -1525,11 +1426,11 @@ input.fs-field-group__input ~ .fs-field-group__attachment {
   box-sizing: border-box;
 }
 @media screen and (max-width: 767px) {
-  .fs-subnav__container {
+  .fs-subnav-container {
     display: none;
   }
 }
-.fs-subnav__container:before {
+.fs-subnav-container:before {
   border: 2px solid rgba(0,0,0,0.05);
   bottom: -3px;
   content: '';
@@ -1546,13 +1447,14 @@ input.fs-field-group__input ~ .fs-field-group__attachment {
   border: 0;
   color: #666662;
   display: inline-block;
-  font-size: 12px;
-  font-size: 0.857rem;
-  line-height: 1.35rem;
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 1.286;
   margin-right: 1px;
   padding: 4px 10px;
   vertical-align: middle;
-/*------------------------------------*      $SPLIT_ITEM
+/*------------------------------------*
+      $SPLIT_ITEM
     \*------------------------------------*/
 }
 .fs-subnav__item:active,
@@ -1571,7 +1473,7 @@ input.fs-field-group__input ~ .fs-field-group__attachment {
   vertical-align: middle;
 }
 .fs-subnav__item--split:hover .fs-subnav__item {
-  background: #f1f8e3;
+  background: #e1edc1;
 }
 .fs-subnav__item--split .fs-subnav__item:first-child {
   border-radius: 4px 0 0 4px;
@@ -1584,7 +1486,7 @@ input.fs-field-group__input ~ .fs-field-group__attachment {
   float: left;
 }
 .fs-subnav__item--split .fs-subnav__item:hover {
-  background: #e1edc1;
+  background: #f1f8e3;
 }
 .fs-subnav--secondary {
   float: right;

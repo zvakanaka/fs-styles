@@ -33,7 +33,7 @@
  * Avoid letting the persons lifespan and id line wrap.
  *
  * @section
- * @subsectionof Persons
+ * @sectionof Persons
  *
  * @example
  * <div>
@@ -50,10 +50,27 @@
  *   </div>
  * </div>
  */
+
+ /*
+  * 1. In CJK languages we shouldn't bold the person name because it makes the characters harder
+  *    to read.
+  */
 .fs-person-vitals__name {
   overflow: ellipsis;
   font-size: pxToRem($font-size-medium);
-  line-height: calcLineHeight($line-height-medium, $font-size-medium);
+  line-height: $line-height-medium;
+  font-weight: bold;
+  color: $color-grey;
+
+  .locale-zh &,
+  .locale-ja &,
+  .locale-ko & {
+    font-weight: normal; /* [1] */
+  }
+}
+
+.fs-person-vitals__link {
+  font-weight: normal;
 }
 
 .fs-person-vitals__name-full,
@@ -80,7 +97,7 @@
 .fs-person-details__id,
 .fs-person-details__birthPlace {
   font-size: pxToRem($font-size-small);
-  line-height: calcLineHeight($line-height-small, $font-size-small);
+  line-height: $line-height-small;
   white-space: nowrap;
 }
 
@@ -116,7 +133,7 @@
 .fs-person-parents__show-label {
   @extend a;
   display: inline-block;
-  line-height: calcLineHeight($line-height-small, $font-size-small);
+  line-height: $line-height-small;
 }
 
 .fs-person-parents__hide-text {
@@ -162,7 +179,7 @@
  * person could be ambiguous.
  *
  * @section
- * @subsectionof Persons
+ * @sectionof Persons
  *
  * @example
  * <div class="fs-person-gender">
@@ -303,7 +320,7 @@
  * gender icon will be used as a placeholder.
  *
  * @section
- * @subsectionof Persons
+ * @sectionof Persons
  *
  * @example
  * <div class="fs-person-portrait">
@@ -486,7 +503,7 @@
  * Use a couple relationship to indicate a marriage between two persons.
  *
  * @section
- * @subsectionof Persons
+ * @sectionof Persons
  *
  * @example
  * <div class="fs-couple fs-couple--info">
@@ -595,7 +612,7 @@
  * Display Variations
  *
  * @section
- * @subsectionof Persons
+ * @sectionof Persons
  *
  * @example
  * <small class="example__title">Light Theme - <code>fs-person--light</code></small>
@@ -743,6 +760,10 @@
       text-align: center;
     }
 
+    .fs-person-vitals {
+      padding-top: 10px;
+    }
+
     .fs-person-portrait__portrait {
       margin: 0 auto;
     }
@@ -752,10 +773,12 @@
     }
 
     .fs-person-vitals__fs-person-details {
+      margin-top: 5px;
       display: inline-block;
     }
 
     .fs-person-vitals__name:not(.fs-person-vitals__name--sinotypic) {
+      line-height: 1.5rem;
 
       .fs-person-vitals__name--split {
         display: inline;
@@ -773,13 +796,24 @@
     &.fs-person-vitals,
     & .fs-person-vitals,
     & .fs-person-gender__container,
-    & .fs-person-portrait__container {
+    & .fs-person-portrait__container,
+    & .fs-person-vitals__name {
       color: #fff;
+    }
+
+    &.fs-person-vitals,
+    .fs-person-vitals {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale
+    }
+
+    .fs-person-details__container {
+      color: $color-grey-background;
     }
 
     .fs-person-portrait__portrait {
       background-color: #57585a;
-      border-color: #6c6d6f;
+      border-color: #8c8d8f;
       box-shadow: none;
     }
 
