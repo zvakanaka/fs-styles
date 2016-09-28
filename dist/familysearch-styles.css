@@ -1,7 +1,7 @@
 /*
  * FamilySearch Styles
  * https://github.com/fs-webdev/fs-styles
- * v1.10.2 | MIT
+ * v2.1.0 | MIT
  */
 @-moz-keyframes rotate {
   from {
@@ -148,7 +148,8 @@
 .fs-icon.fs-icon-warning,
 .fs-icon-before.fs-icon-warning:before,
 .fs-icon-after.fs-icon-warning:after,
-.fs-alert--warning:before {
+.fs-alert--warning:before,
+.fs-field-validation--warning input {
   background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.2%22%20baseProfile%3D%22tiny%22%20x%3D%220%22%20y%3D%220%22%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%20xml%3Aspace%3D%22preserve%22%3E%3Crect%20fill%3D%22none%22%20width%3D%2220%22%20height%3D%2220%22%2F%3E%3Cpath%20fill%3D%22%2379520F%22%20d%3D%22M10%208.7l3.2%205.4H6.8L10%208.7M10%202.2c-0.4%200-0.7%200.2-1%200.7L1.2%2016.2C0.6%2017.1%201.1%2017.9%202.2%2017.9h15.7c1.1%200%201.5-0.8%201-1.7L11%202.9C10.7%202.4%2010.4%202.2%2010%202.2L10%202.2z%22%2F%3E%3C%2Fsvg%3E") !important;
 }
 .fs-badge {
@@ -1052,6 +1053,8 @@ input.fs-field-group__input ~ .fs-field-group__attachment {
   position: relative;
 /*------------------------------------*    $VALID_STATE
   \*------------------------------------*/
+/*------------------------------------*    $WARNING_STATE
+  \*------------------------------------*/
 /*------------------------------------*    $INVALID_STATE
   \*------------------------------------*/
 }
@@ -1061,7 +1064,8 @@ input.fs-field-group__input ~ .fs-field-group__attachment {
   background-position: right 10px center;
 }
 .fs-field-validation__valid-message,
-.fs-field-validation__invalid-message {
+.fs-field-validation__invalid-message,
+.fs-field-validation__warning-message {
   display: none;
   margin: 10px 10px 4px 10px;
 }
@@ -1074,10 +1078,24 @@ input.fs-field-group__input ~ .fs-field-group__attachment {
   border-color: #bfd730;
 }
 .fs-field-validation--valid input:focus {
-  border-color: #356635;
+  border-color: #44650f;
 }
 .fs-field-validation--valid .fs-field-validation__valid-message {
   color: #44650f;
+  display: block;
+}
+.fs-field-validation--warning {
+  background: #fff8de;
+  border: 1px solid #ffd400;
+}
+.fs-field-validation--warning input {
+  border-color: #ffd400;
+}
+.fs-field-validation--warning input:focus {
+  border-color: #79520f;
+}
+.fs-field-validation--warning .fs-field-validation__warning-message {
+  color: #79520f;
   display: block;
 }
 .fs-field-validation--invalid {
@@ -1088,7 +1106,7 @@ input.fs-field-group__input ~ .fs-field-group__attachment {
   border-color: #f8b0ab;
 }
 .fs-field-validation--invalid input:focus {
-  border-color: #953b39;
+  border-color: #a71e1a;
 }
 .fs-field-validation--invalid .fs-field-validation__invalid-message {
   color: #a71e1a;
