@@ -4,6 +4,7 @@
 /*
  * DEFAULT_STATE........Default field state
  * VALID_STATE..........Valid field state
+ * WARNING_STATE........Warning field state
  * INVALID_STATE........Invalid field state
  */
 
@@ -24,21 +25,32 @@
  * <label class="example__title" for="defaultState">Default State</label>
  * <div class="fs-field-validation">
  *   <input id="defaultState" type="text" placeholder="Example Text"/>
- *   <p class="fs-field-validation__valid-message">Please save changes below.</p>
- *   <p class="fs-field-validation__invalid-message">Please enter a valid email.</p>
+ *   <p class="fs-field-validation__valid-message" id="validMessage">Please save changes below.</p>
+ *   <p class="fs-field-validation__warning-message" id="warningMessage">Please enter an email address.</p>
+ *   <p class="fs-field-validation__invalid-message" id="invalidMessage">Please enter a valid email.</p>
  * </div>
  *
  * <label class="example__title" for="validState">Valid State</label>
  * <div class="fs-field-validation fs-field-validation--valid">
  *   <input id="validState" type="text" placeholder="Example Text" aria-describedby="validMessage"/>
  *   <p class="fs-field-validation__valid-message" id="validMessage">Please save changes below.</p>
- *   <p class="fs-field-validation__invalid-message">Please enter a valid email.</p>
+ *   <p class="fs-field-validation__warning-message" id="warningMessage">Please enter an email address.</p>
+ *   <p class="fs-field-validation__invalid-message" id="invalidMessage">Please enter a valid email.</p>
+ * </div>
+ *
+ * <label class="example__title" for="warningState">Warning State</label>
+ * <div class="fs-field-validation fs-field-validation--warning">
+ *   <input id="warningState" type="text" placeholder="Example Text" aria-describedby="warningMessage"/>
+ *   <p class="fs-field-validation__valid-message" id="validMessage">Please save changes below.</p>
+ *   <p class="fs-field-validation__warning-message" id="warningMessage">Please enter an email address.</p>
+ *   <p class="fs-field-validation__invalid-message" id="invalidMessage">Please enter a valid email.</p>
  * </div>
  *
  * <label class="example__title" for="invalidState">Invalid State</label>
  * <div class="fs-field-validation fs-field-validation--invalid">
  *   <input id="invalidState" type="text" placeholder="Example Text" aria-describedby="invalidMessage"/>
- *   <p class="fs-field-validation__valid-message">Please save changes below.</p>
+ *   <p class="fs-field-validation__valid-message" id="validMessage">Please save changes below.</p>
+ *   <p class="fs-field-validation__warning-message" id="warningMessage">Please enter an email address.</p>
  *   <p class="fs-field-validation__invalid-message" id="invalidMessage">Please enter a valid email.</p>
  * </div>
  */
@@ -59,7 +71,8 @@
   }
 
   &__valid-message,
-  &__invalid-message {
+  &__invalid-message,
+  &__warning-message {
     display: none;
     margin: 10px 10px 4px 10px;
   }
@@ -81,12 +94,38 @@
       border-color: #bfd730;
 
       &:focus {
-        border-color: #356635
+        border-color: #44650f
       }
     }
 
     .fs-field-validation__valid-message {
       color: #44650f;
+      display: block;
+    }
+  }
+
+
+
+
+
+  /*------------------------------------*\
+    $WARNING_STATE
+  \*------------------------------------*/
+  &--warning {
+    background: #fff8de;
+    border: 1px solid #ffd400;
+
+    input {
+      @extends $icon-warning
+      border-color: #ffd400;
+
+      &:focus {
+        border-color: #79520f
+      }
+    }
+
+    .fs-field-validation__warning-message {
+      color: #79520f;
       display: block;
     }
   }
@@ -107,7 +146,7 @@
       border-color: #f8b0ab;
 
       &:focus {
-        border-color: #953b39
+        border-color: #a71e1a
       }
     }
 
