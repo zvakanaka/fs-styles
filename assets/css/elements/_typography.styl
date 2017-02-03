@@ -145,7 +145,7 @@ body {
  *
  * ##### Avoid
  *
- * Do not apply the hading classes to elements that are not headings (e.g. `<div>`).
+ * Do not apply the heading classes to elements that are not headings (e.g. `<div>`).
  *
  * @section
  * @sectionof Typography
@@ -156,6 +156,7 @@ body {
  * <h3 class="fs-h3">H3 styled as H3</h3>
  * <h4 class="fs-h2">H4 styled as H2</h4>
  * <h5 class="fs-h1">H5 styled as H1</h5>
+ * <h1 class="fs-h1--campaign">Campaign Heading</h1>
  */
 
 // Typography Selectors (conditional based on the $limit-base-styles flag)
@@ -203,7 +204,7 @@ $typography-h5-selectors = 'h5, h6' + ($limit-base-styles ? '' : ', .fs-h5, .fs-
 
 .fs-h1--campaign {
   font-size: pxToRem($font-size-large-xxxx);
-  line-height: unit($baseline-grid * 3, 'rem');
+  line-height: unit($line-height-large-xxxx);
 }
 
 

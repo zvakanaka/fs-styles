@@ -18,6 +18,9 @@
  * the element with the class `fs-tooltip__trigger` is hovered or selected. The tooltip
  * will be centered around the element that has the class `fs-tooltip`.
  *
+ * `fs-tooltip__body` and `fs-tooltip__trigger` must be direct siblings for
+ * for the tooltip to work.
+ *
  * @section
  * @sectionof Tooltips
  *
@@ -49,7 +52,7 @@
   &__trigger:hover + &__body,
   &__trigger:focus + &__body {
     width: 200px;
-    height: inherit;
+    height: auto;
     clip: auto;
     overflow: visible;
     opacity: 1;

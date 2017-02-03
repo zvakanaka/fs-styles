@@ -28,6 +28,10 @@
  * Icons can also be placed `:before` and `:after` the element using `fs-icon-before` and
  * `fs-icon-after`.
  *
+ * An icon using the class `fs-icon` will need to have it's `width` and `height`
+ * set to show. There is no default set to avoid conflicts with elements that
+ * might have already set their width or height.
+ *
  * @section
  * @sectionof Icons
  *
@@ -264,19 +268,6 @@
     @extends $icon-female-large;
   }
 
-  /**
-   * fs-icon-large-grey-female
-   *
-   * @icondef large grey female
-   * @iconof Icons.Available Icons
-   * @class fs-icon fs-icon-large-grey-female
-   */
-  &.fs-icon-large-grey-female,
-  &-before.fs-icon-large-grey-female:before,
-  &-after.fs-icon-large-grey-female:after {
-    @extends $icon-female-large-grey;
-  }
-
   // male
   /**
    * fs-icon-small-male
@@ -315,19 +306,6 @@
   &-before.fs-icon-large-male:before,
   &-after.fs-icon-large-male:after {
     @extends $icon-male-large;
-  }
-
-  /**
-   * fs-icon-large-grey-male
-   *
-   * @icondef large grey male
-   * @iconof Icons.Available Icons
-   * @class fs-icon fs-icon-large-grey-male
-   */
-  &.fs-icon-large-grey-male,
-  &-before.fs-icon-large-grey-male:before,
-  &-after.fs-icon-large-grey-male:after {
-    @extends $icon-male-large-grey;
   }
 
   // unknown

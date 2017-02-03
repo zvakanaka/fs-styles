@@ -87,15 +87,17 @@
   overflow: ellipsis;
 }
 
+// do not use flex since flex adds newline characters to the end of text
+// @see http://stackoverflow.com/questions/27970957/flexbox-adding-newline-to-clipboard
 .fs-person-details__container {
-  display: flex;
-  flex-wrap: nowrap;
+  clearfix();
 }
 
 .fs-person-details__lifeSpan,
 .fs-person-details__separator,
 .fs-person-details__id,
 .fs-person-details__birthPlace {
+  float: left;
   font-size: pxToRem($font-size-small);
   line-height: $line-height-small;
   white-space: nowrap;
@@ -442,12 +444,11 @@
 }
 
 .fs-person-portrait__portrait {
-  background-color: #e0e0e0;
+  background-color: #f4f4f4;
   background-position: center;
   background-size: 60%;
-  border: solid 4px #fff;
+  border: solid 4px #d9d9d9;
   border-radius: 50%;
-  box-shadow: 0 2px 3px 0 #636363;
   width: 66px;
   height: 66px;
   margin-right: 20px;
@@ -615,33 +616,6 @@
  * @sectionof Persons
  *
  * @example
- * <small class="example__title">Light Theme - <code>fs-person--light</code></small>
- * <div class="fs-person-portrait fs-person--light">
- *   <div class="fs-person-portrait__container">
- *     <div class="fs-person-portrait__portrait fs-couple__connector fs-icon-before fs-icon-large-male"></div>
- *   </div>
- *   <div class="fs-person-portrait__gender-wrapper">
- *     <div class="fs-person-gender">
- *       <div class="fs-person-gender__container fs-person-gender--small">
- *         <div class="fs-person-gender__image fs-couple__connector fs-icon fs-icon-small-male"></div>
- *       </div>
- *       <div class="fs-person-vitals">
- *         <div class="fs-person-vitals__name">
- *           <span class="fs-person-vitals__name-full" data-test="full-name">John Henry Doe</span>
- *         </div>
- *         <div class="fs-person-vitals__fs-person-details">
- *           <div class="fs-person-details__container">
- *             <span class="fs-person-details__lifeSpan" data-test="lifeSpan">1900-1960</span>
- *             <span class="fs-person-details__separator">&nbsp;•&nbsp;</span>
- *             <span class="fs-person-details__id" data-test="pid">5XG4-L2Y</span>
- *             <span class="fs-person-details__selection-stopper">​</span>
- *           </div>
- *         </div>
- *       </div>
- *     </div>
- *   </div>
- * </div>
- *
  * <small class="example__title">Dark Theme - <code>fs-person--dark</code></small>
  * <div class="fs-person-portrait fs-person--dark" style="background: #4d4d4a; padding: 5px;">
  *   <div class="fs-person-portrait__container">
@@ -814,44 +788,6 @@
     .fs-person-portrait__portrait {
       background-color: #57585a;
       border-color: #8c8d8f;
-      box-shadow: none;
-    }
-
-    .fs-icon-large-male:before {
-      @extends $icon-male-large-grey;
-      background-position: inherit;
-      background-size: inherit;
-      background-repeat: no-repeat;
-    }
-
-    .fs-icon-large-female:before {
-      @extend $icon-female-large-grey;
-      background-position: inherit;
-      background-size: inherit;
-      background-repeat: no-repeat;
-    }
-  }
-
-  // LIGHT
-  &--light {
-    .fs-person-portrait__portrait {
-      background-color: #f4f4f4;
-      border-color: #d9d9d9;
-      box-shadow: none;
-    }
-
-    .fs-icon-large-male:before {
-      @extends $icon-male-large-grey;
-      background-position: inherit;
-      background-size: inherit;
-      background-repeat: no-repeat;
-    }
-
-    .fs-icon-large-female:before {
-      @extend $icon-female-large-grey;
-      background-position: inherit;
-      background-size: inherit;
-      background-repeat: no-repeat;
     }
   }
 
