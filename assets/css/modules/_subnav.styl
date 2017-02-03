@@ -75,20 +75,12 @@
   top: 50%;
   transform: translateY(-50%)
 
-  @media $break-desktop-hd {
-    max-width: $screen-desktop-hd-min;
-  }
-
   &__container {
     background: #fff;
     border-bottom: 1px solid rgba(151,151,151,0.8);
     position: relative;
     height: 35px; /* [1] */
     box-sizing: border-box;
-
-    @media $break-mobile {
-      display: none;
-    }
 
     &:before {
       border: 2px solid rgba(0,0,0,0.05);
@@ -116,6 +108,7 @@
     border-radius: $border-radius;
     border: 0;
     color: $color-grey-light;
+    cursor: pointer;
     display: inline-block;
     font-size: pxToRem($font-size-small);
     line-height: $line-height-small;
