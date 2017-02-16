@@ -8,7 +8,7 @@ To use fs-styles in you app, turn on the `fsStylesEx` experiment. This will brin
 
 ## Importing the style guide into your Stylus file
 
-Use `@import '/components/fs-styles/assets/css/helpers/*` to import all the style guide variables, mixins, and functions into your Stylus files.
+Use `@import '/components/fs-styles/assets/css/helpers/*'` to import all the style guide variables, mixins, and functions into your Stylus files.
 
 ### Variables
 
