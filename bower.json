@@ -23,6 +23,10 @@
   "moduleType": "globals",
   "license": "SEE LICENSE IN LICENSE.txt",
   "dependencies": {
-    "polymer": "Polymer/Polymer#^1.6.1"
+    "polymer": "Polymer/Polymer#^1.6.1",
+    "polymer-2": "Polymer/polymer#2.0-preview"
+  },
+  "resolutions": {
+    "webcomponentsjs": "v1"
   }
 }
